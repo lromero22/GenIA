@@ -172,3 +172,7 @@ cython_debug/
 
 # Folders
 .venv/
+
+# But not these files...
+!transcribe.txt
+!Error solution.txt
