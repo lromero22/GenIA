@@ -1,0 +1,42 @@
+Teniendo en cuenta que en la reunión inicial se hablo sobre la necesidad de convertir los audios  de las llamadas a texto,+
+se inicia buscando herramientas que puedan ser utiles para lograr dicho propósito el cual recibe el rotulo de "fase 1"
+
+1. Amazon Transcribe
+- Usa tecnologías de DeepLearning para realizar la tarea en cuestión SIN NECESIDAD DE TENER CONOCIMIENTOS de DeepLearning.
+- Esta alternativa se considera porque LikeU cuenta con servicios de  AWS (hay una migración activa a la nuve de Google).
+- Tienen la posibilidad de agregar vocabulario y modelos de lenguaje personalizado.
+- La transcripción tiene la posibilidad de tratar información sensible de forma adecuada (identificación, etc).
+- El peso máximo de cada audio soportado en AWS es de 2GB (2022, verificar si la cantidad aumento).
+NOTAS
+- Sin conocimiento previo de AWS, es un proceso muy manual en el que se deben cargar los archivos y después descargar
+los transcripts. ¿Es posible automatizar el proceso con conocimiento más avanzado de AWS? ¿Cómo se podría automatizar
+el proceso?
+- Leer documentación de AWS para conocer más detalles de la herramienta.
+- Soportado por Python Boto3 (El SDK de AWS para Python).
+- FORMATO: Acepta audios ya grabados en formato AMR, FLAC, M4A, MP3, MP4, Ogg, WebM, WAV siendo FLAC y WAV recomendados.
+Ventajas
+- Es una herramienta muy poderosa para la tarea en cuestión 
+Desventajas
+- A falta de revisar la documentación con lujo de detalle, es una alternativa que podría ser inviable por temas de costo.
+
+2. OpenAI Whisper 
+La misma empresa desarrolladora de ChatGPT (OpenAI) ofrece su inteligencia artifical open source en un modulo disponible
+en python (openai). El siguiente repositorio de GitHub contiene más detalles acerca del uso e instalación de whisper.
+https://github.com/openai/whisper
+
+Instalación, descarga y actualización de whisper:
+pip install -U openai-whisper
+
+También se requiere el command-line tool ffmpeg
+choco install ffmpeg (Chocolatey: https://chocolatey.org/)
+scoop install ffmpeg (Scoop: https://scoop.sh/)
+
+rust
+Si la instalación falla con el mensaje: No module named 'setuptools_rust', se necesita instalar setuptools_rust
+pip install setuptools-rust
+
+Alguna terminologia nueva
+SDK: Software development kit. Conjunto de herramientas para contruir software en una plataforma en particular.
+Estas herramientas también le permiten a un desarrollador de aplicaciones la posibilidad de desarrollar una app que sea
+integrable con otras plataformas.
+

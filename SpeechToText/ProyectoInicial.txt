@@ -1,0 +1,21 @@
+Etapa 1
+Encontrar sentimientos en las comunicaciones y evaluarlo según parametros establecidos.
+
+Etapa 1
+Hacer transcripts de audios en texto para posteriormente ser analizados. Luego hacer un análisis de 
+calidad según sentimientos.
+- Deber generar el texto de conversación.
+- Encontrar el mejor formato para la transcripción
+- Identificar las entradas del modelo: audio, campaña, idioma, saludo del Liker, formato.
+
+Alternativa de mejora (Etapa 1.5)
+
+
+Notas
+- Los audios son WAP49 comprimido. Se debe evaluar las transcripciones realizadas en diferentes formatos
+para llegar a un concenso.
+
+Terminología
+Likers: El asesor de LikeU
+Cliente: La empresa (Ej: Sura, Novaventa)
+Usuario: El cliente del cliente.
