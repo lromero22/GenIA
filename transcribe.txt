@@ -1,58 +1,12 @@
-
-[ 00:00:22.538 -- 00:00:22.623 ] SPEAKER_00 :  Gracias.
-[ 00:00:22.538 -- 00:00:22.623 ] SPEAKER_00 :  Gracias.
-[ 00:00:22.623 -- 00:00:22.809 ] SPEAKER_01 :  ¿no?
-[ 00:00:22.809 -- 00:00:23.013 ] SPEAKER_00 :  Gracias.
-[ 00:00:23.013 -- 00:00:23.132 ] SPEAKER_01 :  Gracias.
-[ 00:00:23.794 -- 00:00:26.578 ] SPEAKER_01 :  Hola, buenas tardes. Me voy a hablar con el señor Alejandro.
-[ 00:00:27.784 -- 00:00:28.718 ] SPEAKER_00 :  Con el habla.
-[ 00:00:29.074 -- 00:00:31.383 ] SPEAKER_01 :  Con Natalia Montoya de Cifra, ¿cómo has estado?
-[ 00:00:32.317 -- 00:00:32.979 ] SPEAKER_00 :  ¿Me manda perdón?
-[ 00:00:33.726 -- 00:00:35.492 ] SPEAKER_01 :  Natalia Montoya, de Turamericana.
-[ 00:00:36.307 -- 00:00:37.631 ] SPEAKER_00 :  Hola Natalia, ¿cómo estás?
-[ 00:00:38.310 -- 00:00:39.974 ] SPEAKER_01 :  Muy bien, muchas gracias.
-[ 00:00:40.212 -- 00:00:50.042 ] SPEAKER_01 :  Bueno, te estoy contactando para validar contigo si ya te llegó toda la documentación, la carácter de la póliza, si ya la pudiste validar o si aún no te ha llegado para reenviártela.
-[ 00:00:50.755 -- 00:00:53.488 ] SPEAKER_00 :  y en la cadena 1 se llegó al mismo día que hablábamos.
-[ 00:00:55.186 -- 00:00:55.390 ] SPEAKER_01 :  ¿Cómo?
-[ 00:00:56.001 -- 00:00:58.718 ] SPEAKER_00 :  De cualquier manera. Sí, de cualquier manera.
-[ 00:00:58.921 -- 00:00:58.955 ] SPEAKER_00 :  Gracias.
-[ 00:00:58.955 -- 00:01:01.027 ] SPEAKER_01 :  Ah, bueno, perfecto. Entonces...
-[ 00:01:01.264 -- 00:01:12.758 ] SPEAKER_01 :  Pues la idea era confirmar el tipo de evidencia de tu póliza. Quedó desde el 23 de marzo del 2024 para que sepas que desde ese día está protegida tu módulo de insomnio.
-[ 00:01:12.775 -- 00:01:12.860 ] SPEAKER_01 :  Gracias.
-[ 00:01:12.860 -- 00:01:12.877 ] SPEAKER_00 :  Gracias.
-[ 00:01:12.877 -- 00:01:12.894 ] SPEAKER_01 :  Gracias.
-[ 00:01:12.894 -- 00:01:14.015 ] SPEAKER_00 : 
-[ 00:01:14.371 -- 00:01:14.524 ] SPEAKER_00 :  ¡Gracias!
-[ 00:01:14.524 -- 00:01:14.592 ] SPEAKER_01 :  Gracias.
-[ 00:01:14.592 -- 00:01:15.135 ] SPEAKER_00 :  Gracias.
-[ 00:01:14.677 -- 00:01:16.324 ] SPEAKER_01 :  Muchas gracias, Alejandro.
-[ 00:00:22.538 -- 00:00:22.623 ] SPEAKER_00 :  Gracias.
-[ 00:00:22.623 -- 00:00:22.809 ] SPEAKER_01 :  ¿no?
-[ 00:00:22.809 -- 00:00:23.013 ] SPEAKER_00 :  Gracias.
-[ 00:00:23.013 -- 00:00:23.132 ] SPEAKER_01 :  Gracias.
-[ 00:00:23.794 -- 00:00:26.578 ] SPEAKER_01 :  Hola, buenas tardes. Me voy a hablar con el señor Alejandro.
-[ 00:00:27.784 -- 00:00:28.718 ] SPEAKER_00 :  Con el habla.
-[ 00:00:29.074 -- 00:00:31.383 ] SPEAKER_01 :  Con Natalia Montoya de Cifra, ¿cómo has estado?
-[ 00:00:32.317 -- 00:00:32.979 ] SPEAKER_00 :  ¿Me manda perdón?
-[ 00:00:33.726 -- 00:00:35.492 ] SPEAKER_01 :  Natalia Montoya, de Turamericana.
-[ 00:00:36.307 -- 00:00:37.631 ] SPEAKER_00 :  Hola Natalia, ¿cómo estás?
-[ 00:00:38.310 -- 00:00:39.974 ] SPEAKER_01 :  Muy bien, muchas gracias.
-[ 00:00:40.212 -- 00:00:50.042 ] SPEAKER_01 :  Bueno, te estoy contactando para validar contigo si ya te llegó toda la documentación, la carácter de la póliza, si ya la pudiste validar o si aún no te ha llegado para reenviártela.
-[ 00:00:50.755 -- 00:00:53.488 ] SPEAKER_00 :  y en la cadena 1 se llegó al mismo día que hablábamos.
-[ 00:00:55.186 -- 00:00:55.390 ] SPEAKER_01 :  ¿Cómo?
-[ 00:00:56.001 -- 00:00:58.718 ] SPEAKER_00 :  De cualquier manera. Sí, de cualquier manera.
-[ 00:00:58.921 -- 00:00:58.955 ] SPEAKER_00 :  Gracias.
-[ 00:00:58.955 -- 00:01:01.027 ] SPEAKER_01 :  Ah, bueno, perfecto. Entonces...
-[ 00:01:01.264 -- 00:01:12.758 ] SPEAKER_01 :  Pues la idea era confirmar el tipo de evidencia de tu póliza. Quedó desde el 23 de marzo del 2024 para que sepas que desde ese día está protegida tu módulo de insomnio.
-[ 00:01:12.775 -- 00:01:12.860 ] SPEAKER_01 :  Gracias.
-[ 00:01:12.860 -- 00:01:12.877 ] SPEAKER_00 :  Gracias.
-[ 00:01:12.877 -- 00:01:12.894 ] SPEAKER_01 :  Gracias.
-[ 00:01:12.894 -- 00:01:14.015 ] SPEAKER_00 : 
-[ 00:01:14.371 -- 00:01:14.524 ] SPEAKER_00 :  ¡Gracias!
-[ 00:01:14.524 -- 00:01:14.592 ] SPEAKER_01 :  Gracias.
-[ 00:01:14.592 -- 00:01:15.135 ] SPEAKER_00 :  Gracias.
-[ 00:01:14.677 -- 00:01:16.324 ] SPEAKER_01 :  Muchas gracias, Alejandro.
-[ 00:01:15.882 -- 00:01:16.782 ] SPEAKER_00 :  Gracias.
-[ 00:01:17.156 -- 00:01:19.023 ] SPEAKER_00 :  Dale, con gusto, gracias.
-[ 00:01:20.144 -- 00:01:21.095 ] SPEAKER_01 :  Gracias.
-[ 00:01:21.095 -- 00:01:21.723 ] SPEAKER_00 :  Gracias.
+0:00:22 - 0:00:26 [SPEAKER_00]: Aló Aló, buenas tardes, me vuelvo a hablar con el señor Alejandro
+0:00:26 - 0:00:28 [SPEAKER_01]: ¿Y con él habla?
+0:00:28 - 0:00:30 [SPEAKER_00]: Con Natalia Montoya de Suramericana, ¿cómo has estado?
+0:00:31 - 0:00:32 [SPEAKER_01]: ¿De dónde, perdón?
+0:00:33 - 0:00:35 [SPEAKER_00]: Natalia Montoya de Suramericana
+0:00:35 - 0:00:37 [SPEAKER_01]: Hola Natalia, ¿cómo estás?
+0:00:37 - 0:00:49 [SPEAKER_00]: Muy bien, muchas gracias Bueno, te estoy contactando para validar contigo si ya te llegó toda la documentación, la carácter de la póliza, si ya la pudiste validar o si aún no te ha llegado para reenviártela
+0:00:49 - 0:00:53 [SPEAKER_01]: La carácter llegó el mismo día que hablábamos
+0:00:53 - 0:00:55 [SPEAKER_00]: ¿Cómo?
+0:00:55 - 0:00:58 [SPEAKER_01]: Llegó el mismo día Sí, llegó el mismo día
+0:00:58 - 0:01:16 [SPEAKER_00]: Ah, bueno, perfecto Entonces, pues la idea es que era confirmar que la evidencia de tu póliza quedó desde el 23 de marzo del 2024 ¿Para qué le pasó? Que desde ese día está protegida tu mundo visto Visto de una Muchas gracias Alejandro, un excelente trabajo
+0:01:16 - 0:01:17 [SPEAKER_01]: Natalia, una vez con gusto, gracias
