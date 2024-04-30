@@ -176,3 +176,4 @@ cython_debug/
 # But not these files...
 !transcribe.txt
 !Error solution.txt
+!likers_words.zip
