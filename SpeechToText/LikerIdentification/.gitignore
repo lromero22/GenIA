@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+*
+
+# Include
+!.gitignore
+!Liker_Identification_Initial.ipynb
+!PruebaFuncion.txt
+!requirements.txt
