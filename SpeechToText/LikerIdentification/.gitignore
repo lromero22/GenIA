@@ -3,7 +3,6 @@
 
 # Include
 !.gitignore
-!Liker_Identification_Initial.ipynb
+!*.ipynb
 !PruebaFuncion.txt
 !requirements.txt
-!*Raw_Transcriptions\
