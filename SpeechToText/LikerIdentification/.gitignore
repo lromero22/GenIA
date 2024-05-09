@@ -7,5 +7,5 @@
 !requirements.txt
 
 # Include folders
-/Raw_Transcriptions/*
-/Identified_Speakers/*
+!/Raw_Transcriptions/
+!/Identified_Speakers/
