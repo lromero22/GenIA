@@ -1,8 +1,11 @@
 # created by virtualenv automatically
 *
 
-# Include
+# Include files
 !.gitignore
 !*.ipynb
-!PruebaFuncion.txt
 !requirements.txt
+
+# Include folders
+/Raw_Transcriptions/*
+/Identified_Speakers/*
