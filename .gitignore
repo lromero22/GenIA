@@ -1,3 +1,6 @@
+# API Toen file
+/Chatbot/MessageExtractor/API_Token_Chatbot.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
