@@ -2,15 +2,11 @@ import os
 import audeer
 import audonnx
 import numpy as np
-import audinterface
 import audb
+import pandas as pd
 import audformat
 import audmetric
-import pandas as pd
 import opensmile
-import audiofile
-from pathlib import Path
-from glob import glob
 from sklearn.model_selection import LeaveOneGroupOut
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
@@ -18,7 +14,11 @@ from sklearn.svm import SVC
 
 # Function to download and extract the model
 def download_and_extract_model(model_url, dst_path, model_root, cache_root):
+
     if not os.path.exists(dst_path):
+        # Create cache_root folder if it doesn't exist
+        os.makedirs(cache_root, exist_ok=True)
+
         audeer.download_url(
             model_url,
             dst_path,
@@ -26,6 +26,9 @@ def download_and_extract_model(model_url, dst_path, model_root, cache_root):
         )
 
     if not os.path.exists(model_root):
+        # Create model_root folder if it doesn't exist
+        os.makedirs(model_root, exist_ok=True)
+
         audeer.extract_archive(
             dst_path,
             model_root,
@@ -50,6 +53,25 @@ def load_emodb_database(cache_root):
         verbose=True,
     )
     return db
+
+def smile_pretrain(emotion, db, cache_root):
+
+    smile = opensmile.Smile(
+        opensmile.FeatureSet.ComParE_2016,
+        opensmile.FeatureLevel.Functionals,
+        sampling_rate=16000,
+        resample=True,
+        num_workers=5,
+        verbose=True,
+    ) 
+
+    features_smile = smile.process_index(
+        emotion.index,
+        root=db.root,
+        cache_root=audeer.path(cache_root, 'smile'),
+    )
+
+    return features_smile
 
 # Function to perform leave-one-speaker-out cross-validation experiment
 def leave_one_speaker_out_experiment(features, targets, groups, clf):
@@ -90,28 +112,6 @@ def leave_one_speaker_out_experiment(features, targets, groups, clf):
 
     return truth, pred
 
-# Function to process audio features using OpenSMILE
-def process_features(audio:str):
-    signal, sampling_rate = audiofile.read(audio)
-
-    smile = opensmile.Smile(
-        opensmile.FeatureSet.ComParE_2016,
-        opensmile.FeatureLevel.Functionals,
-        sampling_rate=16000,
-        resample=True,
-        num_workers=5,
-        verbose=True,
-    )
-
-    features = smile.process_signal(signal, sampling_rate)
-
-    return features
-
-# Function to predict emotion from audio features
-def predict_emotion(features, clf):
-    predicted_emotion = clf.predict(features)
-    return predicted_emotion
-
 def main():
     def cache_path(file):
         return os.path.join(cache_root, file)
@@ -135,12 +135,8 @@ def main():
         StandardScaler(),
         SVC(gamma='auto'),
     )
-
-    features_smile = smile.process_index(
-        emotion.index,
-        root=db.root,
-        cache_root=audeer.path(cache_root, 'smile'),
-    )
+    
+    features_smile = smile_pretrain(emotion, db, cache_root)
 
     truth_smile, pred_smile = leave_one_speaker_out_experiment(
         features_smile,
@@ -151,13 +147,6 @@ def main():
 
     audmetric.unweighted_average_recall(truth_smile, pred_smile)
 
-    base = os.path.abspath('')
-    file_paths = glob(f"{base}/*.WAV")
-
-    for file_path in file_paths:
-        features = process_features(file_path)
-        predicted_emotion = predict_emotion(features, clf)
-        print("Predicted Emotion:", predicted_emotion)
-
 if __name__ == "__main__":
     main()
+    print("End pretraining")
