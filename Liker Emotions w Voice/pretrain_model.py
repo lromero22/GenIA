@@ -11,6 +11,7 @@ from sklearn.model_selection import LeaveOneGroupOut
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
+import joblib
 
 # Function to download and extract the model
 def download_and_extract_model(model_url, dst_path, model_root, cache_root):
@@ -112,12 +113,14 @@ def leave_one_speaker_out_experiment(features, targets, groups, clf):
 
     return truth, pred
 
-def main():
+def pretrain_model():
     def cache_path(file):
         return os.path.join(cache_root, file)
     
-    model_root = 'model'
-    cache_root = 'cache'
+    base = os.path.dirname(__file__)
+
+    model_root = os.path.join(base, 'model')
+    cache_root = os.path.join(base, 'cache')
     
     dst_path = cache_path('model.zip')
     model_url = 'https://zenodo.org/record/6221127/files/w2v2-L-robust-12.6bc4a7fd-1.1.0.zip'
@@ -131,22 +134,33 @@ def main():
 
     audformat.utils.concat([emotion, speaker])
 
-    clf = make_pipeline(
-        StandardScaler(),
-        SVC(gamma='auto'),
-    )
-    
-    features_smile = smile_pretrain(emotion, db, cache_root)
+    # Check if the classifier file exists
+    clf_file = cache_path('emotion_classifier.pkl')
+    if os.path.exists(clf_file):
+        # Load the classifier from file
+        clf = joblib.load(clf_file)
+    else:
+        clf = make_pipeline(
+            StandardScaler(),
+            SVC(gamma='auto'),
+        )
+        
+        features_smile = smile_pretrain(emotion, db, cache_root)
 
-    truth_smile, pred_smile = leave_one_speaker_out_experiment(
-        features_smile,
-        emotion,
-        speaker,
-        clf
-    )
+        truth_smile, pred_smile = leave_one_speaker_out_experiment(
+            features_smile,
+            emotion,
+            speaker,
+            clf
+        )
 
-    audmetric.unweighted_average_recall(truth_smile, pred_smile)
+        audmetric.unweighted_average_recall(truth_smile, pred_smile)
+
+        # Save the trained classifier to file
+        joblib.dump(clf, clf_file)
+
+    return clf
 
 if __name__ == "__main__":
-    main()
+    pretrain_model()
     print("End pretraining")

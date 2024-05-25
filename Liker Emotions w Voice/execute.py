@@ -41,11 +41,15 @@ def predict_emotion(features, clf):
 
 def main():
     ptm.main()
+    # Base path for Colab
+    # base = os.path.abspath('')
+    base = os.path.dirname(__file__)
 
-    base = os.path.abspath('')
     file_paths = glob(f"{base}/*.WAV")
 
     for file_path in file_paths:
+        # Batch conversion using CMD
+        # for %i in (*.WAV) do ffmpeg -y -i "%i" -acodec pcm_s16le -ac 1 -ar 16000 "converted/%~ni.WAV"
         command = f"ffmpeg -y -i {file_path} -acodec pcm_s16le -ac 1 -ar 16000 {file_path}"
         os.system(command)
         print(f"Archivo {file_path} creado.")

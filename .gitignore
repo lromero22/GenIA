@@ -128,6 +128,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.venv/
+.voicenv/
 
 # Spyder project settings
 .spyderproject
@@ -171,7 +173,8 @@ cython_debug/
 *.docx 
 
 # Folders
-.venv/
+cache/
+model/
 
 # But not these files...
 !transcribe.txt
