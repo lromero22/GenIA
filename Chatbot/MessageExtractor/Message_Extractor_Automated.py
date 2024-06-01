@@ -6,7 +6,7 @@ import schedule
 import time
 
 # Configurar el token y el ID del canal de Slack
-token = "xoxb-1690660427493-7155376342645-n57TC7qzGFv1EfeaImEFtTaS"
+token = "xoxb-1690660427493-7155376342645-buFuLANUZYDtbTvZbM6eNVLQ" # Token de la app de Slack
 channel_id = "C06SNC0JLUA"  # Reemplaza con el ID del canal correcto
 
 # Configurar los encabezados de la solicitud
@@ -248,11 +248,5 @@ schedule.every(1).minutes.do(main)
 
 # Mantener el script en ejecución
 while True:
-
-    # Verificar la existente de un archivo de parada para terminar ejecución del script
-    if os.path.exists("stop_script.txt"):
-        print("Archivo de parada encontrado. Deteniendo el script.")
-        break
-
     schedule.run_pending()
     time.sleep(10)
