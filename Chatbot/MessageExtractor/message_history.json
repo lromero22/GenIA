@@ -1,0 +1,956 @@
+[
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "74c56aaa-915a-4762-9543-f5e972d3eee1",
+        "user_name": "Leandro Romero",
+        "text": "Pruebas 3",
+        "timestamp": "2024-05-23 17:00:01",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "4400c1e7-864b-4297-99ff-7d6c39941d20",
+        "user_name": "Leandro Romero",
+        "text": "Prueba 2",
+        "timestamp": "2024-05-23 16:58:59",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "6f6ee2bf-fea5-4046-a35c-350d02561ea5",
+        "user_name": "Leandro Romero",
+        "text": "Prueba 1",
+        "timestamp": "2024-05-23 16:58:53",
+        "type": "response",
+        "thread_start_msg_id": "7cbf2c75-da2c-42cc-af96-6e8fff700c32"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "4400c1e7-864b-4297-99ff-7d6c39941d20",
+        "user_name": "Leandro Romero",
+        "text": "Prueba 2",
+        "timestamp": "2024-05-23 16:58:59",
+        "type": "response",
+        "thread_start_msg_id": "7cbf2c75-da2c-42cc-af96-6e8fff700c32"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "0e8299ef-f521-43d8-be7a-6f876ad7cb47",
+        "user_name": "Leandro Romero",
+        "text": "Equipo me dan 10 min por favor",
+        "timestamp": "2024-05-23 16:29:46",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "7cbf2c75-da2c-42cc-af96-6e8fff700c32",
+        "user_name": "David Cardona Duque",
+        "text": "Hola bot",
+        "timestamp": "2024-05-22 17:20:17",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "eadb3151-5c60-4327-93c0-34f345b8c9f1",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Luego lo elimino, de momento es solo para hacer pruebas",
+        "timestamp": "2024-05-22 16:41:52",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "f14f25d5-6a36-4ffe-9548-af8849c1caab",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Trate de hacerlo en mi chat personal o creando un nuevo canal de pruebas pero no me estaba dejando",
+        "timestamp": "2024-05-22 16:41:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "45f40160-c309-46fe-aae2-e26e8538b6e3",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Muchachos acabo de agregar un bot al canal para probar la extracci\u00f3n de mensajes",
+        "timestamp": "2024-05-22 16:41:08",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U074KB2A2JZ",
+        "client_msg_id": null,
+        "user_name": "Message Extractor",
+        "text": "<@U074KB2A2JZ> se uni\u00f3 al canal",
+        "timestamp": "2024-05-22 16:40:27",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "b0c3a429-a581-4060-adca-f644b678bc84",
+        "user_name": "David Cardona Duque",
+        "text": "Que m\u00e1s leo, a mi los lunes no me es posible a esa hora porque trabajo de manera presencial en la tarde, los lunes la verdad en general me queda dif\u00edcil",
+        "timestamp": "2024-05-17 10:34:38",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "01eeaf62-c564-4390-babf-fd6408952358",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Hola, yo personalmente me puedo seguir ajustando al horario propuesto",
+        "timestamp": "2024-05-17 10:33:06",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "c602ba9b-d28c-4b56-8eaa-35e6dcaf86ce",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Buenos d\u00edas. Me disculpo por no poder asistir ayer, tuve un inconveniente.\n\nSobre las disponibilidades, si no les molesta que ingrese a las reuniones mientras me estoy desplazando, podr\u00eda seguir ingresando a la misma hora, con riesgos de que se extiendan otras reuniones.\n\nNo se si sea factible mover la hora",
+        "timestamp": "2024-05-17 09:12:15",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "733ec8da-4bd5-4b61-b987-fca337674a46",
+        "user_name": "Leandro Romero",
+        "text": "como est\u00e1n sus disponibilidades ?",
+        "timestamp": "2024-05-17 08:53:21",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "a8e70403-fc89-4bc3-8298-e077c39cee4a",
+        "user_name": "Leandro Romero",
+        "text": "que opinan Lunes y Miercoles , a la misma hora ?",
+        "timestamp": "2024-05-17 08:53:12",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "15cf0c8d-92c6-4843-bc6d-5810c91e2d82",
+        "user_name": "Leandro Romero",
+        "text": "<!channel>, buenos dias , ayer no revisamos el tema de la sincro de los Jueves , la idea de los martes y jueves me gustaba pq damos oportunidad a tener avances",
+        "timestamp": "2024-05-17 08:52:46",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "97f4c764-6ce3-40fd-9933-fea189d52773",
+        "user_name": "David Cardona Duque",
+        "text": "Muchas gracias juanjo, todo correcto en la pestana de me",
+        "timestamp": "2024-05-16 18:22:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "af5244a6-1457-4ec8-8f64-a38c3d2f70b6",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Esa si deber\u00eda estar normal, la otra ni idea",
+        "timestamp": "2024-05-16 18:05:55",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "fd2d16c6-709e-454f-b63f-1e3b61354a1c",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Cambia la pesta\u00f1a \"All\" por la pesta\u00f1a \"Me\"",
+        "timestamp": "2024-05-16 18:05:44",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "6b45496e-40f2-4cdb-8894-dfa423d48beb",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "No pero sabes que, ya pille el lio",
+        "timestamp": "2024-05-16 18:05:12",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "ac2f0b90-6174-43c5-9af2-6f9ce52691b7",
+        "user_name": "Leandro Romero",
+        "text": "gracias",
+        "timestamp": "2024-05-16 17:48:17",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "44bd7fd9-3fdf-4f3f-aa6e-9414d2c28cf3",
+        "user_name": "Leandro Romero",
+        "text": "de una",
+        "timestamp": "2024-05-16 17:48:15",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "53e79a5c-c0b3-4b2f-825d-73ce3d4c3609",
+        "user_name": "David Cardona Duque",
+        "text": "Ya mismo te lo mando",
+        "timestamp": "2024-05-16 17:47:44",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f871feed-3346-4e02-8232-d89301ac8619",
+        "user_name": "Leandro Romero",
+        "text": "<@U06S28H3CFR>,para el video",
+        "timestamp": "2024-05-16 17:47:30",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f871feed-3346-4e02-8232-d89301ac8619",
+        "user_name": "Leandro Romero",
+        "text": "<@U06S28H3CFR>,para el video",
+        "timestamp": "2024-05-16 17:47:30",
+        "type": "response",
+        "thread_start_msg_id": "da6e95bf-88b1-4e95-a248-349a8a9fb43b"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "da6e95bf-88b1-4e95-a248-349a8a9fb43b",
+        "user_name": "Leandro Romero",
+        "text": "3148253972",
+        "timestamp": "2024-05-16 17:42:00",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "be018843-330a-4676-971d-5c2f5f63e790",
+        "user_name": "Leandro Romero",
+        "text": "Debemos considerar algun estandar de nombrado de documentos? ?",
+        "timestamp": "2024-05-16 17:16:47",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "59ff457a-2089-4858-9e63-cee38b0df33e",
+        "user_name": "David Cardona Duque",
+        "text": "Hola hola buenos d\u00edas, yo estar\u00eda disponible en el mismo horario mi\u00e9rcoles o viernes",
+        "timestamp": "2024-05-16 12:48:58",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "155c64b1-3afa-48fa-8f0c-86e80381d7d3",
+        "user_name": "David Cardona Duque",
+        "text": "<@U01L6UJGRSS> avanzando en el proyecto de bot me tope con que mis creditos gratis de openIA ya expiraron, puedo crear el asistente y hacer todas las configuraciones del lado de slack, pero para poder ponerlo a funcionar hay un minimo de 5 dolares",
+        "timestamp": "2024-05-15 19:09:16",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "4dbaa154-1557-457a-8fbe-d59bcd5f08cf",
+        "user_name": "Leandro Romero",
+        "text": "ya quedo",
+        "timestamp": "2024-05-15 18:02:00",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "0eb91794-8f4c-42d9-9dae-9b51d662188f",
+        "user_name": "Leandro Romero",
+        "text": "listo ya voy",
+        "timestamp": "2024-05-15 18:01:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "e8f933bf-bc13-4091-83c3-88f126d59988",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Necesita permisos para acceder",
+        "timestamp": "2024-05-15 16:56:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "3fc11978-e5f3-48e2-9220-7cf45d1f207d",
+        "user_name": "David Cardona Duque",
+        "text": "Con cual correo deberia poder ingresar?",
+        "timestamp": "2024-05-15 16:56:06",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f3835802-0ac0-47cc-8424-8e6cf080e7f9",
+        "user_name": "Leandro Romero",
+        "text": "Clausulado Seguro de Motos Digital",
+        "timestamp": "2024-05-15 16:55:06",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "7594b6a7-7917-40e2-ac9a-790c33b87584",
+        "user_name": "Leandro Romero",
+        "text": "Politicas_59.Autos",
+        "timestamp": "2024-05-15 16:55:03",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "b0480dae-a614-4990-8475-51ce9b1a7b37",
+        "user_name": "Leandro Romero",
+        "text": "hay dos pdf ,",
+        "timestamp": "2024-05-15 16:55:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "00c40421-c42d-43d2-b15b-0af93989b3d6",
+        "user_name": "Leandro Romero",
+        "text": "revisa por favor si puedes ingresar",
+        "timestamp": "2024-05-15 16:53:53",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "1fc28fe3-6157-41df-8ef3-058eac48940c",
+        "user_name": "David Cardona Duque",
+        "text": "Mi correo es <mailto:davidcd8230@gmail.com|davidcd8230@gmail.com>",
+        "timestamp": "2024-05-15 17:14:43",
+        "type": "response",
+        "thread_start_msg_id": "00c40421-c42d-43d2-b15b-0af93989b3d6"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "1319589f-c941-4094-9ca3-1009f6922045",
+        "user_name": "Leandro Romero",
+        "text": "<https://drive.google.com/open?id=1d-VKcKjqKn21Q4-57y3FUFlsOmdpAak-&amp;usp=drive_fs>",
+        "timestamp": "2024-05-15 16:53:43",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "b21cf1dc-1afc-4c1f-a746-8cb2a89d444b",
+        "user_name": "Leandro Romero",
+        "text": "Buenas tardes",
+        "timestamp": "2024-05-15 16:53:42",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "19f7420c-22b6-4c35-94a6-e359cee93abb",
+        "user_name": "David Cardona Duque",
+        "text": "Hola equipo, <@U01L6UJGRSS> nos podes pasar porfa los documentos para generar la base de conocimiento para el bot ?",
+        "timestamp": "2024-05-15 16:42:23",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "9a3eda26-3dc8-4d9b-94a6-58d9d9265d25",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Buenas tardes muchachos hoy no podre estar en la reuni\u00f3n, estoy un bastante ocupado aqu\u00ed en el trabajo, se me extendi\u00f3 una reuni\u00f3n. Apenas salga les doy mis actualizaciones. Disculpen los inconvenientes.",
+        "timestamp": "2024-05-14 16:28:34",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "2af22990-d87a-4b0c-bf25-6f3a05c7de50",
+        "user_name": "David Cardona Duque",
+        "text": "<https://drive.google.com/drive/folders/1PtmwNRqDDKefQPCwh912wPTPawsJuqVA?usp=sharing>",
+        "timestamp": "2024-05-09 16:44:09",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "ac5638c2-5df9-4616-8e77-8db23b19d414",
+        "user_name": "David Cardona Duque",
+        "text": "Ya Juanjo la tiene pero voy a pasar por aqu\u00ed el link",
+        "timestamp": "2024-05-09 16:40:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "29592d4d-8c19-4189-814b-d6fcb7316f50",
+        "user_name": "David Cardona Duque",
+        "text": "Pero en la \u00faltima reu yo les coment\u00e9 que ten\u00eda una carpeta en drive con las transcripciones donde cada vez que colab me daba GPU sub\u00eda nuevas",
+        "timestamp": "2024-05-09 16:40:22",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "49c7583e-adcc-4761-9d81-2ba8cb3f3aec",
+        "user_name": "David Cardona Duque",
+        "text": "Oscar se nos olvid\u00f3 comentarte",
+        "timestamp": "2024-05-09 16:39:40",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "fe04ea8b-4037-4374-8b0f-ecad9498ac9d",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Y yo vengo con una propuesta, he notado que la transcripci\u00f3n toma bastante tiempo mientras aumenta la cantidad de audios.\n\nSer\u00eda bueno tenerlas todas en la nube, o en el repositorio para que sea m\u00e1s f\u00e1cil acceder a ellas y no hacer reprocesos al volverlas a transcribir.\n\nPropongo guardarlas con este formato.\ntranscribe_{\u00faltimos 6 caracteres del audio}.txt",
+        "timestamp": "2024-05-09 16:27:25",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "e4f778c1-8f3c-4b70-92e5-3438122a0e91",
+        "user_name": "David Cardona Duque",
+        "text": "Qued\u00f3 a la espera de otra tarea, a mi me gustar\u00eda apoyar a <@U06T5JSMBQQ> que sino estoy mal est\u00e1 probando hacer el an\u00e1lisis de sentimientos directo en el audio, me parece bastante interesante",
+        "timestamp": "2024-05-09 16:19:48",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "0183d4ef-aa75-4468-91f7-af1be766153d",
+        "user_name": "Brandon Perez Gomez",
+        "text": "De una David, si por favor, ay\u00fadame con esto.  Hoy estuve entrenando el modelo en diferentes emociones, estoy con el problema de hacerle pretratamiento a los datos, ya que en esta labor es indispensable, por el hecho de que es mejor analizar segmentos de audio, quitar ruidos de fondo, etc. Ahora mas tarde subo los archivos al github y si quieres nos reunimos para unir ideas.",
+        "timestamp": "2024-05-09 18:20:35",
+        "type": "response",
+        "thread_start_msg_id": "e4f778c1-8f3c-4b70-92e5-3438122a0e91"
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "13896ea4-404b-48cb-94f1-54bbe21db8dc",
+        "user_name": "David Cardona Duque",
+        "text": "Listo, esperemos que <@U01L6UJGRSS> nos de luz verde",
+        "timestamp": "2024-05-09 18:36:02",
+        "type": "response",
+        "thread_start_msg_id": "e4f778c1-8f3c-4b70-92e5-3438122a0e91"
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "60711860-53d0-4cad-977b-76b648c2793c",
+        "user_name": "David Cardona Duque",
+        "text": "Leo en resumen mi parte con IBMwatson no hab\u00eda una plataforma simple donde solo subir la transcripci\u00f3n, pero tire c\u00f3digo con su API de NLP, la testee y todo. De manera r\u00e1pida el modelo identifica m\u00e1s positivos y negativos pero con menor confianza y en el testeo con el dataset que prob\u00e9 las otras librer\u00edas el desempe\u00f1o fue un poco debajo que pysentimiento, pero teniendo en cuenta que cobra luego de una cuota gratuita no la recomendar\u00eda",
+        "timestamp": "2024-05-09 16:18:13",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "b0e04a88-a8d1-4c35-9199-c23b7427ca49",
+        "user_name": "David Cardona Duque",
+        "text": "Listo leo",
+        "timestamp": "2024-05-09 16:12:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "868a9ada-1709-4f8d-a45f-84b9b2c8ce3b",
+        "user_name": "Leandro Romero",
+        "text": "les debo mover la reu , me acaban de informar otra ya les aviso si lo logramos para hoy",
+        "timestamp": "2024-05-09 15:50:29",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "5af5da2b-5ae6-48d8-a00d-f641dd217652",
+        "user_name": "Leandro Romero",
+        "text": "<!channel> Buenas tardes",
+        "timestamp": "2024-05-09 15:50:11",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "2005053a-1fbd-4491-a3ff-d00cb11b2214",
+        "user_name": "Leandro Romero",
+        "text": "<@U06S28H3CFR> me compartes por favor la transcripci\u00f3n  de este audio :\nout-3118642729-913-20240405-141059-1712344259.161987.WAV dio negativo para SPEAKER_01",
+        "timestamp": "2024-05-08 10:12:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "1a6d0ff6-e71c-4a1e-b318-d9c6fca07c42",
+        "user_name": "Leandro Romero",
+        "text": "<!channel>",
+        "timestamp": "2024-05-08 10:11:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "673665ce-4ee6-406d-9a0b-ef6bb3a88031",
+        "user_name": "Leandro Romero",
+        "text": "Buenos dias",
+        "timestamp": "2024-05-08 10:11:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "9ad95b99-5f7b-4354-bc82-667eaca591b3",
+        "user_name": "David Cardona Duque",
+        "text": "out-3103814989-913-20240404-161134-1712265094.160513.WAV dio negativo para SPEAKER_00 mediante metodo completo\nout-3118642729-913-20240405-141059-1712344259.161987.WAV dio negativo para SPEAKER_01 mediante metodo completo\nout-3118642729-913-20240405-141059-1712344259.161987.WAV dio negativo para SPEAKER_01 mediante metodo fragmentado",
+        "timestamp": "2024-05-07 17:10:01",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "d497be63-fa7b-45f5-8537-7897f62d2aa7",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Listo Leo, ya la envi\u00e9 desde el personal. Gracias",
+        "timestamp": "2024-05-06 17:53:12",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "32cdaef3-5756-4522-9e68-d19c8e9a97e0",
+        "user_name": "David Cardona Duque",
+        "text": "Enviada :white_check_mark:",
+        "timestamp": "2024-05-06 17:43:38",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "4da72882-cdce-44f8-a1ac-cd8ceec61701",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Yo tambi\u00e9n confirmo",
+        "timestamp": "2024-05-06 17:42:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "3843afac-f27c-4ef2-988b-a0232a6b966e",
+        "user_name": "Leandro Romero",
+        "text": "recibida, ya confirmo con finanzas , si me pueden confirmas todos por favor",
+        "timestamp": "2024-05-06 17:41:56",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "c6b16c5d-a1a3-40a2-9643-3786c1491ca9",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Listo Leo, ya te le env\u00ede desde el personal",
+        "timestamp": "2024-05-06 17:41:29",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "80f84a6b-cf85-4029-88a1-93357df2aec1",
+        "user_name": "Leandro Romero",
+        "text": "por favor",
+        "timestamp": "2024-05-06 17:39:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "dd8230ce-cbc4-40a3-9a11-2518a94b7a47",
+        "user_name": "David Cardona Duque",
+        "text": "Yo igual leo, la env\u00ede desde el somos likeU y a\u00fan no me han pagado, ya hago la gesti\u00f3n desde el personal",
+        "timestamp": "2024-05-06 17:39:09",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "6734a9b5-b850-483f-9d46-ea3f9a890755",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Vale",
+        "timestamp": "2024-05-06 17:38:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "2414ab51-a846-42ad-9e40-770df812718b",
+        "user_name": "Leandro Romero",
+        "text": "<mailto:ti@likeu.co|ti@likeu.co>",
+        "timestamp": "2024-05-06 17:38:22",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f7e50a1e-badc-4224-9465-5c84d95ea66c",
+        "user_name": "Leandro Romero",
+        "text": "jejeje si",
+        "timestamp": "2024-05-06 17:38:18",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "bb1bb6c1-ef47-464e-9013-f6e8337fc7ed",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "En cuyo caso, cual correo ser\u00eda el tuyo?",
+        "timestamp": "2024-05-06 17:36:02",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "ddbba183-975c-4ffd-b777-931f5b8a1178",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Te colocamos como copia de carbono?",
+        "timestamp": "2024-05-06 17:35:53",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "45c8a831-ca71-4075-971a-d4a0536ca551",
+        "user_name": "Leandro Romero",
+        "text": "pues el proceso ...",
+        "timestamp": "2024-05-06 17:35:51",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "5170cd5e-a4ec-41f1-8f39-d87d59e36cf5",
+        "user_name": "Leandro Romero",
+        "text": "<@U06T5JSMBQQ> y <@U06S28H3CFR> ???",
+        "timestamp": "2024-05-06 17:35:40",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "ef7f4317-cc9d-4e78-bc69-5c80eed3c39e",
+        "user_name": "Leandro Romero",
+        "text": "me copian y yo le hago l a gesti\u00f3n",
+        "timestamp": "2024-05-06 17:35:18",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "a8ff8e64-df56-444d-8dfb-f83d9a5a70b5",
+        "user_name": "Leandro Romero",
+        "text": "si por favor",
+        "timestamp": "2024-05-06 17:35:05",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "41db1467-d7ab-4768-82ca-7157f956189e",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Siempre la enviamos por el personal?",
+        "timestamp": "2024-05-06 17:34:09",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "c4600796-1655-4f85-b99c-3eab4ffdb27d",
+        "user_name": "Leandro Romero",
+        "text": "por favor la envian desde el correo personal",
+        "timestamp": "2024-05-06 17:32:24",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "1baa9cc6-fa4a-456b-b341-467d60ad4895",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "A mi tampoco, y envi\u00e9 la cuenta a estos dos\n<mailto:dosoperaciones@likeu.co|operaciones@likeu.co> y <mailto:ti@likeu.co|ti@likeu.co>",
+        "timestamp": "2024-05-06 17:19:08",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "269ff502-f434-4964-a213-75c6c972c5eb",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Env\u00ede mi cuenta de cobro al correo <mailto:operaciones@likeu.co|operaciones@likeu.co>",
+        "timestamp": "2024-05-06 17:17:58",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "00f2989d-211d-420e-b311-3ec0346a2f63",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "A m\u00ed no me han pagado",
+        "timestamp": "2024-05-06 17:17:38",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "5e3916e3-97c9-4d01-adf5-ad7938d7218d",
+        "user_name": "Leandro Romero",
+        "text": "<!channel>, como les fue con el pago ???",
+        "timestamp": "2024-05-06 17:16:13",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "6dc348dc-7c85-4ba8-8334-37956eb5ce51",
+        "user_name": "Leandro Romero",
+        "text": "A mi se me complica mas tarde , hag\u00e1mosla a las 4:30  y <@U06SPFKSFU2> cuando puedas nos dejas por ac\u00e1 el resumen de tus actividades y resultados,  ya lo miramos el Jueves",
+        "timestamp": "2024-05-06 14:13:51",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "6843a63f-5f3e-4e9d-9ae4-45837cb1a4fa",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Yo personalmente podria asistir un poco m\u00e1s tarde u otro d\u00eda",
+        "timestamp": "2024-05-06 13:52:23",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "93ab1a9a-0d3c-41f3-895e-861669d2f43e",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "<!channel> Buenos d\u00edas,\n\nVengo con una solicitud, podemos mover la reuni\u00f3n de ma\u00f1ana para m\u00e1s tarde? O cambiarla de d\u00eda?\n\nMa\u00f1ana no podr\u00e9 asistir :/",
+        "timestamp": "2024-05-06 11:43:45",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "eead19c2-c56d-4535-8874-9add001f92d3",
+        "user_name": "Leandro Romero",
+        "text": "Se estan subiendo en este momento , son  como 230",
+        "timestamp": "2024-05-03 09:00:34",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "058109cc-7d0b-456d-8472-fdacc44bfbf0",
+        "user_name": "Leandro Romero",
+        "text": "enlace con audios",
+        "timestamp": "2024-05-03 08:59:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "c8b8757e-6440-4107-92a0-f655caa2f74c",
+        "user_name": "Leandro Romero",
+        "text": "<https://drive.google.com/open?id=1PB4oQQwhqoCQ9nfpOShn_yRt9xxPnpjr&amp;usp=drive_fs>",
+        "timestamp": "2024-05-03 08:59:19",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "a296bd5d-e5d4-47f1-8fa9-f0f32ee81dd0",
+        "user_name": "Leandro Romero",
+        "text": "<!channel>, buenos dias",
+        "timestamp": "2024-05-03 08:59:18",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "cf282aa0-2490-4d2c-90cc-09211e32f65c",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Muchachos, vengo con una correcci\u00f3n.\n\nEn el codigo para la conversion del wav a PCM, hay que agregar un parametro antes de -i. ( -y )\n\ncommand = f\"ffmpeg -y -i {input_file} -acodec {codec} -ar 44100 -b:a {bitrate} {output_file}\"\n\nDe lo contrario, cuando se realicen varias diarizaciones simultaneas no se reescribe el archivo convertido. -y es para sobreescribirlo",
+        "timestamp": "2024-05-01 15:39:56",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "6825b021-5272-47ef-9552-317baf06563a",
+        "user_name": "Leandro Romero",
+        "text": "<!channel> Buenos dias,  ando con temas de salud, nos vemos el jueves",
+        "timestamp": "2024-04-30 11:43:26",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "171070b9-193e-4110-b7c2-eba0efc4bb7c",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Mis mejores deseos para que se mejore pronto :+1:",
+        "timestamp": "2024-04-30 11:46:37",
+        "type": "response",
+        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "4ddd1e59-3ce2-4c63-863a-b10e13555f13",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Entendido Leo, que te mejores",
+        "timestamp": "2024-04-30 11:55:39",
+        "type": "response",
+        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "b2853cbd-bd66-4418-9486-2bae6eb41716",
+        "user_name": "David Cardona Duque",
+        "text": "Listo ! Ojala te mejores",
+        "timestamp": "2024-04-30 13:48:23",
+        "type": "response",
+        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "a43fbdd7-2ed5-470a-92ce-bfbf8bee589e",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Listo Leandro, ojala te mejores pronto.",
+        "timestamp": "2024-04-30 15:41:37",
+        "type": "response",
+        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "ed5a4323-fd00-4a21-9fa8-94446c0ba051",
+        "user_name": "Leandro Romero",
+        "text": "<!channel> Buenos dias , testeamos con esa licencia y validamos si tienen restricciones de uso por favor",
+        "timestamp": "2024-04-29 10:34:01",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "4f4cf92a-6e4f-4a2b-9359-664858c671b4",
+        "user_name": "David Cardona Duque",
+        "text": "Que mas Brandon, aqui no estaria muy seguro de como proceder, esperemos a ver que dice Leo.\n\nAdjunto aqui una copia de la licencia para que leo la tenga a la mano:\n\n`pysentimiento` is an open-source library for non-commercial use and scientific research purposes only. Please be aware that models are trained with third-party datasets and are subject to their respective licenses.",
+        "timestamp": "2024-04-28 14:30:48",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "4f4cf92a-6e4f-4a2b-9359-664858c671b4",
+        "user_name": "David Cardona Duque",
+        "text": "Que mas Brandon, aqui no estaria muy seguro de como proceder, esperemos a ver que dice Leo.\n\nAdjunto aqui una copia de la licencia para que leo la tenga a la mano:\n\n`pysentimiento` is an open-source library for non-commercial use and scientific research purposes only. Please be aware that models are trained with third-party datasets and are subject to their respective licenses.",
+        "timestamp": "2024-04-28 14:30:48",
+        "type": "response",
+        "thread_start_msg_id": "58f1ca69-fe01-4781-916f-2b23ad0024db"
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "a1d649f7-e16b-4839-a656-cb5f7157c195",
+        "user_name": "David Cardona Duque",
+        "text": "Buenas equipo,\nHe creado un nuevo folder en mi rama de GitHub llamado `Speech2Text` que contiene dos cuadernos importantes:\n1. *Speech2textLikeU.ipynb*: Este cuaderno incluye todo el desarrollo previo necesario para llegar a la funci\u00f3n final. Aqu\u00ed encontraran el an\u00e1lisis de diferentes formatos y la implementaci\u00f3n de otros modelos que se pusieron a prueba.\n2. *Speech2textLikeU - Funci\u00f3n Final.ipynb*: Este archivo est\u00e1 centrado exclusivamente en lo que necesitamos para la funci\u00f3n final. Contiene los comandos `pip install` necesarios para ejecutarlo en Colab, las importaciones y funciones requeridas, la carga de los modelos, y la funci\u00f3n final. Adem\u00e1s, he incorporado las mejoras sugeridas por \u00d3scar para liberar RAM en la GPU, junto con otro comando adicional para el mismo prop\u00f3sito.\n",
+        "timestamp": "2024-04-28 14:29:24",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "58f1ca69-fe01-4781-916f-2b23ad0024db",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Muchachos buenas noches, estaba consultando sobre an\u00e1lisis de sentimiento y nos va tocar cambiar la librer\u00eda de Pysentimiento, ya que la licencia es de uso no comercial y solo para fines de investigaci\u00f3n, lo cual para este proyecto no nos sirve, pensar\u00eda yo, que opinas vos <@U06S28H3CFR> <@U01L6UJGRSS>?",
+        "timestamp": "2024-04-25 22:28:32",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "31faafeb-dcf6-47df-902e-25693506ca35",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Mensaje de prueba",
+        "timestamp": "2024-05-30 14:28:16",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U074KB2A2JZ",
+        "client_msg_id": null,
+        "user_name": "Message Extractor",
+        "text": "<@U074KB2A2JZ> se uni\u00f3 al canal",
+        "timestamp": "2024-05-31 18:44:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "99856308-5ab9-4e7b-b46f-a840be3d596e",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Yo tambi\u00e9n estoy esperando que me den ingreso <@U06S28H3CFR>",
+        "timestamp": "2024-05-30 16:38:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "7bf73315-e024-485f-b6b8-bfaf18c2f0d4",
+        "user_name": "David Cardona Duque",
+        "text": "<@U01L6UJGRSS> <@U06SGR43U1G> <@U06SPFKSFU2> <@U06T5JSMBQQ>",
+        "timestamp": "2024-05-30 16:37:36",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "1977a49a-9b10-45f6-ad75-ce77bac92fcf",
+        "user_name": "David Cardona Duque",
+        "text": "Equipo que mas, estoy intentando entrar a la reunion pero aun no me acpetan, no se si aun no inicia o es un error de mi conexion, si ya inicio me dicen porfa jajajaja",
+        "timestamp": "2024-05-30 16:37:09",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "35cff4fd-af86-4505-b4e2-0455ef63cd7e",
+        "user_name": "Leandro Romero",
+        "text": "llego normal",
+        "timestamp": "2024-05-30 14:35:03",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "862280d6-6d87-41be-9093-87aa6ff8a0e6",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Prueba luego de reinstalaci\u00f3n",
+        "timestamp": "2024-05-31 18:53:13",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "d9f9a034-be61-487d-b6e6-a58802828c34",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Btw, acabo de solucionar el problema de conexi\u00f3n que me surgi\u00f3 ayer xd",
+        "timestamp": "2024-05-31 18:53:53",
+        "type": "other",
+        "thread_start_msg_id": null
+    }
+]
