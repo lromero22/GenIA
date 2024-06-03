@@ -177,6 +177,8 @@ cache/
 model/
 
 # But not these files...
+!test_case.zip
+!RAVDESS_dataset.zip
 !transcribe.txt
 !Error solution.txt
 !likers_words.zip
