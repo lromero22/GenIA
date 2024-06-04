@@ -1,5 +1,95 @@
 [
     {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "e526f969-2181-472f-8daa-cd1fd5c6e851",
+        "user_name": "David Cardona Duque",
+        "text": "Buenos d\u00edas equipo, espero que est\u00e9n muy bien. <@U01L6UJGRSS> acordate porfa cuando podas pasarme los accesos a la copia de la base de datos que hablamos el jueves",
+        "timestamp": "2024-06-04 08:19:51",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U074KB2A2JZ",
+        "client_msg_id": null,
+        "user_name": "Message Extractor",
+        "text": "<@U074KB2A2JZ> se uni\u00f3 al canal",
+        "timestamp": "2024-06-02 13:38:44",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "d9f9a034-be61-487d-b6e6-a58802828c34",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Btw, acabo de solucionar el problema de conexi\u00f3n que me surgi\u00f3 ayer xd",
+        "timestamp": "2024-05-31 18:53:53",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "862280d6-6d87-41be-9093-87aa6ff8a0e6",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Prueba luego de reinstalaci\u00f3n",
+        "timestamp": "2024-05-31 18:53:13",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U074KB2A2JZ",
+        "client_msg_id": null,
+        "user_name": "Message Extractor",
+        "text": "<@U074KB2A2JZ> se uni\u00f3 al canal",
+        "timestamp": "2024-05-31 18:44:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "99856308-5ab9-4e7b-b46f-a840be3d596e",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Yo tambi\u00e9n estoy esperando que me den ingreso <@U06S28H3CFR>",
+        "timestamp": "2024-05-30 16:38:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "7bf73315-e024-485f-b6b8-bfaf18c2f0d4",
+        "user_name": "David Cardona Duque",
+        "text": "<@U01L6UJGRSS> <@U06SGR43U1G> <@U06SPFKSFU2> <@U06T5JSMBQQ>",
+        "timestamp": "2024-05-30 16:37:36",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "1977a49a-9b10-45f6-ad75-ce77bac92fcf",
+        "user_name": "David Cardona Duque",
+        "text": "Equipo que mas, estoy intentando entrar a la reunion pero aun no me acpetan, no se si aun no inicia o es un error de mi conexion, si ya inicio me dicen porfa jajajaja",
+        "timestamp": "2024-05-30 16:37:09",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "35cff4fd-af86-4505-b4e2-0455ef63cd7e",
+        "user_name": "Leandro Romero",
+        "text": "llego normal",
+        "timestamp": "2024-05-30 14:35:03",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "31faafeb-dcf6-47df-902e-25693506ca35",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Mensaje de prueba",
+        "timestamp": "2024-05-30 14:28:16",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
         "user_id": "U01L6UJGRSS",
         "client_msg_id": "74c56aaa-915a-4762-9543-f5e972d3eee1",
         "user_name": "Leandro Romero",
@@ -180,6 +270,24 @@
         "thread_start_msg_id": null
     },
     {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "20fc0b8c-6ef3-4de9-bdd7-575b11f7fb80",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Se enloquecio Hubstaff X2",
+        "timestamp": "2024-05-16 18:03:06",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06S28H3CFR",
+        "client_msg_id": "20ff9c50-8c1b-4249-a51a-fc694070ae87",
+        "user_name": "David Cardona Duque",
+        "text": "Gente el hubstaff esta raro o es solo el mio ? <!channel>\nMe aparecen menos horas que las que tenia y tambien me aparece como si las hubiera hecho todas hoy",
+        "timestamp": "2024-05-16 18:00:36",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
         "user_id": "U01L6UJGRSS",
         "client_msg_id": "ac2f0b90-6174-43c5-9af2-6f9ce52691b7",
         "user_name": "Leandro Romero",
@@ -235,6 +343,15 @@
     },
     {
         "user_id": "U01L6UJGRSS",
+        "client_msg_id": "b0f4388c-ffa2-49fe-83a3-83d3ed99a12e",
+        "user_name": "Leandro Romero",
+        "text": "<https://docs.google.com/spreadsheets/d/1POGxrQ9Pdhc4tT1SCfjOB2eT5NSiigtc/edit#gid=894115030>",
+        "timestamp": "2024-05-16 17:38:42",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
         "client_msg_id": "be018843-330a-4676-971d-5c2f5f63e790",
         "user_name": "Leandro Romero",
         "text": "Debemos considerar algun estandar de nombrado de documentos? ?",
@@ -249,6 +366,15 @@
         "text": "Hola hola buenos d\u00edas, yo estar\u00eda disponible en el mismo horario mi\u00e9rcoles o viernes",
         "timestamp": "2024-05-16 12:48:58",
         "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "43ece527-a6d5-46c9-af65-ef0ac8b3cca7",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Buenos d\u00edas team, vengo a comentarles un inconveniente que tengo. En la otra empresa donde laboro me ocuparon los jueves de 4 a 6, este tiempo lo van hacer cada dos semanas. Quer\u00eda comentarles si tal vez podamos mover ese daily a otro d\u00eda de la semana? cualquier d\u00eda de 4 a 5 excepto los jueves yo no tengo obligaciones, quedo pendiente a sus comentarios y propuestas. <!channel>",
+        "timestamp": "2024-05-16 11:53:37",
+        "type": "files",
         "thread_start_msg_id": null
     },
     {
@@ -370,6 +496,24 @@
     },
     {
         "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "c554ef8c-d95e-4d6e-a351-2b654262a966",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Buenas tardes muchachos, ayer sub\u00ed el c\u00f3digo a github, tengo varias actualizaciones:\n\u2022 Ya se entreno el modelo para la clasificaci\u00f3n de emociones con una maquina de soporte vectorial y con la ayuda de un modelo creado por meta wav2vec2; este modelo que estoy usando, tiene la caracter\u00edstica de que se le hizo un fine tuning con data relacionada con el reconocimiento de emociones.\n\u2022 Se probo con un audio y arrojo un resultado, pero debo pre procesar mas el audio ya que es muy general, no logra capturar la emoci\u00f3n del momento, estaba pensando en separar el audio en audios de 10 seg para as\u00ed tener concordancia con la base de datos que se uso para entrenarlo (queda a discusi\u00f3n ya que he visto en papers que se usan mas segundos).\n\u2022 La clave es el pre procesamiento, ya que la selecci\u00f3n de caracter\u00edsticas la elige el modelo y la clasificaci\u00f3n de emociones tambi\u00e9n las da el modelo y muestra resultado muy prometedores como podemos ver en esta imagen, donde se compara con una biblioteca llamada openSMILE, la cual seria la equivalente a hacerlo a \"mano\".\n<https://github.com/lromero22/GenIA/blob/devBrandon/Training_model.ipynb>",
+        "timestamp": "2024-05-15 12:17:53",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "6b95990f-693a-4839-bbeb-815cba11318c",
+        "user_name": "Leandro Romero",
+        "text": "<https://platform.openai.com/docs/assistants/overview>",
+        "timestamp": "2024-05-14 17:28:34",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
         "client_msg_id": "9a3eda26-3dc8-4d9b-94a6-58d9d9265d25",
         "user_name": "Brandon Perez Gomez",
         "text": "Buenas tardes muchachos hoy no podre estar en la reuni\u00f3n, estoy un bastante ocupado aqu\u00ed en el trabajo, se me extendi\u00f3 una reuni\u00f3n. Apenas salga les doy mis actualizaciones. Disculpen los inconvenientes.",
@@ -487,6 +631,15 @@
     },
     {
         "user_id": "U01L6UJGRSS",
+        "client_msg_id": "3213f3a1-4b42-4191-8370-112e501cb7e0",
+        "user_name": "Leandro Romero",
+        "text": "Chatgpt , an\u00e1lisis de sentimientos",
+        "timestamp": "2024-05-08 10:36:30",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
         "client_msg_id": "2005053a-1fbd-4491-a3ff-d00cb11b2214",
         "user_name": "Leandro Romero",
         "text": "<@U06S28H3CFR> me compartes por favor la transcripci\u00f3n  de este audio :\nout-3118642729-913-20240405-141059-1712344259.161987.WAV dio negativo para SPEAKER_01",
@@ -510,6 +663,24 @@
         "text": "Buenos dias",
         "timestamp": "2024-05-08 10:11:28",
         "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "00885f2c-27a6-47a5-a4a1-d31c2f7c82c5",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "<https://github.com/lromero22/GenIA/blob/devOscar/src/keyword_process.ipynb>",
+        "timestamp": "2024-05-07 22:35:22",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "0238b534-fc2b-40cb-a01d-d65db34361b4",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Buenas,\nSe encontraron los siguientes resultados de los 4 primeros audios.\nAudio 4339_6: SPEAKER 1 = Liker\n\n Audio 8701_2: SPEAKER 0 = Liker\n\n Audio 9230_3: SPEAKER 0 = Liker\n\n Audio 4369_1: SPEAKER 0 = Liker\n\n\n Teniendo una identificaci\u00f3n del 100%, el modelo entrenado normalmente ignora las entidades que no son similares a las que le fueron ense\u00f1adas, pero en otras ocasiones identifica otras provenientes del modelo base de la librer\u00eda.",
+        "timestamp": "2024-05-07 22:31:37",
+        "type": "files",
         "thread_start_msg_id": null
     },
     {
@@ -743,213 +914,6 @@
         "user_name": "Oscar Julian Cardenas Sosa",
         "text": "<!channel> Buenos d\u00edas,\n\nVengo con una solicitud, podemos mover la reuni\u00f3n de ma\u00f1ana para m\u00e1s tarde? O cambiarla de d\u00eda?\n\nMa\u00f1ana no podr\u00e9 asistir :/",
         "timestamp": "2024-05-06 11:43:45",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "eead19c2-c56d-4535-8874-9add001f92d3",
-        "user_name": "Leandro Romero",
-        "text": "Se estan subiendo en este momento , son  como 230",
-        "timestamp": "2024-05-03 09:00:34",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "058109cc-7d0b-456d-8472-fdacc44bfbf0",
-        "user_name": "Leandro Romero",
-        "text": "enlace con audios",
-        "timestamp": "2024-05-03 08:59:30",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "c8b8757e-6440-4107-92a0-f655caa2f74c",
-        "user_name": "Leandro Romero",
-        "text": "<https://drive.google.com/open?id=1PB4oQQwhqoCQ9nfpOShn_yRt9xxPnpjr&amp;usp=drive_fs>",
-        "timestamp": "2024-05-03 08:59:19",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "a296bd5d-e5d4-47f1-8fa9-f0f32ee81dd0",
-        "user_name": "Leandro Romero",
-        "text": "<!channel>, buenos dias",
-        "timestamp": "2024-05-03 08:59:18",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SPFKSFU2",
-        "client_msg_id": "cf282aa0-2490-4d2c-90cc-09211e32f65c",
-        "user_name": "Oscar Julian Cardenas Sosa",
-        "text": "Muchachos, vengo con una correcci\u00f3n.\n\nEn el codigo para la conversion del wav a PCM, hay que agregar un parametro antes de -i. ( -y )\n\ncommand = f\"ffmpeg -y -i {input_file} -acodec {codec} -ar 44100 -b:a {bitrate} {output_file}\"\n\nDe lo contrario, cuando se realicen varias diarizaciones simultaneas no se reescribe el archivo convertido. -y es para sobreescribirlo",
-        "timestamp": "2024-05-01 15:39:56",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "6825b021-5272-47ef-9552-317baf06563a",
-        "user_name": "Leandro Romero",
-        "text": "<!channel> Buenos dias,  ando con temas de salud, nos vemos el jueves",
-        "timestamp": "2024-04-30 11:43:26",
-        "type": "thread_start",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SPFKSFU2",
-        "client_msg_id": "171070b9-193e-4110-b7c2-eba0efc4bb7c",
-        "user_name": "Oscar Julian Cardenas Sosa",
-        "text": "Mis mejores deseos para que se mejore pronto :+1:",
-        "timestamp": "2024-04-30 11:46:37",
-        "type": "response",
-        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
-    },
-    {
-        "user_id": "U06SGR43U1G",
-        "client_msg_id": "4ddd1e59-3ce2-4c63-863a-b10e13555f13",
-        "user_name": "Juan Jose Galeano Arenas",
-        "text": "Entendido Leo, que te mejores",
-        "timestamp": "2024-04-30 11:55:39",
-        "type": "response",
-        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "b2853cbd-bd66-4418-9486-2bae6eb41716",
-        "user_name": "David Cardona Duque",
-        "text": "Listo ! Ojala te mejores",
-        "timestamp": "2024-04-30 13:48:23",
-        "type": "response",
-        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
-    },
-    {
-        "user_id": "U06T5JSMBQQ",
-        "client_msg_id": "a43fbdd7-2ed5-470a-92ce-bfbf8bee589e",
-        "user_name": "Brandon Perez Gomez",
-        "text": "Listo Leandro, ojala te mejores pronto.",
-        "timestamp": "2024-04-30 15:41:37",
-        "type": "response",
-        "thread_start_msg_id": "6825b021-5272-47ef-9552-317baf06563a"
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "ed5a4323-fd00-4a21-9fa8-94446c0ba051",
-        "user_name": "Leandro Romero",
-        "text": "<!channel> Buenos dias , testeamos con esa licencia y validamos si tienen restricciones de uso por favor",
-        "timestamp": "2024-04-29 10:34:01",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "4f4cf92a-6e4f-4a2b-9359-664858c671b4",
-        "user_name": "David Cardona Duque",
-        "text": "Que mas Brandon, aqui no estaria muy seguro de como proceder, esperemos a ver que dice Leo.\n\nAdjunto aqui una copia de la licencia para que leo la tenga a la mano:\n\n`pysentimiento` is an open-source library for non-commercial use and scientific research purposes only. Please be aware that models are trained with third-party datasets and are subject to their respective licenses.",
-        "timestamp": "2024-04-28 14:30:48",
-        "type": "thread_start",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "4f4cf92a-6e4f-4a2b-9359-664858c671b4",
-        "user_name": "David Cardona Duque",
-        "text": "Que mas Brandon, aqui no estaria muy seguro de como proceder, esperemos a ver que dice Leo.\n\nAdjunto aqui una copia de la licencia para que leo la tenga a la mano:\n\n`pysentimiento` is an open-source library for non-commercial use and scientific research purposes only. Please be aware that models are trained with third-party datasets and are subject to their respective licenses.",
-        "timestamp": "2024-04-28 14:30:48",
-        "type": "response",
-        "thread_start_msg_id": "58f1ca69-fe01-4781-916f-2b23ad0024db"
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "a1d649f7-e16b-4839-a656-cb5f7157c195",
-        "user_name": "David Cardona Duque",
-        "text": "Buenas equipo,\nHe creado un nuevo folder en mi rama de GitHub llamado `Speech2Text` que contiene dos cuadernos importantes:\n1. *Speech2textLikeU.ipynb*: Este cuaderno incluye todo el desarrollo previo necesario para llegar a la funci\u00f3n final. Aqu\u00ed encontraran el an\u00e1lisis de diferentes formatos y la implementaci\u00f3n de otros modelos que se pusieron a prueba.\n2. *Speech2textLikeU - Funci\u00f3n Final.ipynb*: Este archivo est\u00e1 centrado exclusivamente en lo que necesitamos para la funci\u00f3n final. Contiene los comandos `pip install` necesarios para ejecutarlo en Colab, las importaciones y funciones requeridas, la carga de los modelos, y la funci\u00f3n final. Adem\u00e1s, he incorporado las mejoras sugeridas por \u00d3scar para liberar RAM en la GPU, junto con otro comando adicional para el mismo prop\u00f3sito.\n",
-        "timestamp": "2024-04-28 14:29:24",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06T5JSMBQQ",
-        "client_msg_id": "58f1ca69-fe01-4781-916f-2b23ad0024db",
-        "user_name": "Brandon Perez Gomez",
-        "text": "Muchachos buenas noches, estaba consultando sobre an\u00e1lisis de sentimiento y nos va tocar cambiar la librer\u00eda de Pysentimiento, ya que la licencia es de uso no comercial y solo para fines de investigaci\u00f3n, lo cual para este proyecto no nos sirve, pensar\u00eda yo, que opinas vos <@U06S28H3CFR> <@U01L6UJGRSS>?",
-        "timestamp": "2024-04-25 22:28:32",
-        "type": "question",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SGR43U1G",
-        "client_msg_id": "31faafeb-dcf6-47df-902e-25693506ca35",
-        "user_name": "Juan Jose Galeano Arenas",
-        "text": "Mensaje de prueba",
-        "timestamp": "2024-05-30 14:28:16",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U074KB2A2JZ",
-        "client_msg_id": null,
-        "user_name": "Message Extractor",
-        "text": "<@U074KB2A2JZ> se uni\u00f3 al canal",
-        "timestamp": "2024-05-31 18:44:35",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SGR43U1G",
-        "client_msg_id": "99856308-5ab9-4e7b-b46f-a840be3d596e",
-        "user_name": "Juan Jose Galeano Arenas",
-        "text": "Yo tambi\u00e9n estoy esperando que me den ingreso <@U06S28H3CFR>",
-        "timestamp": "2024-05-30 16:38:02",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "7bf73315-e024-485f-b6b8-bfaf18c2f0d4",
-        "user_name": "David Cardona Duque",
-        "text": "<@U01L6UJGRSS> <@U06SGR43U1G> <@U06SPFKSFU2> <@U06T5JSMBQQ>",
-        "timestamp": "2024-05-30 16:37:36",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06S28H3CFR",
-        "client_msg_id": "1977a49a-9b10-45f6-ad75-ce77bac92fcf",
-        "user_name": "David Cardona Duque",
-        "text": "Equipo que mas, estoy intentando entrar a la reunion pero aun no me acpetan, no se si aun no inicia o es un error de mi conexion, si ya inicio me dicen porfa jajajaja",
-        "timestamp": "2024-05-30 16:37:09",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U01L6UJGRSS",
-        "client_msg_id": "35cff4fd-af86-4505-b4e2-0455ef63cd7e",
-        "user_name": "Leandro Romero",
-        "text": "llego normal",
-        "timestamp": "2024-05-30 14:35:03",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SGR43U1G",
-        "client_msg_id": "862280d6-6d87-41be-9093-87aa6ff8a0e6",
-        "user_name": "Juan Jose Galeano Arenas",
-        "text": "Prueba luego de reinstalaci\u00f3n",
-        "timestamp": "2024-05-31 18:53:13",
-        "type": "other",
-        "thread_start_msg_id": null
-    },
-    {
-        "user_id": "U06SGR43U1G",
-        "client_msg_id": "d9f9a034-be61-487d-b6e6-a58802828c34",
-        "user_name": "Juan Jose Galeano Arenas",
-        "text": "Btw, acabo de solucionar el problema de conexi\u00f3n que me surgi\u00f3 ayer xd",
-        "timestamp": "2024-05-31 18:53:53",
         "type": "other",
         "thread_start_msg_id": null
     }
