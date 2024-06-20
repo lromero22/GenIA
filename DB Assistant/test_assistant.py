@@ -21,7 +21,7 @@ def promt_to_sql(pregunta, table_str):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": f"You're and AI assistant that will help me create SQL queries based on the following table schema: {table_str}"},
+            {"role": "system", "content": f"Eres un asistente que convierte preguntas en consultas SQL, solamente retornaras la sintaxis SQL correspondiente a la consulta. Sin decoradores solo el texto. Haz las querys teniendo en cuenta que la DB es una MariaDB. Las caracteristicas de la tabla estan en formato diccionario, con key = table_name, value = table_schema, pueden ser unica o varias. IMPORTANTE: NUNCA HARAS QUERYS QUE ELIMINEN O MODIFIQUEN DATOS, SOLO CONSULTAS SELECT. Estas son las caracteristica {table_str}"},
             {"role": "user", "content": pregunta}
         ]
     )
@@ -41,20 +41,27 @@ def execute_query(query):
     df = pd.read_sql(query, engine)
     return df
 
-def table_schema(table_name):
+def table_schema(tables_names:list):
     # Connect to the database
     engine = conn_db()
-    # Get the schema of the database
-    query_sche = f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table_name}'"
+    table_sch = {}
+    for table_name in tables_names:
+        # Get the schema of the database
+        query_sche = f"SELECT COLUMN_NAME, DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table_name}'"
 
-    df = pd.read_sql(query_sche, engine)
-    table_schema = df.to_string(index=False, header=False)
-    table_sch = "Table Schema: " + table_schema
+        df = pd.read_sql(query_sche, engine)
+        table_schema = ', '.join(f"{row['COLUMN_NAME']}: {row['DATA_TYPE']}" for index, row in df.iterrows())
+        table_sch[table_name] = table_schema
+
     return table_sch
 
 
-table_sch = table_schema("lk_pedidos_cstm")
-pregunta = "I need to know the total amount of orders that were placed in the last 30 days."
+tables_to_look = ["leads", "leads_lk_pedidos_1_c", "lk_pedidos_cstm"]
+
+table_sch = table_schema(tables_to_look)
+pregunta = "Quiero saber el id del lider que tenga a las 10 personas mas vendieron y el valor de ventas, teniendo como limite inferior ventas de 400000 en los ciclos mayores a 202310, con pedidos mayores a 3. Y sabiendo que la tabla leads tiene el id del lider, la tabla leads_lk_pedidos_1_c es una tabla relacional que los leads que se relacionan con cada id de lk, tambien como dato adicional el id de lk_pedidos_cstm tiene este formato id-ciclo."
 query = promt_to_sql(pregunta, table_sch)
 
 result = execute_query(query)
+
+print(result)
