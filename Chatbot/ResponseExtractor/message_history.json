@@ -1,0 +1,200 @@
+[
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "ec49c4ca-8c6f-44d6-b7dd-c0660e1f62d0",
+        "user_name": "Leandro Romero",
+        "text": "<!channel> mañana tengo un espacio a las 4:30 ,nos vemos a las 5",
+        "timestamp": "2024-06-19 12:40:32",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "fce7f7ff-36b9-4810-88d6-5a1581c78b3b",
+        "user_name": "Leandro Romero",
+        "text": "o la grabamos y luego la miras, entonces veámonos a as 3 revisamos las bases",
+        "timestamp": "2024-06-05 10:05:19",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "71329fbc-a0a3-47ab-82bb-c188692838ff",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "A mí no me da, porque necesitaría un PC para probar. Si pueden grabar la reunión, yo me pongo al día",
+        "timestamp": "2024-06-05 09:48:39",
+        "type": "response",
+        "thread_start_msg_id": "c260a7af-17a7-4207-9902-69f875e2e101"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "80aab948-1074-4469-8259-0b2f3d0d7dcd",
+        "user_name": "Leandro Romero",
+        "text": "No no es necesario , este espacio que yo les pido es mas para explicarles la estructura de la base de datos",
+        "timestamp": "2024-06-05 09:51:24",
+        "type": "response",
+        "thread_start_msg_id": "c260a7af-17a7-4207-9902-69f875e2e101"
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "3b01711b-45cb-4712-b8b3-9e0fe3c66b74",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Por mi parte a las 3 me queda bien.",
+        "timestamp": "2024-06-05 09:52:45",
+        "type": "response",
+        "thread_start_msg_id": "c260a7af-17a7-4207-9902-69f875e2e101"
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "1a4d197e-14a7-4f5d-8906-0746da29b01b",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Yo me pongo en contexto con Brandon jajajaja",
+        "timestamp": "2024-06-05 09:53:36",
+        "type": "response",
+        "thread_start_msg_id": "c260a7af-17a7-4207-9902-69f875e2e101"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "fce7f7ff-36b9-4810-88d6-5a1581c78b3b",
+        "user_name": "Leandro Romero",
+        "text": "o la grabamos y luego la miras, entonces veámonos a as 3 revisamos las bases",
+        "timestamp": "2024-06-05 10:05:19",
+        "type": "response",
+        "thread_start_msg_id": "c260a7af-17a7-4207-9902-69f875e2e101"
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "05a72667-5eee-47e3-b57b-bc7eea81d6f7",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Si los vídeos son explicativos (mucha voz) se me ocurre convertirlos a audio, y hacer uso del modelo de diarizacion. Y pasarle eso al bot como conocimiento",
+        "timestamp": "2024-06-05 09:56:45",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "372b8b41-a1a9-4bc0-9669-e6c54f108ee3",
+        "user_name": "Leandro Romero",
+        "text": "Nova tiene mucho contenido basado en videos , como lo volvemos conocimiento",
+        "timestamp": "2024-06-05 09:53:15",
+        "type": "response",
+        "thread_start_msg_id": "ad36764b-dc01-4973-ad96-4701a0a9bdad"
+    },
+    {
+        "user_id": "U06SPFKSFU2",
+        "client_msg_id": "05a72667-5eee-47e3-b57b-bc7eea81d6f7",
+        "user_name": "Oscar Julian Cardenas Sosa",
+        "text": "Si los vídeos son explicativos (mucha voz) se me ocurre convertirlos a audio, y hacer uso del modelo de diarizacion. Y pasarle eso al bot como conocimiento",
+        "timestamp": "2024-06-05 09:56:45",
+        "type": "response",
+        "thread_start_msg_id": "ad36764b-dc01-4973-ad96-4701a0a9bdad"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "c6bc8239-aa08-486e-a2d3-0f6811af31dd",
+        "user_name": "Leandro Romero",
+        "text": "<https://www.youtube.com/watch?v=nYbvFf0EGuY>",
+        "timestamp": "2024-06-05 10:06:15",
+        "type": "files",
+        "thread_start_msg_id": "ad36764b-dc01-4973-ad96-4701a0a9bdad"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "cb9f5b4a-964c-4dd4-a73e-f6b3fd21f32c",
+        "user_name": "Leandro Romero",
+        "text": "este seria un ejemplo",
+        "timestamp": "2024-06-05 10:06:27",
+        "type": "response",
+        "thread_start_msg_id": "ad36764b-dc01-4973-ad96-4701a0a9bdad"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "9eeaa049-cd46-4371-8d46-deb0f4055700",
+        "user_name": "Daniel Gonzalez",
+        "text": "<!channel> Les comparto el paso a paso para descargar, instalar y configurar la VPN:\nPaso 1: Descargar e instalar OpenVPN\n<https://swupdate.openvpn.org/community/releases/OpenVPN-2.5.7-I602-amd64.msi>\n- Una vez descargado, ejecuta el instalador y sigue las instrucciones para completar la instalación.\n\nPaso 2: Archivo de configuración\n- El archivo de configuración, se los comparto individualmente por SLACK.\n\nPaso 3: Importar el archivo de configuración\n- Abre OpenVPN en tu computadora.\n- Haz clic con el botón derecho en el icono de OpenVPN en la bandeja del sistema y selecciona \"Importar archivo...\"\n- Busca el archivo de configuración que descargaste y ábrelo. Se importará a la aplicación.\n\nPaso 4: Conectar a la VPN\n- Una vez importado, verás la conexión en la ventana principal de OpenVPN. Haz doble clic en ella para conectarte.\n- Ingresa tus credenciales (Compartidas tambien por slack.)",
+        "timestamp": "2024-06-05 09:48:09",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "3d239e41-fe41-4cd6-b5e2-a75bb530669b",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Hola Daniel, con este paso a paso ya no se tendría el espacio de las 10 am?",
+        "timestamp": "2024-06-05 09:56:50",
+        "type": "question",
+        "thread_start_msg_id": "9eeaa049-cd46-4371-8d46-deb0f4055700"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "23c15f3b-0767-4c72-8803-9d5c2216265e",
+        "user_name": "Daniel Gonzalez",
+        "text": "No es necesario, me cuentan si tienen alguna dificultad.",
+        "timestamp": "2024-06-05 09:57:18",
+        "type": "response",
+        "thread_start_msg_id": "9eeaa049-cd46-4371-8d46-deb0f4055700"
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "8a780161-363c-4927-ae6a-7c526719b042",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Entendido, muchas gracias",
+        "timestamp": "2024-06-05 09:57:34",
+        "type": "response",
+        "thread_start_msg_id": "9eeaa049-cd46-4371-8d46-deb0f4055700"
+    },
+    {
+        "user_id": "U06SGR43U1G",
+        "client_msg_id": "99856308-5ab9-4e7b-b46f-a840be3d596e",
+        "user_name": "Juan Jose Galeano Arenas",
+        "text": "Yo también estoy esperando que me den ingreso <@U06S28H3CFR>",
+        "timestamp": "2024-05-30 16:38:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "0e8299ef-f521-43d8-be7a-6f876ad7cb47",
+        "user_name": "Leandro Romero",
+        "text": "Equipo me dan 10 min por favor",
+        "timestamp": "2024-05-23 16:29:46",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f871feed-3346-4e02-8232-d89301ac8619",
+        "user_name": "Leandro Romero",
+        "text": "<@U06S28H3CFR>,para el video",
+        "timestamp": "2024-05-16 17:47:30",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "f871feed-3346-4e02-8232-d89301ac8619",
+        "user_name": "Leandro Romero",
+        "text": "<@U06S28H3CFR>,para el video",
+        "timestamp": "2024-05-16 17:47:30",
+        "type": "response",
+        "thread_start_msg_id": "da6e95bf-88b1-4e95-a248-349a8a9fb43b"
+    },
+    {
+        "user_id": "U01L6UJGRSS",
+        "client_msg_id": "0eb91794-8f4c-42d9-9dae-9b51d662188f",
+        "user_name": "Leandro Romero",
+        "text": "listo ya voy",
+        "timestamp": "2024-05-15 18:01:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U06T5JSMBQQ",
+        "client_msg_id": "c554ef8c-d95e-4d6e-a351-2b654262a966",
+        "user_name": "Brandon Perez Gomez",
+        "text": "Buenas tardes muchachos, ayer subí el código a github, tengo varias actualizaciones:\n• Ya se entreno el modelo para la clasificación de emociones con una maquina de soporte vectorial y con la ayuda de un modelo creado por meta wav2vec2; este modelo que estoy usando, tiene la característica de que se le hizo un fine tuning con data relacionada con el reconocimiento de emociones.\n• Se probo con un audio y arrojo un resultado, pero debo pre procesar mas el audio ya que es muy general, no logra capturar la emoción del momento, estaba pensando en separar el audio en audios de 10 seg para así tener concordancia con la base de datos que se uso para entrenarlo (queda a discusión ya que he visto en papers que se usan mas segundos).\n• La clave es el pre procesamiento, ya que la selección de características la elige el modelo y la clasificación de emociones también las da el modelo y muestra resultado muy prometedores como podemos ver en esta imagen, donde se compara con una biblioteca llamada openSMILE, la cual seria la equivalente a hacerlo a \"mano\".\n<https://github.com/lromero22/GenIA/blob/devBrandon/Training_model.ipynb>",
+        "timestamp": "2024-05-15 12:17:53",
+        "type": "files",
+        "thread_start_msg_id": null
+    }
+]
