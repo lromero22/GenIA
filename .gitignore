@@ -2,6 +2,12 @@
 /Chatbot/MessageExtractor/API_Token_Chatbot.txt
 /Chatbot/ResponseExtractor/API_Token_ResponseExtractor.txt
 
+# txt notes files
+/Chatbot/Asistente_Campanas_Inicial.txt
+/Chatbot/Asistente_de_campanas.txt
+/Chatbot/Extraccion_Info_Slack.txt
+/Chatbot/MessageExtractor/Observaciones_Adicionales.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

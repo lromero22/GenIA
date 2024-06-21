@@ -2,12 +2,10 @@ import requests
 from datetime import datetime
 import json
 import os
-import schedule
-import time
 
 # Configurar el token y el ID del canal de Slack
-token = "some_token"
-channel_id = "some_channel"  # Reemplaza con el ID del canal correcto
+token = "some_api_key"
+channel_id = "some_channel_id"  # Reemplaza con el ID del canal correcto
 
 # Configurar los encabezados de la solicitud
 headers = {
@@ -18,15 +16,15 @@ headers = {
 # Función para almacenar y leer el último timestamp
 def get_last_timestamp(file_path="last_timestamp.json"):
     try:
-        with open(file_path, 'r', encoding = 'utf-8') as f:
+        with open(file_path, 'r', encoding = 'utf8') as f:
             data = json.load(f)
             return data.get('last_timestamp', None)
     except FileNotFoundError:
         return None
 
 def save_last_timestamp(timestamp, file_path="last_timestamp.json"):
-    with open(file_path, 'w', encoding = 'utf-8') as f:
-        json.dump({'last_timestamp': timestamp}, f)
+    with open(file_path, 'w', encoding = 'utf8') as f:
+        json.dump({'last_timestamp': timestamp}, f, ensure_ascii = False)
 
 # Función para extraer mensajes del canal de Slack
 def fetch_messages(oldest_timestamp=None, oldest = None, latest = None):
@@ -57,6 +55,7 @@ def fetch_messages(oldest_timestamp=None, oldest = None, latest = None):
 
     return data["messages"]
 
+
 # Función para obtener respuestas de un hilo
 def fetch_thread_messages(thread_ts):
     url = f"https://slack.com/api/conversations.replies?channel={channel_id}&ts={thread_ts}"
@@ -77,6 +76,19 @@ def fetch_thread_messages(thread_ts):
     # Ignorar el primer mensaje ya que es el mensaje principal
     return data["messages"] # return data["messages"][1:]
 
+# Función para obtener los mensajes con la reacción de "chulo verde"
+def get_messages_with_checkmark(messages):
+    checkmark_emoji = 'white_check_mark'
+    messages_with_checkmark = []
+
+    for message in messages:
+        if 'reactions' in message:
+            for reaction in message['reactions']:
+                if reaction['name'] == checkmark_emoji:
+                    messages_with_checkmark.append(message)
+                    break
+    
+    return messages_with_checkmark
 
 # Función para obtener la información del usuario
 def get_user_info(user_id):
@@ -112,7 +124,7 @@ def process_and_store_messages(messages, history_file="message_history.json"):
 
     # Leer el archivo histórico si existe
     if os.path.exists(history_file):
-        with open(history_file, 'r', encoding = 'utf-8') as f:
+        with open(history_file, 'r', encoding = 'utf8') as f:
             historical_data = json.load(f)
 
     # Procesar y almacenar los mensajes
@@ -138,6 +150,7 @@ def process_and_store_messages(messages, history_file="message_history.json"):
 
         user_name = user_cache[user_id]
 
+
         # Identificar tipo de mensaje
         message_type = "other"
         if is_question(text):
@@ -158,6 +171,7 @@ def process_and_store_messages(messages, history_file="message_history.json"):
             'type': message_type,
             'thread_start_msg_id': None
         })
+
 
         # Si el mensaje tiene un hilo, obtener los mensajes del hilo
         if 'thread_ts' in message:
@@ -207,14 +221,14 @@ def process_and_store_messages(messages, history_file="message_history.json"):
                 })
 
     # Guardar el archivo histórico actualizado
-    with open(history_file, 'w', encoding = 'utf-8') as f:
-        json.dump(historical_data, f, indent=4)
+    with open(history_file, 'w', encoding = 'utf8') as f:
+        json.dump(historical_data, f, indent=4, ensure_ascii = False)
 
 # Eliminacion de mensajes duplicados
 def remove_duplicates(history_file="message_history.json"):
     try:
         # Leer el archivo histórico
-        with open(history_file, 'r', encoding = 'utf-8') as f:
+        with open(history_file, 'r', encoding = 'utf8') as f:
             historical_data = json.load(f)
     except FileNotFoundError:
         print(f"Archivo {history_file} no encontrado.")
@@ -232,27 +246,7 @@ def remove_duplicates(history_file="message_history.json"):
             unique_messages.append(message)
 
     # Guardar el archivo histórico actualizado sin duplicados
-    with open(history_file, 'w') as f:
-        json.dump(unique_messages, f, indent=4)
+    with open(history_file, 'w', encoding = 'utf8') as f:
+        json.dump(unique_messages, f, indent=4, ensure_ascii = False)
 
     print(f"Se eliminaron duplicados. {len(historical_data) - len(unique_messages)} mensajes eliminados.")
-
-# Función principal para ejecutar el proceso completo
-def main():
-    # Extraer y procesar los mensajes
-    last_timestamp = get_last_timestamp()  # Obtener el último timestamp procesado
-    messages = fetch_messages(oldest_timestamp=last_timestamp)  # Extraer mensajes desde el último timestamp
-    if messages:
-        process_and_store_messages(messages)  # Procesar y almacenar los mensajes
-        # Guardar el timestamp del último mensaje procesado
-        save_last_timestamp(messages[0]['ts'])
-    # Eliminar duplicados del archivo histórico
-    remove_duplicates()
-
-# Configurar la tarea programada para ejecutarse al final de cada dia
-schedule.every(1).minutes.do(main)
-
-# Mantener el script en ejecución
-while True:
-    schedule.run_pending()
-    time.sleep(10)

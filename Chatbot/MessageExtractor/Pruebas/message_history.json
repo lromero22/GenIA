@@ -1,0 +1,1577 @@
+[
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "178de47a-6d19-45e2-9e0a-fef466cd1712",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D44d42a64-c35b-430f-abc9-65dcaa3e21c7|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D44d42a64-c35b-430f-abc9-65dcaa3e21c7> no conocen a la NE",
+        "timestamp": "2024-06-04 14:35:43",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "cbbcba8f-0ec7-4d30-97aa-05e4bab37c3f",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "<@U01L71AMFPG> Buenas tardes pao, en cierre temprano estamos en correteo del  4-5-6-7 de junio y nos esta entrando llamadas de 11 y 12 de junio, no le estamos dando prioridad a los que pasan esta semana ya que esa fechas aplican correteo la próxima semana",
+        "timestamp": "2024-06-04 13:46:30",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "26e63e12-a13e-4af5-958d-58ea25ca55f5",
+        "user_name": "Paola Vargas",
+        "text": "Gracias por el aviso, ya ajusto",
+        "timestamp": "2024-06-04 14:47:14",
+        "type": "response",
+        "thread_start_msg_id": "cbbcba8f-0ec7-4d30-97aa-05e4bab37c3f"
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "1ecb1d96-0671-4891-be0d-88073299ddb3",
+        "user_name": "Camilo Echeverry",
+        "text": "Equipo por ahora les comparto esta e card",
+        "timestamp": "2024-06-04 12:31:27",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "32844596-61ec-4674-8f5e-a55595a216fd",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Almuerzo",
+        "timestamp": "2024-06-04 12:31:21",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "b9d2d753-8a03-45c8-ada6-77c9d555c3f7",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Almuerzo",
+        "timestamp": "2024-06-04 11:57:43",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a",
+        "user_name": "Miguel Acero",
+        "text": "<!channel> buenos días, acabo de hacer un ajuste en botmaker para cuando envían un template y la NE responde y le salta el bot de home, ya no debería suceder, por favor me cuentan si sigue la novedad o ya se corrige.",
+        "timestamp": "2024-06-04 11:03:57",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "77fdde7a-5be4-46f3-9d67-621961bd52fc",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<https://go.botmaker.com/#/chats/5RGAVVXCKRJETBLSC67W>",
+        "timestamp": "2024-06-04 11:08:14",
+        "type": "files",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "4fe5f014-51a8-4399-9669-fcd47b4bad39",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Mensaje enviado desde CRM.",
+        "timestamp": "2024-06-04 11:08:49",
+        "type": "response",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "3f867cf0-89d8-4187-84bb-ac72f24f68bf",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U01L6UML92A> Porqué  el saludo que enviamos por CRM cambió? Hace preguntas:¿Cómo estás? Cuéntame, ¿cómo puedo apoyarte? y se supone que estoy hablando con ella.  jejeje",
+        "timestamp": "2024-06-04 11:10:02",
+        "type": "question",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "bec8d0c4-b376-4c21-9e4d-a2690f6676b9",
+        "user_name": "Miguel Acero",
+        "text": "Fue el que nos comentaron que se debía dejar <@U04HCJ0CE2X> <@U01L71AMFPG>",
+        "timestamp": "2024-06-04 11:10:53",
+        "type": "response",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "82c74be1-a634-47c5-9604-848af254a518",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Vale.",
+        "timestamp": "2024-06-04 11:11:38",
+        "type": "response",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "0d813af4-549a-470b-a4d5-cfa57411c2c6",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://go.botmaker.com/#/chats/7J5PEPXQCZLNCCN82ZI6https://go.botmaker.com/#/chats/7J5PEPXQCZLNCCN82ZI6>",
+        "timestamp": "2024-06-04 11:15:01",
+        "type": "files",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "afdb0d6c-965f-4454-8960-0d8dae7af7af",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://go.botmaker.com/#/chats/XK3IXDHAUXT1TNE5P0SN>",
+        "timestamp": "2024-06-04 11:29:16",
+        "type": "files",
+        "thread_start_msg_id": "a5cb71c3-9a99-4948-ab5f-5222d6c8512a"
+    },
+    {
+        "user_id": "U074KB2A2JZ",
+        "client_msg_id": null,
+        "user_name": "Message Extractor",
+        "text": "<@U074KB2A2JZ> se unió al canal",
+        "timestamp": "2024-06-04 10:54:39",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "b0b3281d-ee99-4e46-8d64-4158bff730d9",
+        "user_name": "Miguel Acero",
+        "text": "<@U074KB2A2JZ>",
+        "timestamp": "2024-06-04 10:54:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "ad669167-1459-4105-830c-edc6201b2198",
+        "user_name": "Ana Rojas",
+        "text": "<@U05QZNBJPSR> hola ! en c9 tenemos doble puntaje por tv?",
+        "timestamp": "2024-06-04 10:46:50",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "970a4495-3c21-46e3-865c-e6161300acdd",
+        "user_name": "Camilo Echeverry",
+        "text": "Así es, pero no nos han compartido las condiciones, ya las solicitamos desde hoy temprano.",
+        "timestamp": "2024-06-04 10:47:19",
+        "type": "response",
+        "thread_start_msg_id": "ad669167-1459-4105-830c-edc6201b2198"
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "d77565e0-49c8-4657-8b4b-d4a670255038",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Buenos días:hugging_face:",
+        "timestamp": "2024-06-04 09:43:24",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "1ab6eb28-1400-4594-81e5-bba3ee1c3e3c",
+        "user_name": "Paola Vargas",
+        "text": "<@U062B84FXJB> <@U05R1HSKN80>\nDebido a la caída de Bancolombia de ayer, vamos a hacer el cierre en horas de la tarde, dando tiempo a que nos ingresen más pagos. Para los que tenemos en recuperacion por favor.",
+        "timestamp": "2024-06-04 09:05:51",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<@U04229KLR6E> <@U01L6UML92A> Chicos buenos dìas, es que siempre que envio un mensaje a la NE desde CRM el bot responde de manera antomatica",
+        "timestamp": "2024-06-04 09:05:49",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "02da607d-2cc9-46ad-91aa-fb62a42494b4",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Eso mismo me pasa a mí. No se ha podido solucionar.",
+        "timestamp": "2024-06-04 09:08:23",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "dee38dc0-0cea-444f-9f8b-de4b1b71b966",
+        "user_name": "Miguel Acero",
+        "text": "<@U01M3018BTP> <@U05MSA7EBT5> hola, pregunta, el mensaje lo envían desde el CRM o desde botmaker?",
+        "timestamp": "2024-06-04 09:08:57",
+        "type": "question",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "c4e2abfd-4eb7-4c2b-93a4-aece80ea2a8e",
+        "user_name": "Miguel Acero",
+        "text": "Qué plantilla envían?",
+        "timestamp": "2024-06-04 09:09:06",
+        "type": "question",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "1f78161d-8f32-4371-ba24-02d2d9fc0ff1",
+        "user_name": "Miguel Acero",
+        "text": "En qué bot y cola está el chat?",
+        "timestamp": "2024-06-04 09:09:32",
+        "type": "question",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "43778ce0-ff66-40aa-a968-e10015964457",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "el saludo desde CRM",
+        "timestamp": "2024-06-04 09:10:47",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "12a4718b-43c3-4ff3-b3c6-3d21f94be36a",
+        "user_name": "Ana Rojas",
+        "text": "Me pasa lo mismo",
+        "timestamp": "2024-06-04 09:11:16",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "2c802448-f754-4250-bf35-49c31a2941ed",
+        "user_name": "Miguel Acero",
+        "text": "Me pasas url del chat por fa",
+        "timestamp": "2024-06-04 09:11:17",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "8656470f-0ab6-40cc-b20a-241c3759a623",
+        "user_name": "Ana Rojas",
+        "text": "cuando escribo desde una plantilla del botmaker, comienza a responder el bot automáticamente",
+        "timestamp": "2024-06-04 09:11:43",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "8188ed18-7a94-49af-ab98-c96ab83fb32f",
+        "user_name": "Miguel Acero",
+        "text": "Hay plantillas que no deben usar, es lo que quiero revisar cuáles han enviado :sweat_smile:",
+        "timestamp": "2024-06-04 09:12:14",
+        "type": "question",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "887969a6-fd45-4714-8b18-a9478b7c581c",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Miguel, cuando utilizamos el boton de  CRM no se elijimos}",
+        "timestamp": "2024-06-04 09:13:30",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "2e9318b3-567d-4629-82e4-df6466a49177",
+        "user_name": "Miguel Acero",
+        "text": "Me comparten números o url por fa",
+        "timestamp": "2024-06-04 09:13:41",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "b90d424b-cbc2-4b22-a427-05f84601a773",
+        "user_name": "Ana Rojas",
+        "text": "este es un ej cel <tel:+3104012836|+3104012836>",
+        "timestamp": "2024-06-04 09:13:53",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "e83d5b76-8725-436a-a9c7-a31acfec861a",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<https://go.botmaker.com/#/chats/CA822SO0E5CW7API06NQ>",
+        "timestamp": "2024-06-04 09:29:49",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "9a96b87d-44d7-49c8-b98f-4c890126faed",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://go.botmaker.com/#/chats/A2Y0T573I63U0216TPEY>",
+        "timestamp": "2024-06-04 09:31:21",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "8a2abce9-bd20-45ca-9f02-e04226f51651",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://go.botmaker.com/#/chats/8EUFXOVR8URACQO2ZO5V>",
+        "timestamp": "2024-06-04 09:32:36",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "1733e295-5aef-43c1-b72c-9e6aa300445c",
+        "user_name": "Ana Rojas",
+        "text": "sucede lo mismo con los mensajes desde crm, ej cel <tel:+3132961807|+3132961807>",
+        "timestamp": "2024-06-04 09:36:21",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "1d86b485-e041-4409-bca6-800cbc619acb",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Mensaje enviado desde CRM <https://go.botmaker.com/#/chats/E10DGBUEHVO7R71UY2S8>",
+        "timestamp": "2024-06-04 09:39:14",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "558530d5-65ab-4900-ba17-ca9f032cc3bd",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Saludo desde CRM <https://go.botmaker.com/#/chats/EHLMR2FLVS2UBJMPK7BQ>",
+        "timestamp": "2024-06-04 09:54:06",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "7ee064eb-388e-4134-80d6-4d193ef63a4c",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://go.botmaker.com/#/chats/OV1XCNHPIODZHJHNH6EK>",
+        "timestamp": "2024-06-04 10:54:57",
+        "type": "files",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "5852b702-0926-43e6-b249-54e93752a217",
+        "user_name": "Miguel Acero",
+        "text": "Estoy viendo que es por el tipo de respuesta, los emojis, ya reviso si podemos controlar ello",
+        "timestamp": "2024-06-04 10:55:50",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U01L6UML92A",
+        "client_msg_id": "1c2db897-abab-41a4-9a31-7ba9f61d042e",
+        "user_name": "Miguel Acero",
+        "text": "Ya veo que sí lo puedo controlar, voy a cargar la actualización y les confirmo",
+        "timestamp": "2024-06-04 10:57:00",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "02702c99-e0f0-4af9-bef8-5a9f9de4d740",
+        "user_name": "Ana Rojas",
+        "text": "Miguelito, en uno de los casos que te pasé no me respondieron con emojis :eyes:",
+        "timestamp": "2024-06-04 10:57:24",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "031ba86b-d58b-4895-bcb0-cdbf6f9547e7",
+        "user_name": "Ana Rojas",
+        "text": "<tel:+3104012836|3104012836>",
+        "timestamp": "2024-06-04 10:59:26",
+        "type": "response",
+        "thread_start_msg_id": "25400a4c-cc9b-4b90-a47e-7f429a527968"
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "36f167c9-c5b8-4cd4-a997-265f983aebae",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D1a28c328-97c7-0ee1-011b-64dcfb9e19ff|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D1a28c328-97c7-0ee1-011b-64dcfb9e19ff> NE proyectada C9 hace 4 dìas",
+        "timestamp": "2024-06-04 09:05:38",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "ada4d604-b311-42fa-b498-0feda01c9fbc",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "yo tengo asesorias del sabado y me cuelgan :disappointed:",
+        "timestamp": "2024-06-04 09:06:01",
+        "type": "response",
+        "thread_start_msg_id": "36f167c9-c5b8-4cd4-a997-265f983aebae"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "10f393c7-0e96-4266-9436-c893e8d6bd38",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "Buenos días :sunny:",
+        "timestamp": "2024-06-04 09:02:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "b6703e08-1ff7-49b1-b27b-1077424f8af7",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D1409748c-7293-f981-e38a-65dca7b2c279|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D1409748c-7293-f981-e38a-65dca7b2c279> esta NE ya estaba tipificada que no desea acompañamiento",
+        "timestamp": "2024-06-04 08:41:54",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "5514d6df-a469-4216-9364-5f03df6c6a5d",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "SII",
+        "timestamp": "2024-06-04 08:36:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "4bb18929-e489-48e6-9c12-0b6b8df716e0",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Ya me ingresaron",
+        "timestamp": "2024-06-04 08:35:34",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "beea18a1-ee11-4222-82e5-c8715b19300f",
+        "user_name": "Camilo Echeverry",
+        "text": "*<!channel>*  ¡Hola equipo! :star2:\n¡Feliz inicio de mes y de ciclo 9! :tada: Es el momento perfecto para recargar nuestras energías y enfocarnos en nuestros objetivos. Este mes, nuestro propósito es claro: _cerrar muchas ventas, aumentar nuestra efectividad y lograr que el ticket promedio crezca significativamente._ :muscle:\nPara lograrlo, recordemos la importancia de los acuerdos de entendimiento. :handshake: Conocer las motivaciones de nuestros clientes nos permitirá ofrecerles exactamente lo que necesitan y superar sus expectativas. :star2:\nVamos a darla toda y superar los retos que se nos presenten. :boom: Cada uno de nosotrxs tiene la capacidad de hacer la diferencia y juntxs, alcanzaremos nuestros objetivos. ¡Vamos con toda la energía y entusiasmo para que este ciclo sea el mejor! :rocket:\n\n_Reaccionen con un emoji lxs que nos sumamos a este reto de Ciclo 9_ :raised_hands:",
+        "timestamp": "2024-06-04 08:30:32",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "2daada7c-cf8c-47f1-9724-4a4f423e7374",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "X2",
+        "timestamp": "2024-06-04 08:27:45",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "736bb049-c59d-4301-a708-e4e678ed23cb",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Sin llamadas Ext. 713. Cierre intermedio.",
+        "timestamp": "2024-06-04 08:27:32",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "57e78beb-c383-4d7e-ba07-a22f48cefb14",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Buenos días :heart_hands:",
+        "timestamp": "2024-06-04 08:19:39",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "d0c7b7b8-28f8-4d05-a832-7178a205958c",
+        "user_name": "Ana Rojas",
+        "text": "Buenos días :sun_with_face:",
+        "timestamp": "2024-06-04 08:03:58",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "87f8d2a3-548f-48f8-ae5f-af8a3fb25932",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Buenos dìas",
+        "timestamp": "2024-06-04 08:03:29",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "fc525172-918f-42fd-bc03-7751f28beb46",
+        "user_name": "Paola Vargas",
+        "text": "Les comparto el plan de trabajo de hoy.\nTambien les cuento que en el transcurso del día se estarán haciendo las actualizaciones de MG y fechas de toma de pedido, por favor guíense por las fechas de 360.",
+        "timestamp": "2024-06-04 08:01:00",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "0f7c9f02-e878-4eee-909d-1789e7e26c85",
+        "user_name": "Paola Vargas",
+        "text": "Linda Semana para todas!\nQue empiece ciclo 9!!!! :triangular_flag_on_post:",
+        "timestamp": "2024-06-04 08:00:07",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "ff5491fc-efd1-4b49-bc33-ab4c0aaa2a66",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "Buenos días!!",
+        "timestamp": "2024-06-04 07:57:30",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "fc9ed45b-240f-4883-a823-f70285386939",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "Buen día :sunflower:",
+        "timestamp": "2024-06-04 07:56:21",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "df9af59e-28e2-4475-9fec-6b86167b541d",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Buuuuenos días compañeras :blue_heart:",
+        "timestamp": "2024-06-04 07:55:24",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "f5201d79-f060-40e4-81fc-0021224d72af",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Break",
+        "timestamp": "2024-06-01 13:17:09",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "4b16cd78-b1ce-4b62-ad76-5f5d01d3a46d",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Feliz fin de semana aprovechen a descansar :heart_hands:",
+        "timestamp": "2024-06-01 11:52:13",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "615a4593-16b1-4630-a301-689e0516a0d4",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Feliz fin de semana compañeras:blue_heart:",
+        "timestamp": "2024-06-01 11:22:45",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "cc72249f-3e28-4e20-85db-12d381ceb693",
+        "user_name": "Ana Rojas",
+        "text": "niñas, saben si el black day y doble puntos por tv se amplió hasta el 3 de Junio?",
+        "timestamp": "2024-06-01 10:52:51",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "fbc71cb4-b50b-4a88-aa70-376ba1806616",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Doble de puntos está hasta e 3, de junio los descuentos fue hasta el 31.",
+        "timestamp": "2024-06-01 10:55:30",
+        "type": "files",
+        "thread_start_msg_id": "cc72249f-3e28-4e20-85db-12d381ceb693"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "3b99c347-6aeb-430f-b420-65e6c18ebccf",
+        "user_name": "Ana Rojas",
+        "text": "Buenos días :sun_with_face:",
+        "timestamp": "2024-06-01 10:37:17",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "38788458-f2b5-4b9b-a772-b5603a43751e",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> Hola Pao, 68248092 No conoce a la NE, ya estaba tipificado antes igual",
+        "timestamp": "2024-06-01 10:00:11",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "a095f200-aeee-4fbc-bdb6-59e6a38a9849",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Niñas para infórmales que el pago en punto físico Bancolombia por TV esta deshabilitado por cierre de ciclo, se activa nuevamente el 04/06/2024!! pagos solo por PSE Y Wompi",
+        "timestamp": "2024-06-01 09:24:04",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "73c976e9-8ba4-4f11-9fca-b04622ad9cae",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "Buenos días :sunny:",
+        "timestamp": "2024-06-01 09:02:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "a7e1dc29-b8b2-4a9d-b939-d3935edc0c34",
+        "user_name": "Paola Vargas",
+        "text": "Hoy no deberían ya salir casos de NE que no pertenecen pero si les sale estaré atenta.",
+        "timestamp": "2024-06-01 08:53:13",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "b945676f-b3df-40f0-8436-824d43c3451a",
+        "user_name": "Paola Vargas",
+        "text": "Hola buenos días a todas... Hoy olvidé saludar temprano :face_with_peeking_eye: .\nQue tengan un junio maravilloso.",
+        "timestamp": "2024-06-01 08:51:42",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "e40adec3-4af1-411b-80fc-07e574479355",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": ":heart_hands:",
+        "timestamp": "2024-06-01 08:32:40",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "70d3c78c-5f83-4617-8ffa-3cde86440147",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Buenos días",
+        "timestamp": "2024-06-01 08:32:33",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "350d4eba-351a-45ca-8de1-ed270938b06e",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "Buen día :sunflower:",
+        "timestamp": "2024-06-01 08:32:11",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "5c5b4411-4d05-4538-875f-09ec9de4e148",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Buenos días :heart:",
+        "timestamp": "2024-06-01 08:16:52",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "82c8666a-cc8a-4004-a3f7-0e93acaaaa38",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Buenos dìas",
+        "timestamp": "2024-06-01 08:15:49",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "1e2cbd63-54b9-49a5-bb6e-708d572fe17d",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Buuuenos días:sunny::blue_heart:",
+        "timestamp": "2024-06-01 08:14:51",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "91b3c6e3-dd48-4aff-ab63-9393e7ea7433",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Feliz tarde :heart:",
+        "timestamp": "2024-05-31 18:00:52",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "f2968e2c-7ef2-4c7b-acf6-db9e5ceea4ff",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> No pertenece 30505764",
+        "timestamp": "2024-05-31 16:39:23",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "cb485e64-c9ce-4431-a78e-595cab0e5991",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "Buenas tardes Cami, tenemos publicidad para redes sociales de C9 para las NE? <@U05QZNBJPSR>",
+        "timestamp": "2024-05-31 16:14:41",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "DBE427C3-D8FA-444D-A13C-AD52045AAC5B",
+        "user_name": "Camilo Echeverry",
+        "text": "Ya está en el drive, si no te aparece me avisas porfa ",
+        "timestamp": "2024-06-01 12:04:24",
+        "type": "response",
+        "thread_start_msg_id": "cb485e64-c9ce-4431-a78e-595cab0e5991"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "9d746928-6330-4311-8d58-89b4b4edfcaa",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "vale gracias",
+        "timestamp": "2024-06-01 12:10:03",
+        "type": "response",
+        "thread_start_msg_id": "cb485e64-c9ce-4431-a78e-595cab0e5991"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "707a1e03-a186-494d-b5d6-efad76e961fb",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> No pertenece 39021434",
+        "timestamp": "2024-05-31 16:12:25",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "a0800e08-c789-4b84-a1dc-510b9894498a",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> 40731434 tipificada anteriormente como No continúa",
+        "timestamp": "2024-05-31 16:07:50",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "04690f86-0f20-4a77-a944-0232e0a67c26",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "<@U01L71AMFPG> NE no continua 37946993 del día de ayer",
+        "timestamp": "2024-05-31 16:03:49",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "946a348e-ca8d-4c05-88c3-38dec69beb31",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> No pertenece 1117517857",
+        "timestamp": "2024-05-31 14:21:28",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "e70d6838-101f-48b0-9ec3-37adabe974ff",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U01L71AMFPG> Ya se había contactado el día de ayer con contacto efectivo: <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3Dd043a7ac-a221-8560-9efe-65dca73855b4|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3Dd043a7ac-a221-8560-9efe-65dca73855b4>",
+        "timestamp": "2024-05-31 14:21:05",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "d79393e6-9f6d-45fd-88dc-45cf96cc25d6",
+        "user_name": "Daniel Gonzalez",
+        "text": "<!channel> ya debe funcionar con normalidad el boton de presentación.",
+        "timestamp": "2024-05-31 12:20:37",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "ff3eac3b-e812-44b2-a80a-a7f3cb396a86",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Si Dani mil gracias",
+        "timestamp": "2024-05-31 12:27:29",
+        "type": "response",
+        "thread_start_msg_id": "d79393e6-9f6d-45fd-88dc-45cf96cc25d6"
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "00f7bb2b-710f-4782-9d58-967761edb19d",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Almuerzo",
+        "timestamp": "2024-05-31 12:08:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "9dd4a9e0-ee9a-43bd-916c-c52a565177ec",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<@U01L71AMFPG> NE no pertence, <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D12753b19-52b8-f20d-c207-65dcab0c84a3|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D12753b19-52b8-f20d-c207-65dcab0c84a3>",
+        "timestamp": "2024-05-31 12:03:56",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "ea625add-da33-4c86-aad8-86a0c0c0a995",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "el botón de CRM para enviar msj no está funcionado?",
+        "timestamp": "2024-05-31 11:32:32",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "716ff373-41c9-4941-9482-996d39ad7c59",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "a mi tampoco me funciona, ni el de las plantillas",
+        "timestamp": "2024-05-31 11:33:17",
+        "type": "response",
+        "thread_start_msg_id": "ea625add-da33-4c86-aad8-86a0c0c0a995"
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "0890ee7b-9572-453f-8c67-46f8cc42e3fd",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Tampoco me funciona <@U04229KLR6E> desde crm no se esta enviando el mensaje a botmaker",
+        "timestamp": "2024-05-31 11:56:53",
+        "type": "response",
+        "thread_start_msg_id": "ea625add-da33-4c86-aad8-86a0c0c0a995"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "eafe229b-06dc-42e0-885d-b38beaf7ce91",
+        "user_name": "Daniel Gonzalez",
+        "text": "Buenas tardes, ya nos encontramos revisando",
+        "timestamp": "2024-05-31 12:02:53",
+        "type": "response",
+        "thread_start_msg_id": "ea625add-da33-4c86-aad8-86a0c0c0a995"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "101ccd47-fd9f-47d3-bd64-c830a0d5015c",
+        "user_name": "Daniel Gonzalez",
+        "text": "Por ahora manejarlo manualmente desde la plataforma por favor.",
+        "timestamp": "2024-05-31 12:17:57",
+        "type": "response",
+        "thread_start_msg_id": "ea625add-da33-4c86-aad8-86a0c0c0a995"
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "e623c6ce-7871-43f8-a01e-020c461c0589",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<@U01L71AMFPG> NE no pertenece <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3Ddd0cd6d8-643b-c3c3-1e68-65dca717ee67|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3Ddd0cd6d8-643b-c3c3-1e68-65dca717ee67>",
+        "timestamp": "2024-05-31 11:13:03",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "ea5463fd-ad1b-4ed9-8bfc-d2beb3f46f3d",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "<@U01L71AMFPG> Pao la base que esta gestionando cierre temprano esta muy negativa porque son NE que llevan más de 4 campañas consecutivas sin pasar pedido, la mayoria o corta la llamada o no continua, o ya tenia esa tipificación anteriormente",
+        "timestamp": "2024-05-31 11:11:33",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "9ecb76b6-ef32-4309-9183-d2bc0c53b72f",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> 1001171388 tipificada como No continúa",
+        "timestamp": "2024-05-31 11:05:23",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "2eb69cde-e74e-4a81-9732-4ddc4e985a62",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "<@U01L71AMFPG> ya la han llamado varias veces y esta como no continua 1024550991",
+        "timestamp": "2024-05-31 10:58:08",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "4a9beeb0-01a4-4176-8a68-bec982ae8476",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "1152224266 NE no continua tipificada en abril contesta y cuelga *<tel:3042015173|3042015173>*",
+        "timestamp": "2024-05-31 11:20:58",
+        "type": "files",
+        "thread_start_msg_id": "2eb69cde-e74e-4a81-9732-4ddc4e985a62"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "b54a2220-fc38-4c5d-a180-9df6fb9e2d9e",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> 39353749 No pertenece",
+        "timestamp": "2024-05-31 10:40:10",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U04229KLR6E>, otra vez pasó con esta NE <tel:+3183979414|+3183979414>. :face_with_head_bandage:",
+        "timestamp": "2024-05-31 10:16:13",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "eb14a1f0-6d1d-4d73-ad93-c29a1805b9a6",
+        "user_name": "Daniel Gonzalez",
+        "text": "La enviaste desde crm?",
+        "timestamp": "2024-05-31 10:19:09",
+        "type": "question",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "b8f030ae-9a56-4c10-95d1-fce90ae1c52d",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Si",
+        "timestamp": "2024-05-31 10:19:42",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "279901e1-7881-4ec0-974f-1164c702c179",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U04229KLR6E> otra <tel:+573215411650|+573215411650>. Mensaje por CRM",
+        "timestamp": "2024-05-31 10:28:09",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "965e0142-8e29-4661-9e29-139e5d8a8d40",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Otra <tel:+3209002219|+3209002219> mensaje enviado por CRM",
+        "timestamp": "2024-05-31 10:36:28",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "e35f3e38-508e-4c94-88f7-a08a1c27d77c",
+        "user_name": "Daniel Gonzalez",
+        "text": "Ya nos encontramos revisando",
+        "timestamp": "2024-05-31 10:36:48",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "16690d0b-30a1-48cd-aa0d-768bc1610baa",
+        "user_name": "Daniel Gonzalez",
+        "text": "Me ayudas con los proximos para validar si ya se encuentra operando con normalidad",
+        "timestamp": "2024-05-31 10:49:31",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "68d539df-993e-42a2-b2bb-210b6ab4f91c",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U04229KLR6E> siguió pasando <tel:+3185766372|+3185766372>:see_no_evil: Mensaje desde CRM",
+        "timestamp": "2024-05-31 14:17:20",
+        "type": "response",
+        "thread_start_msg_id": "cfacb275-6902-41dc-8609-ebd6ab22c8e1"
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "0f3b9741-b734-411c-9e91-d8dda9a8c963",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<@U01L71AMFPG> NE no pertenece, <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D5cad3abe-ccc4-7644-e6ff-64dd0008cc06|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D5cad3abe-ccc4-7644-e6ff-64dd0008cc06>",
+        "timestamp": "2024-05-31 10:13:36",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "71465475-47c2-4651-b838-6f04c4b959c4",
+        "user_name": "Ana Rojas",
+        "text": "<@U05QZNBJPSR> o niñas, la fecha de pedido por TV se amplió cierto? me pareció ver algo al respecto pero no lo encuentro :eyes:, me confirman plssssss",
+        "timestamp": "2024-05-31 10:03:26",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "5afc26c8-6491-4c50-9169-fae49f02a07e",
+        "user_name": "Paola Vargas",
+        "text": "Así es tienda virtual va hasta el 03 de junio para C8.",
+        "timestamp": "2024-05-31 10:04:04",
+        "type": "response",
+        "thread_start_msg_id": "71465475-47c2-4651-b838-6f04c4b959c4"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "7791dc1e-a909-4bf9-84cf-b545679fd18f",
+        "user_name": "Ana Rojas",
+        "text": "Gracias :+1:",
+        "timestamp": "2024-05-31 10:04:28",
+        "type": "response",
+        "thread_start_msg_id": "71465475-47c2-4651-b838-6f04c4b959c4"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "ffc0d55f-f83b-488d-a9e8-a20d78ffae58",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "Pao contacto efectivo de ayer <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3Dd111291a-3841-e4f3-e2e2-65dca8dd788d|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3Dd111291a-3841-e4f3-e2e2-65dca8dd788d>",
+        "timestamp": "2024-05-31 10:00:49",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "91cef59a-d226-438e-8968-8a02df8f1be7",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "<@U01L71AMFPG> Holi Pao para las fechas de pedido 4-5 de Junio MG A ¿Ya aplica correteo?",
+        "timestamp": "2024-05-31 09:56:13",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "d48243e8-778e-4b24-ae9f-626e8929fa2f",
+        "user_name": "Paola Vargas",
+        "text": "Gracias por la pregunta Maira, está programado para mañana, pero si porfa aprovechemos para hacer correteo si nos salen personas de esas fechas en las estrategias de hoy.\n<@U03KUR8GFR8> <@U05AA7W7NR3>",
+        "timestamp": "2024-05-31 10:02:01",
+        "type": "response",
+        "thread_start_msg_id": "91cef59a-d226-438e-8968-8a02df8f1be7"
+    },
+    {
+        "user_id": "U065NUTL84A",
+        "client_msg_id": "680b7406-e00b-4226-bf5e-42c97f5804d4",
+        "user_name": "Maira Alejandra Piedrahita Osorio",
+        "text": "Buenos días :sun_with_face:",
+        "timestamp": "2024-05-31 09:28:50",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U04229KLR6E> y <@U01L6UML92A> Todos los mensajes que he estado enviando,  cuando la NE me contesta les contesta un BOT y eso es incomodo <tel:+3107200829|+3107200829>. Lo otro, si yo no filtro por el número de la NE cuando yo le envío el saludo a mi no me sale. ¿existe una forma en que me pueda salir automáticamente, muchas veces no me he dado cuenta que me contesta porque no me sale. Y por último, es posible que cuando yo le envíe el saludo a una NE y me conteste, se bloquee el chat y  me quede solo a mí.",
+        "timestamp": "2024-05-31 09:19:04",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "0645faae-4a2b-45cf-af49-191abf749fd6",
+        "user_name": "Daniel Gonzalez",
+        "text": "Hola esta sucediendo con todos Los chat?",
+        "timestamp": "2024-05-31 09:29:49",
+        "type": "question",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "1cdc89e8-790c-42ce-94bd-94bf1e3af474",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "SI,",
+        "timestamp": "2024-05-31 09:30:11",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "15411fdb-2946-4c39-b01b-a528fed1223c",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "&lt;callto:+3006735372|3006735372&gt;, este es otro.",
+        "timestamp": "2024-05-31 09:31:09",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "afe786c8-a9c9-4a07-b0a3-14a6f62ca285",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Con todos los que me contestan el mensaje que envío.",
+        "timestamp": "2024-05-31 09:31:28",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "440a03a5-7c6e-4e9c-b376-d8769a1038f3",
+        "user_name": "Daniel Gonzalez",
+        "text": "ese mensaje lo envias desde botmaker o desde el boton del crm",
+        "timestamp": "2024-05-31 09:32:13",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "9887f291-a484-47f6-91f1-ef62bdedcce3",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Ambos desde CRM",
+        "timestamp": "2024-05-31 09:32:30",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "1df147a0-4b52-41c0-b04a-4e795d18955d",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "No se si ustedes pueden filtrar los chat por Liker, ahí vas a poder ver que en mis chat cuando yo le envío el saludo y contestan les sale el mensaje del bot.",
+        "timestamp": "2024-05-31 09:34:37",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "cca3137f-bb2b-4fcd-9481-eff1d5a9d050",
+        "user_name": "Daniel Gonzalez",
+        "text": "Me cuentas por favor si con los proximos contactos sucede lo mismo.",
+        "timestamp": "2024-05-31 09:36:23",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "c43dc71c-9c7a-4e40-9b33-36331e473480",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Ya no me está saliendo :pray::grin: TKS",
+        "timestamp": "2024-05-31 09:58:50",
+        "type": "response",
+        "thread_start_msg_id": "8712d92b-1dd9-46a2-8862-463e9697deef"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "d2249f25-70bc-4874-b8fa-218514f3a297",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "Buenos días :sunny:",
+        "timestamp": "2024-05-31 09:16:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "2478dbf2-e713-419a-9a51-e240529801ac",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "contacto efectivo de ayer <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3Db56d2f1a-e212-4d72-dadc-65dca79665ce|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3Db56d2f1a-e212-4d72-dadc-65dca79665ce>",
+        "timestamp": "2024-05-31 08:51:34",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "86853a42-a539-436f-9bfe-71b709d9c987",
+        "user_name": "Camilo Echeverry",
+        "text": "<!channel> Les traigo energía de viernes :zap:\n\n:notes:_Come on, dance, jump on it_\n_If you're sexy then flaunt it_\n_If you're freaky then own it_\n_Don't brag about it, come show me_\n_Come on, dance, jump on it_\n_If you're sexy then flaunt it_\n_Well it's Saturday night and we're in the spot_\n_Don't believe me? just watch_ :notes:\n\n<https://www.youtube.com/watch?v=OPf0YbXqDm0>",
+        "timestamp": "2024-05-31 08:34:39",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "7e2edad0-1255-4192-a20c-65fb737fa21f",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Buenos días :heart_hands:",
+        "timestamp": "2024-05-31 08:29:35",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "b9f793ac-32de-45ae-9757-f3a118f4ca80",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "Buenos días :sunflower:",
+        "timestamp": "2024-05-31 08:02:58",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U03KUR8GFR8",
+        "client_msg_id": "d989f129-cdb8-4c28-be76-7fa0ffc30f4a",
+        "user_name": "Geraldin Alarcón Sánchez",
+        "text": "Buenos días!!!",
+        "timestamp": "2024-05-31 08:01:22",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "8403ce13-6ad1-4464-9441-19f85803ff6a",
+        "user_name": "Ana Rojas",
+        "text": "Buenos días :sun_with_face:",
+        "timestamp": "2024-05-31 08:01:19",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "5dedbbef-305f-44af-ae15-2e4e06cc4226",
+        "user_name": "Paola Vargas",
+        "text": "Quienes gestionan proyecciones de C9, hoy tendrán en sus llamadas principalmente personas que no hicieron pedido en C8, si vemos la oportunidad de promocionarles los BLACKDAYS hagámoslo.",
+        "timestamp": "2024-05-31 08:01:02",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "83748703-e3fd-46b3-954b-0541d8493234",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Buenos dìas",
+        "timestamp": "2024-05-31 08:00:31",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "cabcfba6-ae6f-4e2a-bcc5-47da9c89fa74",
+        "user_name": "Paola Vargas",
+        "text": "les comparto el plan de trabajo de hoy",
+        "timestamp": "2024-05-31 07:59:55",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "88d2ee7a-3195-4d51-8c03-2d7a9d1fa11b",
+        "user_name": "Paola Vargas",
+        "text": "Buenos días likers!!!! terminemos este mes con mucha energía :battery::battery::battery:",
+        "timestamp": "2024-05-31 07:58:36",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U062B84FXJB",
+        "client_msg_id": "212acc82-73ee-4292-9a2b-22c75cc8c371",
+        "user_name": "Rosana Carreno Maury",
+        "text": "Hasta mañana",
+        "timestamp": "2024-05-30 18:15:49",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "64859b01-1aeb-4d9b-85cc-d1d7823c311c",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Finalizo turno.",
+        "timestamp": "2024-05-30 18:15:40",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "568b4473-b2dc-487b-a097-7a361e64a343",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D93ac058e-487d-deef-d167-65dcab1f7890|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D93ac058e-487d-deef-d167-65dcab1f7890> no pertenece <@U01L71AMFPG>",
+        "timestamp": "2024-05-30 18:11:03",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "79d2efd0-57f0-4689-8cdd-dfdc5dcb3d52",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<@U01L71AMFPG> <https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D1%26stamp%3D1692456308063720400%26return_module%3DLeads%26action%3DDetailView%26record%3D3cc66137-8af0-169c-6eed-65dca87b05f7|https://zafiro.likeu.co/index.php?action=ajaxui#ajaxUILoc=index.php%3Fmodule%3DLeads%26offset%3D[…]w%26record%3D3cc66137-8af0-169c-6eed-65dca87b05f7> por favor me ayudas eliminado la tipificación de \"no continua\", a esta no le correspondía esa tipificación, gracias",
+        "timestamp": "2024-05-30 17:44:50",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "6c961060-188a-4284-8a74-7581e6e517df",
+        "user_name": "Paola Vargas",
+        "text": "Cual es la correcta?",
+        "timestamp": "2024-05-30 17:51:16",
+        "type": "question",
+        "thread_start_msg_id": "79d2efd0-57f0-4689-8cdd-dfdc5dcb3d52"
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "1e276728-9dce-4d03-bced-caddd3bcd6fa",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "las correctas son consulta sobre fechas y asesoría general, la de fechas fue por chat hoy en la mañana y asesoría hace un rato que me ingresó en el predictivo...",
+        "timestamp": "2024-05-30 17:54:57",
+        "type": "response",
+        "thread_start_msg_id": "79d2efd0-57f0-4689-8cdd-dfdc5dcb3d52"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "<@U04229KLR6E> Dani holi, esta spor aquì? es qu eno me escuchan mis NE :disappointed:",
+        "timestamp": "2024-05-30 17:20:32",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "953eebe4-d00a-48c7-92fc-4516f5e67502",
+        "user_name": "Daniel Gonzalez",
+        "text": "Hola me compartes anydesk para revisar porfa",
+        "timestamp": "2024-05-30 17:21:53",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "cc881843-7b0e-4479-bf42-e42d5f691d6e",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "voy",
+        "timestamp": "2024-05-30 17:22:04",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "ddc1cc76-d102-4e63-b0e6-53a008ce8fbc",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": "205 872 628",
+        "timestamp": "2024-05-30 17:22:38",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "1afd7207-7456-4d51-9a66-2e9e1956b81a",
+        "user_name": "Daniel Gonzalez",
+        "text": "Como te fue <@U01M3018BTP> luego del reinicio?",
+        "timestamp": "2024-05-30 17:37:12",
+        "type": "question",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U01M3018BTP",
+        "client_msg_id": "60ab14ad-abfd-4c04-8ef2-64493cd1b27c",
+        "user_name": "Liz Andrea Aguirre Beltran",
+        "text": ":woozy_face:",
+        "timestamp": "2024-05-30 17:38:15",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "829b9ed3-2c45-43ce-a1c1-71a8e86d70f4",
+        "user_name": "Daniel Gonzalez",
+        "text": "Si te escucho",
+        "timestamp": "2024-05-30 17:38:32",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "9a4602c2-0992-48ae-939e-e903970b5d44",
+        "user_name": "Daniel Gonzalez",
+        "text": "te puedes unir a un meet?",
+        "timestamp": "2024-05-30 17:38:38",
+        "type": "question",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U04229KLR6E",
+        "client_msg_id": "807d039b-c274-469b-85e0-29405f4d3b51",
+        "user_name": "Daniel Gonzalez",
+        "text": "<http://meet.google.com/hfp-acyx-vdj|meet.google.com/hfp-acyx-vdj>",
+        "timestamp": "2024-05-30 17:39:00",
+        "type": "response",
+        "thread_start_msg_id": "b9c45454-d013-4c41-8c8e-f4917fa2afd3"
+    },
+    {
+        "user_id": "U05QZNBJPSR",
+        "client_msg_id": "2269048a-c4db-47a9-8582-23da867c3c69",
+        "user_name": "Camilo Echeverry",
+        "text": "<!channel> en las escuchas de esta semana me estoy encontrando con que realizamos preguntas como:\n\n_¿Has tenido alguna dificultad con Novaventa? o ¿Cómo te ha ido con tus pedidos?_\n\nEste tipo de preguntas incentivan a la NE a manifestarnos una oportunidad de mejora y como consecuencia podemos perder nuestro enfoque comercial. Les propongo que lo hagamos diferente, haciendo preguntas más en función de las motivaciones de las NE:\n\n:bulb:¿Qué sueños o metas te gustaría alcanzar de acá a 6 meses?\n:florero-2:¿Te gustan las ganancias?\n:bulb:¿Qué te gustaría lograr con tus ganancias? (viajar, estudiar, ir de compras, salir a comer, etc)\n:florero-2:¿Qué aspectos de tu vida actual te gustaría mejorar con más ingresos?\n:bulb:¿Cuál es tu mayor motivación para buscar mayores ganancias?\n:florero-2:¿Qué metas personales podrías alcanzar con un aumento en tus ingresos?\n\nRecuerden también apostarle a la efectividad en la venta con los _acuerdos de entendimiento_ ",
+        "timestamp": "2024-05-30 16:09:38",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "7d019677-2397-483b-ae7c-2b3c7540c0e4",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> No pertenece 60356794",
+        "timestamp": "2024-05-30 16:05:35",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "2fd73c91-1403-4745-a43e-f72884583fc6",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "37946993",
+        "timestamp": "2024-05-30 16:27:28",
+        "type": "response",
+        "thread_start_msg_id": "7d019677-2397-483b-ae7c-2b3c7540c0e4"
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "722ebe18-8132-447a-adba-d55d8ae42c5e",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "<@U01L71AMFPG> NE NO PERTENECE: 1061710526",
+        "timestamp": "2024-05-30 14:34:06",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "47ab8f6b-4c10-4fcb-8e1d-03c7494ab1ce",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": ":heart_hands:",
+        "timestamp": "2024-05-30 13:39:21",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSA7EBT5",
+        "client_msg_id": "6fe73dc0-cdab-4f89-ad6b-991cf8dfe496",
+        "user_name": "Deicy Karen Sánchez Sepúlveda",
+        "text": "Buenas tardes",
+        "timestamp": "2024-05-30 13:39:15",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "156494ef-93a5-49a0-a57a-946fe4c3d461",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "<@U01L71AMFPG> Hola Pao buenas tardes, una consulta, estoy en proyecciones pero me han salido NE que no pertenecen, ¿está bien? o ¿te las reporto?",
+        "timestamp": "2024-05-30 13:27:50",
+        "type": "question",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "00e13d6a-c91d-4218-ab83-02b2c17f0e86",
+        "user_name": "Paola Vargas",
+        "text": "no deberían, porfa marcalas como NE no continúa y me lo reportas por acá para tenerlo en cuenta",
+        "timestamp": "2024-05-30 13:28:34",
+        "type": "response",
+        "thread_start_msg_id": "156494ef-93a5-49a0-a57a-946fe4c3d461"
+    },
+    {
+        "user_id": "U05AA7W7NR3",
+        "client_msg_id": "9cb56a73-fcc8-4a18-9ac5-35f0d0a97e6b",
+        "user_name": "Lina Marcela Caro Diaz",
+        "text": "1049615075, 31982728, vale listo gracias",
+        "timestamp": "2024-05-30 13:29:40",
+        "type": "response",
+        "thread_start_msg_id": "156494ef-93a5-49a0-a57a-946fe4c3d461"
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "8327bc43-0ebe-4802-ad6f-270c499ae6fe",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "Almuerzo",
+        "timestamp": "2024-05-30 12:35:38",
+        "type": "other",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05MSD5TYP5",
+        "client_msg_id": "67dcd28d-6a97-495d-8071-4e0147e75dc5",
+        "user_name": "Lizeth Carolina Cabrera",
+        "text": "<@U01L71AMFPG>  NE 1194715201, No pertenece en 360",
+        "timestamp": "2024-05-30 12:14:02",
+        "type": "files",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "ed8a96e2-0044-4cf2-a5eb-28256d9e970d",
+        "user_name": "Paola Vargas",
+        "text": "POrfa de esos casos me pasas el valor del saldo, el valor que debia pagar segun el sistema y el numero de cedula de la NE para escalarlos para que les liberen el pedido.",
+        "timestamp": "2024-05-30 11:49:37",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "ed8a96e2-0044-4cf2-a5eb-28256d9e970d",
+        "user_name": "Paola Vargas",
+        "text": "POrfa de esos casos me pasas el valor del saldo, el valor que debia pagar segun el sistema y el numero de cedula de la NE para escalarlos para que les liberen el pedido.",
+        "timestamp": "2024-05-30 11:49:37",
+        "type": "response",
+        "thread_start_msg_id": "bf4af7a9-19a6-424e-aea3-15eca751578e"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "090a9dc3-63c7-4bdc-a5c7-ceb38d3d1723",
+        "user_name": "Ana Rojas",
+        "text": "Ok, claro que sí, a futuro entonces, estaré escalando estos casos así :+1:",
+        "timestamp": "2024-05-30 11:54:27",
+        "type": "response",
+        "thread_start_msg_id": "bf4af7a9-19a6-424e-aea3-15eca751578e"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "bf4af7a9-19a6-424e-aea3-15eca751578e",
+        "user_name": "Ana Rojas",
+        "text": "Sería bueno poder sugerir, que la herramienta les muestre a la NE de contado enseguida, el valor total a pagar, estoy segura que eso evitaría muchos pedidos rechazados y a veces si no alcanzamos a notificarles se quedan sin su pedido, como le decía el otro día a Cami, una ne dijo que se iba a retirar porque se molestó muchísimo, por que el rechazo era por $333 pesos :melting_face:",
+        "timestamp": "2024-05-30 11:30:11",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "fb5243ed-8d2b-49ab-b001-761e15aec3d4",
+        "user_name": "Ana Rojas",
+        "text": "<@U01L71AMFPG> <@U05QZNBJPSR> tengo varios casos de ne contado con pedidos rechazados por saldos mínimos, según lo que ellas me indican pagan el total que les dice el sistema, sin embargo; siempre les hace falta un monto mínimo y el sistema les rechaza el pedido, se enojan muchísimo porque son saldos muy pequeños que el sistema no les muestra cuando ellas van a pagar y cuando les notifico se molestan, porque muchas se movilizan hasta un punto de pago y solo a pagar 100, 200 o en este caso :point_down: 49 pesos :upside_down_face:",
+        "timestamp": "2024-05-30 11:28:30",
+        "type": "thread_start",
+        "thread_start_msg_id": null
+    },
+    {
+        "user_id": "U01L71AMFPG",
+        "client_msg_id": "884b73da-e4e6-4b42-a352-0b18f9e641f3",
+        "user_name": "Paola Vargas",
+        "text": "POrfa de esos casos me pasas el valor del saldo, el valor que debia pagar segun el sistema y el numero de cedula de la NE para escalarlos y que les liberen el pedido.",
+        "timestamp": "2024-05-30 11:48:52",
+        "type": "response",
+        "thread_start_msg_id": "fb5243ed-8d2b-49ab-b001-761e15aec3d4"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "573b8892-78bd-4c09-bd0e-cdee2e2b3c2f",
+        "user_name": "Ana Rojas",
+        "text": "cc 20530909 valor pedido $160.394 valor pagado $160.344.57 valor pendiente $49.43",
+        "timestamp": "2024-05-30 11:52:18",
+        "type": "response",
+        "thread_start_msg_id": "fb5243ed-8d2b-49ab-b001-761e15aec3d4"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "568a1777-8869-4151-8098-254fc9131193",
+        "user_name": "Ana Rojas",
+        "text": "La NE ya pagó Pao, $500 pesos y el pedido ya se encuentra ok, ya no es necesario escalarlo",
+        "timestamp": "2024-05-30 12:00:49",
+        "type": "response",
+        "thread_start_msg_id": "fb5243ed-8d2b-49ab-b001-761e15aec3d4"
+    },
+    {
+        "user_id": "U05R1HSKN80",
+        "client_msg_id": "0502dd2c-4545-4f40-9d07-ad10a9c42cde",
+        "user_name": "Ana Rojas",
+        "text": "Gracias",
+        "timestamp": "2024-05-30 12:00:57",
+        "type": "response",
+        "thread_start_msg_id": "fb5243ed-8d2b-49ab-b001-761e15aec3d4"
+    }
+]
