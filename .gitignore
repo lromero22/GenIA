@@ -130,6 +130,7 @@ env.bak/
 venv.bak/
 .venv/
 .voicenv/
+.asvenv/
 
 # Spyder project settings
 .spyderproject

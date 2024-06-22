@@ -1,4 +1,4 @@
-# %pip install langchain openai sqlalchemy
+# pip install langchain openai sqlalchemy python-dotenv langchain-openai langchain-experimental pymysql
 
 import os
 
