@@ -21,10 +21,29 @@ def conn_db():
 
 db_engine = conn_db()
 
-db = SQLDatabase(engine=db_engine, include_tables=["leads", "leads_lk_pedidos_1_c", "lk_pedidos_cstm"])
-llm = OpenAI(temperature=0, verbose=True)
-db_chain = SQLDatabaseChain.from_llm(llm=llm, db=db, verbose=True)
+QUERY_CHECKER = """
+Double check the query above for database mistakes, including:
+- Number of records greater than 100
+- DELETE, DROP, INSERT, UPDATE, or ALTER statements or any other statements that modify the database
 
-result = db_chain.invoke("Quiero saber el id del lider que tenga a las 10 personas mas vendieron y el valor de ventas, teniendo como limite inferior ventas de 400000 en los ciclos mayores a 202310, con pedidos mayores a 3. Y sabiendo que la tabla leads tiene el id del lider, la tabla leads_lk_pedidos_1_c es una tabla relacional que los leads que se relacionan con cada id de lk.")
+If there are any of the above mistakes, rewrite the query. If there are no mistakes, just reproduce the original query.
+
+Output the final SQL query only.
+
+SQL Query: """
+
+tables_2_look = list(input("Enter the tables you want to look at: ").split())
+# tables_2_look = ["leads", "leads_lk_pedidos_1_c", "lk_pedidos_cstm"]
+
+db = SQLDatabase(engine=db_engine, include_tables=tables_2_look)
+llm = OpenAI(temperature=0, verbose=True)
+db_chain = SQLDatabaseChain.from_llm(llm=llm, db=db, use_query_checker=True, query_checker_prompt=QUERY_CHECKER, verbose=True)
+
+question = input("Enter the question: ")
+
+result = db_chain.invoke(question)
+
+# result = db_chain.invoke("Quiero saber el id del lider que tenga a las 10 personas mas vendieron y el valor de ventas, teniendo como limite inferior ventas de 400000 en los ciclos mayores a 202310, con pedidos mayores a 3. Y sabiendo que la tabla leads tiene el id del lider, la tabla leads_lk_pedidos_1_c es una tabla relacional que los leads que se relacionan con cada id de lk.")
 
 print(result['result'])
+

@@ -1,6 +1,0 @@
-https://stackoverflow.com/questions/22284461/pydub-windowserror-error-2-the-system-can-not-find-the-file-specified
-
-https://github.com/GyanD/codexffmpeg/releases
-
-Paste
-"ffmpeg.exe, ffplay.exe and ffprobe.exe" to "Scripts" folder in "venv"

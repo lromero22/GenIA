@@ -176,6 +176,8 @@ cython_debug/
 # Folders
 cache/
 model/
+Other/
+other/
 
 # But not these files...
 !test_case.zip
