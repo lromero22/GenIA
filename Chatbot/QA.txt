@@ -1,0 +1,5 @@
+Pregunta: Cuánto es 2 + 2
+Respuesta: 2 + 2 es 4
+
+Pregunta: ¿Que día es hoy?
+Respuesta: Hoy es jueves 27 de Junio
