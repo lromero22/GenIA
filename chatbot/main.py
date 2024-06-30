@@ -386,4 +386,4 @@ def handle_liker_message(message, say):
 
 # Start your app
 if __name__ == "__main__":
-    SocketModeHandler(app,"xapp-1-A07A7T15TD2-7345447999506-eee009a417c1705f27ff0acd4fafb6f2b472f79dc29fdea98bad6f9bfc99e49a").start()
+    SocketModeHandler(app,"xapp-1-A07A7T15TD2-7354284311539-8db242bbe6c0d95b6116e0c2b2e8656aef009e025d3b6b13043e2f9b4477d65c").start()
