@@ -1,6 +1,7 @@
 # API Token file
 /Chatbot/MessageExtractor/API_Token_Chatbot.txt
 /Chatbot/ResponseExtractor/API_Token_ResponseExtractor.txt
+/Chatbot/Credenciales.txt
 
 # txt notes files
 /Chatbot/Asistente_Campanas_Inicial.txt
