@@ -1,12 +1,14 @@
 TABLA: lk_pedidos
 DESCRIPCION: Esta tabla contiene la identificación de cada vendedor, el estado del vendedor y el id del usuario al que fue asignado este vendedor
+RELACIONES: Se relaciona con las tablas: lk_pedidos_cstm
 COLUMNAS:
 - id: Esta columna es de tipo Primary Key, char(36). Contiene el documento de identidad y el ciclo. Por ejemplo: 1000003259-202310, donde 1000003259 es el documento de identidad y 202310 es el ciclo. (La temporalidad de los ciclos es 3 semanas)
 - deleted: Esta columna es de tipo tinyint(1). Contiene el estado de cada vendedor si fue eliminado o si esta activo. Por ejemplo: 0 significa que esta activo, y 1 que fue eliminado
 - assigned_user_id: Esta columna es de tipo char(36). Contiene el id del usuario al que fue asignado un vendedor.
 
 TABLA: lk_pedidos_cstm
-DESCRIPCION: Esta tabla es una extension de la tabla 'lk_pedidos'. Contiene multiples detalles relacionados con el vendedor y el pedido.
+DESCRIPCION: Esta tabla es una extension de la tabla 'lk_pedidos', . Contiene multiples detalles relacionados con el vendedor y el pedido.
+QUERY EJEMPLO: SELECT leads.last_name, leads_cstm.identificacion_c FROM leads JOIN leads_cstm ON leads.id = leads_cstm.id_c WHERE leads_cstm.antiguedad_c > 50
 COLUMNAS:
 - id_c: Esta columna es de tipo Primary Key, char(36). Contiene el documento de identidad y el ciclo y se relaciona con la columna id, de la tabla lk_pedidos. Por ejemplo: 1000003259-202310, donde 1000003259 es el documento de identidad y 202310 es el ciclo. (La temporalidad de los ciclos es 3 semanas)
 - ciclo_c: Esta columna es de tipo varchar(255). Contiene el numero de ciclo, que esta en formato AÑOCICLO. Por ejemplo: 202310, 2023 es el año, y 10 es el ciclo, cuya temporalidad es de 3 semanas
@@ -21,8 +23,9 @@ COLUMNAS:
 
 TABLA: leads
 DESCRIPCION: Esta tabla contiene el id unico, datos y detalles especificos de los vendedores novaventa.
+RELACIONES: Se relaciona con las tablas: leads_cstm
 COLUMNAS:
-- id: Esta columna es de tipo char. Contiene el identificador unico del vendedor, el cual se usa para cruzar esta informacion con otras tablas
+- id: Esta columna es de tipo Primary Key, char. Contiene el identificador unico del vendedor, el cual se usa para cruzar esta informacion con otras tablas
 - date_entered: Esta columna es de tipo datetime. Esta columna contiene la fecha en que ingreso el vendedor
 - created_by: Esta columna es de tipo char. Contiene el usuario que creo la entrada de este vendedor en la base de datos
 - description: Esta columna es de tipo text. Contiene detalles de las interacciones del vendedor novaventa, con las personas encargadas de gestionar sus pedidos.
@@ -36,167 +39,41 @@ COLUMNAS:
 - primary_address_state: Esta columna es de tipo varchar. Contiene el numero de documento del vendedor.
 
 TABLA: leads_cstm
-DESCRIPCION: Esta tabla es una extension de la tabla 'leads'. Contiene multiples detalles relacionados con el vendedor y el pedido.
+DESCRIPCION: Esta tabla es una extension de la tabla 'leads'. Contiene multiples detalles relacionados con el vendedor y estadisticas de sus pedidos.
+RELACIONES: Se relaciona con las tablas: leads
+QUERY EJEMPLO: SELECT leads.last_name, leads_cstm.identificacion_c FROM leads JOIN leads_cstm ON leads.id = leads_cstm.id_c WHERE leads_cstm.antiguedad_c > 50
 COLUMNAS:
-- id_c: Esta columna es de tipo char
+- id_c: Esta columna es de tipo Primary Key, char. Contiene el identificador unico del vendedor, el cual se usa para cruzar esta informacion con otras tablas.
 - ultimo_estado_llamada_c: Esta columna es de tipo varchar. Contiene un resumen del estado de la ultima llamada que se tuvo con el vendedor
 - identificacion_c: Esta columna es de tipo varchar. Contiene el numero de identificación del vendedor. Cedula de ciudadania Colombiana
-#TODO: Continuar desde aqui
-- seccion_c: Esta columna es de tipo varchar
-- zona_c: Esta columna es de tipo varchar
-- in_gcp1_c: Esta columna es de tipo varchar
-- ac_gcp1_c: Esta columna es de tipo varchar
-- mg_c11_c: Esta columna es de tipo varchar
-- jefe_c: Esta columna es de tipo varchar
-- fecha_gestion_c: Esta columna es de tipo datetime
-- fecha_entrega1_c: Esta columna es de tipo date
-- fecha_entrega2_c: Esta columna es de tipo date
-- realiza_pedido_c: Esta columna es de tipo varchar
-- bienvenida_c: Esta columna es de tipo tinyint
-- facturacion_c11_c: Esta columna es de tipo int
-- facturacion_c12_c: Esta columna es de tipo int
-- experiencia_virtualidad_c: Esta columna es de tipo varchar
-- piedra_semestre_anterior_c: Esta columna es de tipo varchar
-- seg_2_sem_2020_c: Esta columna es de tipo varchar
-- seg_1_sem_2021_c: Esta columna es de tipo varchar
-- seg_2_sem_2021_c: Esta columna es de tipo varchar
-- seg_1_sem_2022_c: Esta columna es de tipo varchar
-- recordatorio_pedido_c: Esta columna es de tipo tinyint
-- frecuencia_c: Esta columna es de tipo varchar
-- asesoria_likeu_c: Esta columna es de tipo int
-- estado_positivo_c: Esta columna es de tipo varchar
-- franja_horaria_c: Esta columna es de tipo varchar
-- message_kb_c: Esta columna es de tipo tinyint
-- prueba_c: Esta columna es de tipo tinyint
-- fecha_asesoria_c: Esta columna es de tipo date
-- rol_c: Esta columna es de tipo varchar
-- me_administra_c: Esta columna es de tipo varchar
-- me_administradora_c: Esta columna es de tipo varchar
-- motivo_no_continua_c: Esta columna es de tipo varchar
-- estado_civil_c: Esta columna es de tipo varchar
-- canal_pedido_c: Esta columna es de tipo varchar
-- nivel_academico_c: Esta columna es de tipo varchar
-- mejora_experiencia_c: Esta columna es de tipo varchar
-- motivo_intermitencia_pedido_c: Esta columna es de tipo varchar
-- productos_que_compran_c: Esta columna es de tipo text
-- especifica_intermitencia_c: Esta columna es de tipo varchar
-- especifica_mejora_me_c: Esta columna es de tipo varchar
-- ciclos_mora_c: Esta columna es de tipo varchar
-- motivo_mora_c: Esta columna es de tipo varchar
-- especifica_mora_c: Esta columna es de tipo varchar
-- fecha_prueba_c: Esta columna es de tipo date
-- realiza_asesoria_c: Esta columna es de tipo varchar
-- frecuencia_proyectada_c: Esta columna es de tipo varchar
-- dropdown_db_c: Esta columna es de tipo varchar
-- users_db_c: Esta columna es de tipo varchar
-- fecha_carga_c: Esta columna es de tipo date
-- estrategias_ciclo_anterior_c: Esta columna es de tipo varchar
-- estrategias_ciclo_actual_c: Esta columna es de tipo varchar
-- temas_profundizar_c: Esta columna es de tipo varchar
-- fecha_toma_pedido_c: Esta columna es de tipo date
-- franjas_horarias_c: Esta columna es de tipo varchar
-- proxima_asesoria_c: Esta columna es de tipo date
-- asiste_asesoria_grupal_c: Esta columna es de tipo tinyint
-- fecha_asesoria_grupal_c: Esta columna es de tipo datetime
-- confirma_asistencia_c: Esta columna es de tipo tinyint
-- tienda_activa_c: Esta columna es de tipo varchar
-- contador_no_contactado_c: Esta columna es de tipo int
-- pedido_tomado_exitosamente_c: Esta columna es de tipo varchar
-- ciclo_c: Esta columna es de tipo varchar
-- segmento_c: Esta columna es de tipo varchar
-- segmento_anterior_c: Esta columna es de tipo varchar
-- tv_activa_c: Esta columna es de tipo varchar
-- modalidad_de_pago_c: Esta columna es de tipo varchar
-- mg_c: Esta columna es de tipo varchar
-- promedio_venta_semestre_a_c: Esta columna es de tipo varchar
-- correo_electronico_c: Esta columna es de tipo varchar
-- edad_c: Esta columna es de tipo varchar
-- antiguedad_c: Esta columna es de tipo varchar
-- score_c: Esta columna es de tipo varchar
-- toma_pedido_1_c: Esta columna es de tipo date
-- toma_pedido_2_c: Esta columna es de tipo date
-- realiza_ultima_gestion_c: Esta columna es de tipo varchar
-- send_c: Esta columna es de tipo tinyint
-- odern_promedio_c: Esta columna es de tipo int
-- orden_promedio_c: Esta columna es de tipo int
-- alias_c: Esta columna es de tipo varchar
-- motiva_vender_novaventa_c: Esta columna es de tipo varchar
-- dedica_ne_c: Esta columna es de tipo varchar
-- realizara_pedido_c: Esta columna es de tipo varchar
-- venta_acumulada_c: Esta columna es de tipo varchar
-- me_maneja_negocio_c: Esta columna es de tipo varchar
-- proyecciones_realizadas_c: Esta columna es de tipo int
-- experiencia_asesoria_c: Esta columna es de tipo varchar
-- dudas_resueltas_c: Esta columna es de tipo varchar
-- recomendar_novaventa_c: Esta columna es de tipo varchar
-- aporte_negocio_c: Esta columna es de tipo varchar
-- fecha_encuesta_c: Esta columna es de tipo datetime
-- venta_acomulada_c: Esta columna es de tipo int
-- valor_necesario_c: Esta columna es de tipo int
-- contactos_negativos_c: Esta columna es de tipo int
-- esmeralda_c: Esta columna es de tipo tinyint
-- fecha_llamada_positiva_c: Esta columna es de tipo date
-- asistencia_presencial_c: Esta columna es de tipo tinyint
-- nivel_digital_c: Esta columna es de tipo varchar
-- utiliza_oficina_virtual_c: Esta columna es de tipo varchar
-- proxima_llamada_new_c: Esta columna es de tipo date
-- acompanamiento_por_whatsapp_c: Esta columna es de tipo tinyint
-- ne_pasa_pedido_por_c: Esta columna es de tipo varchar
-- cambia_telefono_c: Esta columna es de tipo varchar
-- base_activa_c: Esta columna es de tipo tinyint
-- fecha_disponibilidad_c: Esta columna es de tipo date
-- hora_disponibilidad_c: Esta columna es de tipo varchar
-- verbatim_c: Esta columna es de tipo tinyint
-- venta_precio_lista_c: Esta columna es de tipo int
-- ganancia_c: Esta columna es de tipo int
-- puntos_totales_c: Esta columna es de tipo int
-- puntos_disponibles_c: Esta columna es de tipo int
-- puntos_a_vencer_c: Esta columna es de tipo int
-- saldo_pendiente_c: Esta columna es de tipo int
-- segmento_actual_c: Esta columna es de tipo varchar
-- segmento_siguiente_c: Esta columna es de tipo varchar
-- venta_precio_catalogo_c: Esta columna es de tipo int
-- venta_acumulada_minima_c: Esta columna es de tipo int
-- tipo_catalogo_c: Esta columna es de tipo varchar
-- puntos_pendientes_efectivi_c: Esta columna es de tipo int
-- agencia_asignada_c: Esta columna es de tipo varchar
-- grupo_base_c: Esta columna es de tipo varchar
-- calidad_c: Esta columna es de tipo tinyint
-- envio_unico_c: Esta columna es de tipo tinyint
-- tercer_dia_pedidos_c: Esta columna es de tipo date
-- fecha_cierre_zona_c: Esta columna es de tipo date
-- fecha_rechazo_c: Esta columna es de tipo date
-- descripcion_rechazo_c: Esta columna es de tipo text
-- pedido_rechazado_c: Esta columna es de tipo tinyint
-- dias_mora_c: Esta columna es de tipo int
-- pedido_ciclo_anterior_c: Esta columna es de tipo tinyint
-- calidad_llamadas_c: Esta columna es de tipo tinyint
-- frecuencia_actual_c: Esta columna es de tipo int
-- inactividad_c: Esta columna es de tipo varchar
-- no_enviar_c: Esta columna es de tipo tinyint
-- campana_actual_c: Esta columna es de tipo varchar
-- actividad_c: Esta columna es de tipo varchar
-- antiguedad_absoluta_c: Esta columna es de tipo varchar
-- actividad_acumulada_c: Esta columna es de tipo varchar
-- inactividad_anterior_c: Esta columna es de tipo varchar
-- estructura_comercial_c: Esta columna es de tipo varchar
-- proyeccion_de_ascenso_y_o_de_c: Esta columna es de tipo varchar
-- campania_afiliacion_c: Esta columna es de tipo varchar
-- venta_acumulada_sem_actual_c: Esta columna es de tipo varchar
-- venta_acumulada_sem_ant_c: Esta columna es de tipo varchar
-- saldo_c: Esta columna es de tipo varchar
-- campania_de_saldo_c: Esta columna es de tipo varchar
-- pago_minimo_c: Esta columna es de tipo varchar
-- puntos_proximos_a_vencer_c: Esta columna es de tipo varchar
-- campania_vencimiento_c: Esta columna es de tipo varchar
-- puntos_pendientes_de_efectiv_c: Esta columna es de tipo varchar
-- puntos_redimidos_c: Esta columna es de tipo varchar
-- campania_de_redencion_c: Esta columna es de tipo varchar
-- mundo_favorito_c: Esta columna es de tipo text
-- marca_c: Esta columna es de tipo varchar
-- sin_whatsapp_c: Esta columna es de tipo tinyint
-- no_pertenece_c: Esta columna es de tipo tinyint
-
-TABLA: leads_lk_pedidos_1_c
-DESCRIPCION: 
-COLUMNAS:
+- seccion_c: Esta columna es de tipo varchar.  #TODO: Definir
+- fecha_gestion_c: Esta columna es de tipo datetime. #TODO: Definir
+- fecha_entrega1_c: Esta columna es de tipo date. #TODO: Definir
+- fecha_entrega2_c: Esta columna es de tipo date. #TODO: Definir
+- estado_positivo_c: Esta columna es de tipo varchar. Contiene un resumen del estado del vendedor
+- motivo_intermitencia_pedido_c: Esta columna es de tipo varchar. Contiene una descripcion separada por _ en la que se indica la razón por la que el vendedor no realiza pedidos de manera continua.
+- ciclos_mora_c: Esta columna es de tipo varchar. Contiene la cantidad de ciclos que el vendedor presenta en mora.
+- frecuencia_proyectada_c: Esta columna es de tipo varchar. Contiene la frecuencia estidama en la que el vendedor podria realizar pedidos por semestre.
+- ciclo_c: Esta columna es de tipo varchar. Contiene el numero de ciclo, que esta en formato AÑOCICLO. Por ejemplo: 202310, 2023 es el año, y 10 es el ciclo, cuya temporalidad es de 3 semanas.
+- segmento_c: Esta columna es de tipo varchar. Contiene el segmento (nivel) en el que se encuentra el vendedor. Ejems: Zafiro, Junior, Master
+- segmento_anterior_c: Esta columna es de tipo varchar. Contiene el segmento (nivel) en el que se encuentraba el vendedor, en el ciclo anterior.
+- tv_activa_c: Esta columna es de tipo varchar. Contiene el link de la tienda del vendedor novaventa.
+- modalidad_de_pago_c: Esta columna es de tipo varchar. Contiene la modalidad de pago del vendedor. Ejemplo: CREDITO
+- correo_electronico_c: Esta columna es de tipo varchar. Contiene el correo electronico del vendedor.
+- edad_c: Esta columna es de tipo varchar. Contiene la edad del vendedor.
+- antiguedad_c: Esta columna es de tipo varchar. Contiene la cantidad de semanas que lleva el vendedor.
+- score_c: Esta columna es de tipo varchar. Contiene el puntaje en porcentaje del vendedor
+- toma_pedido_1_c: Esta columna es de tipo date. Contiene la fecha en la que el vendedor hizo su primer pedido del ciclo
+- toma_pedido_2_c: Esta columna es de tipo date. Contiene la fecha en la que el vendedor hizo su segundo pedido del ciclo
+- realiza_ultima_gestion_c: Esta columna es de tipo varchar. Contiene username del usuario que le hizo gestion al vendedor.
+- orden_promedio_c: Esta columna es de tipo int. Contiene el valor promedio de orden que realiza el vendedor
+- motiva_vender_novaventa_c: Esta columna es de tipo varchar. Contiene la motivacion del vendedor para vender productos novaventa.
+- venta_acomulada_c: Esta columna es de tipo int. Contiene el total historico de ventas del vendedor.
+- valor_necesario_c: Esta columna es de tipo int. Contiene el valor necesario para cumplir el presupuesto asignado.
+- acompanamiento_por_whatsapp_c: Esta columna es de tipo tinyint. Contiene datos booleanos para indicar si vendedor recibe acompañamiento por WhatsApp.
+- tipo_catalogo_c: Esta columna es de tipo varchar. Contiene la descripcion del tipo de catalago que usa el vendedor novaventa.
+- pedido_rechazado_c: Esta columna es de tipo tinyint. Contiene un booleano que indica el estado del pedido. 0/NULL para aprobado, 1 para rechazado.
+- dias_mora_c: Esta columna es de tipo int. Contiene la cantidad de dias en mora del vendedor.
+- pedido_ciclo_anterior_c: Esta columna es de tipo tinyint. Contiene un numero booleano que indica si el vendedor realizo un pedido en el ciclo anterior. 0/NULL para No, 1 para Si.
+- frecuencia_actual_c: Esta columna es de tipo int. Contiene la frecuencia actual de pedidos del vendedor 
+- no_enviar_c: Esta columna es de tipo tinyint. Contiene un numero booleano que indica si se le debe enviar o no el pedido al vendedor. 0 para Si, 1 para No.
