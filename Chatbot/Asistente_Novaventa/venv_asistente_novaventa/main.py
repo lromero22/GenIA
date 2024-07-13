@@ -20,11 +20,11 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "asst_iREYxHnwpYv37MoysD1NnNod" # En produccion deben ir como variables de entorno
-VECTOR_STORE_ID = "vs_CceSKFPaCVBlN7T3n8fxcOqR" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "asistant_id" # En produccion deben ir como variables de entorno
+VECTOR_STORE_ID = "vector_store_id" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
-client = OpenAI(api_key="sk-proj-QxtMQWDJPfRkJsN4ooDcT3BlbkFJbTsDMFLZcdnAedAwcX3e") # En produccion deben ir como variables de entorno
+client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variables de entorno
 
 # FUNCIONES ORM FLASK
 
@@ -99,19 +99,32 @@ def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
 # FUNCIONES SLACK
 
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
-app = App(token="xoxb-1690660427493-7363773808497-ExShlXcGtToPOfKQ5omvWuc0")
+slack_token = "slack_app_token"
+app = App(token = slack_token)
 
-SUPERVISOR_USER_ID = "U06LZ2LCD6H" #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
+SUPERVISOR_USER_ID = "U07BNLU9KT2" #"U06LZ2LCD6H" (Leo) #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
 APPROVAL_EMOJI = "white_check_mark" #Emoji de aprobacion por parte del supervisor
-CHANNEL_ID_BOT = '' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
+CHANNEL_ID_BOT = 'D07C74UCTA4' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
 LIKERS_PERMITIDOS =[
     "U01LQ9N5WJJ",
     "U01M2V299EH",
     "U04HCJ0CE2X",
     "U0475KXJU20",
     "U01L6UJGRSS",
-    "U01MB9DQF9B"
+    "U01MB9DQF9B",
+    "U06SGR43U1G" #ID de Juanjo para hacer pruebas
 ]
+
+# Diccionario con los ID de usuarios y sus respectivos nombres
+import requests
+users_info = {}
+headers = {
+        'Authorization': f'Bearer {slack_token}'
+    }
+for id in LIKERS_PERMITIDOS:
+    response = requests.get('https://slack.com/api/users.info', headers = headers, params = {'user': id})
+    user_info = response.json().get("user")
+    users_info[id] = user_info["profile"].get("real_name")
 
 # Almacenamiento para los estados de los hilos
 threads_slack = {}
@@ -152,12 +165,13 @@ def supervisor_escribe(message, say, logger,thread_ts):
     
     # Obtener el historial de conversaciones del canal del bot
     result = app.client.conversations_replies(channel=CHANNEL_ID_BOT, ts=thread_ts) #app.client.conversations_history(channel=CHANNEL_ID_BOT)
-    conversation_history = result["messages"][1]['text']
+    conversation_history = result["messages"][0]['text']
     
     # Extraer el ID del usuario del historial de conversación
-    user_id = re.search(r'^([^:]+)', conversation_history).group(1)
-    
+    user_id = re.search(r'\bU\w+\b', conversation_history).group()
     # Si el supervisor vuelve a escribir y el mensaje anterior no tiene el ID del usuario
+    # print(f"{message} \n{thread_ts} \n{user_id}")
+    # print(result['messages'])
     if user_id in threads_slack:
         # Asegúrate de que el mensaje fue originalmente enviado al supervisor para aprobación
         if threads_slack[user_id]['waiting_for_approval']:
@@ -176,6 +190,7 @@ def supervisor_escribe(message, say, logger,thread_ts):
 
             run = client.beta.threads.runs.create(thread_id=thread_openia.id, assistant_id=ASSISTANT_ID)
             while run.status != "completed":
+                print(f"🏃 Estado de la corrida en supervisor_escribe: {run.status}")
                 run = client.beta.threads.runs.retrieve(thread_id=thread_openia.id, run_id=run.id)
                 time.sleep(1)
 
@@ -184,13 +199,16 @@ def supervisor_escribe(message, say, logger,thread_ts):
             messages = message_response.data
             latest_message = messages[0]
             tentative_response = latest_message.content[0].text.value
+            tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de referencias de archivos del asistente
 
             # Actualizar la respuesta tentativa en el diccionario threads_slack
             threads_slack[user_id]['tentative_response'] = tentative_response 
             threads_slack[user_id]['waiting_for_approval'] = True
 
             # Enviar la respuesta actualizada al canal de Slack
-            say(text=f"{user_id}: - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: {APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
+            # say(text=f"{user_id}: - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: {APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
+            say(text=f"{users_info[user_id]} - {user_id} - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
+            print(f"Thread timestamp {thread_ts}")
             logger.info("Supervisor correction handled and waiting for approval.")
 
 
@@ -210,53 +228,66 @@ def handle_reaction_added_events(body, say, logger):
     logger (Logger): Logger para registrar información y errores.
     """
     event = body['event']
-    #print(event)
-
     user_id = event['user']
     reaction = event['reaction']
     item = event['item']
     channel_id = event['item']['channel']
     ts_id = event['item']['ts']
 
-    # Llamar al método conversations.history usando el WebClient para obtener el mensaje original
-    result = app.client.conversations_history(
-        channel=channel_id,
-        inclusive=True,
-        oldest=ts_id,
-        limit=1
-    )
+    message = None
 
-    message = result["messages"][0]['text']
-    #print(message)
+    # Intentar obtener el mensaje del hilo
+    try:
+        result = app.client.conversations_replies(
+            channel=channel_id,
+            ts=ts_id
+        )
+        if result["messages"]:
+            message = result["messages"][0]['text']
+    except Exception as e:
+        logger.error(f"Error fetching thread messages: {e}")
 
-    #print(re.search(r'^([^:]+)', message).group(1))
-
-    #print(threads_slack)
-
-    # Verificar si la reacción es el emoji de aprobación y si es en un thread que estamos manejando
-    if reaction == APPROVAL_EMOJI and re.search(r'^([^:]+)', message).group(1) in threads_slack:
-        #print('entro al if')
-        # Obtener el user_id del mensaje original
-        user_id = re.search(r'^([^:]+)', message).group(1)
-
-        # Asegurarse de que el mensaje fue originalmente enviado al supervisor para aprobación
-        if threads_slack[user_id]['waiting_for_approval']:
-            # Obtener la respuesta aprobada y el thread_slack_id del liker
-            response = threads_slack[user_id]['tentative_response']
-            liker_thread_slack_id = threads_slack[user_id]['liker_thread_ts']
-
-            # Enviar la respuesta aprobada al liker
-            app.client.chat_postMessage(
-                channel=user_id,
-                text=f"Respuesta aprobada por el supervisor {user_id}: {response}",
-                thread_ts=liker_thread_slack_id
+    # Si no se encontraron mensajes en el hilo, intentar obtener el mensaje del canal principal
+    if not message:
+        try:
+            result = app.client.conversations_history(
+                channel=channel_id,
+                inclusive=True,
+                oldest=ts_id,
+                limit=1
             )
-            append_string_to_file('correcciones_supervisor.txt', f"Respuesta aprobada por el supervisor {user_id}: {response}")
-            # Opcionalmente, limpiar el estado del thread
-            del threads_slack[user_id]
-            logger.info("Approved response sent to liker.")
+            if result["messages"]:
+                message = result["messages"][0]['text']
+        except Exception as e:
+            logger.error(f"Error fetching channel messages: {e}")
+
+    if message:
+        # Verificar si la reacción es el emoji de aprobación y si es en un thread que estamos manejando
+        if reaction == APPROVAL_EMOJI and re.search(r'\bU\w+\b', message).group() in threads_slack:
+            # Obtener el user_id del mensaje original
+            user_id = re.search(r'\bU\w+\b', message).group()
+
+            # Asegurarse de que el mensaje fue originalmente enviado al supervisor para aprobación
+            if threads_slack[user_id]['waiting_for_approval']:
+                # Obtener la respuesta aprobada y el thread_slack_id del liker
+                response = threads_slack[user_id]['tentative_response']
+                response = re.sub('【.*?†source】', '', response) # Limpieza de posibles referencias de archivos por el asistente
+                liker_thread_slack_id = threads_slack[user_id]['liker_thread_ts']
+
+                # Enviar la respuesta aprobada al liker
+                app.client.chat_postMessage(
+                    channel=user_id,
+                    text=f"Respuesta aprobada por el supervisor {users_info[user_id]} - {user_id} : {response}",
+                    thread_ts=liker_thread_slack_id
+                )
+                append_string_to_file('correcciones_supervisor.txt', f"Respuesta aprobada por el supervisor {users_info[user_id]}: {response}")
+                # Opcionalmente, limpiar el estado del thread
+                del threads_slack[user_id]
+                logger.info("Approved response sent to liker.")
+        else:
+            logger.info(f"Reaction {reaction} added by {users_info[user_id]} but no action taken.")
     else:
-        logger.info(f"Reaction {reaction} added by {user_id} but no action taken.")
+        logger.error(f"No messages found for channel {channel_id} with timestamp {ts_id}.")
 
 
 
@@ -349,7 +380,8 @@ def handle_liker_message(message, say):
     messages = message_response.data
     latest_message = messages[0]
     tentative_response = latest_message.content[0].text.value
-    
+    tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de las referencias de los archivos
+
     # Actualizar el diccionario threads_slack con la respuesta tentativa y marcarla como esperando aprobación.
     threads_slack[user_id]['tentative_response'] = tentative_response
     threads_slack[user_id]['waiting_for_approval'] = True
@@ -369,7 +401,7 @@ def handle_liker_message(message, say):
             # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
             app.client.chat_postMessage(
                 channel=SUPERVISOR_USER_ID,
-                text=f"{user_id}: hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: {APPROVAL_EMOJI} o realice una correccion.",
+                text=f"{users_info[user_id]} - {user_id} hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion.",
                 thread_ts=thread_slack_id
             )
         except SlackApiError as e:
@@ -386,4 +418,4 @@ def handle_liker_message(message, say):
 
 # Start your app
 if __name__ == "__main__":
-    SocketModeHandler(app,"xapp-1-A07A7T15TD2-7354284311539-8db242bbe6c0d95b6116e0c2b2e8656aef009e025d3b6b13043e2f9b4477d65c").start()
+    SocketModeHandler(app,"socket_token").start()
