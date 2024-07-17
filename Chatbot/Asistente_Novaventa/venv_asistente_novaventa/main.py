@@ -20,11 +20,11 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "asistant_id" # En produccion deben ir como variables de entorno
-VECTOR_STORE_ID = "vector_store_id" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "Asistente" # En produccion deben ir como variables de entorno
+VECTOR_STORE_ID = "Vector Store ID" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
-client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variables de entorno
+client = OpenAI(api_key="OpenAI API Key") # En produccion deben ir como variables de entorno
 
 # FUNCIONES ORM FLASK
 
@@ -99,10 +99,18 @@ def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
 # FUNCIONES SLACK
 
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
-slack_token = "slack_app_token"
+slack_token = "Aplicación Slack (Bot)"
 app = App(token = slack_token)
 
-SUPERVISOR_USER_ID = "U07BNLU9KT2" #"U06LZ2LCD6H" (Leo) #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
+#En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
+SUPERVISOR_USER_ID = {"U06SGR43U1G": 'U07BNLU9KT2',
+                      "U01LQ9N5WJJ": 'U07BNLU9KT2',
+                      "U01M2V299EH": 'U07BNLU9KT2',
+                      "U04HCJ0CE2X": 'U07BNLU9KT2',
+                      "U0475KXJU20": 'U07BNLU9KT2',
+                      "U01L6UJGRSS": 'U07BNLU9KT2',
+                      "U01MB9DQF9B": 'U07BNLU9KT2',
+                      } #"U06LZ2LCD6H"
 APPROVAL_EMOJI = "white_check_mark" #Emoji de aprobacion por parte del supervisor
 CHANNEL_ID_BOT = 'D07C74UCTA4' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
 LIKERS_PERMITIDOS =[
@@ -121,10 +129,11 @@ users_info = {}
 headers = {
         'Authorization': f'Bearer {slack_token}'
     }
-for id in LIKERS_PERMITIDOS:
+for id in LIKERS_PERMITIDOS + list(SUPERVISOR_USER_ID.values()):
     response = requests.get('https://slack.com/api/users.info', headers = headers, params = {'user': id})
     user_info = response.json().get("user")
     users_info[id] = user_info["profile"].get("real_name")
+print(f"Estado de las personas disponibles para sacar info\n {users_info}")
 
 # Almacenamiento para los estados de los hilos
 threads_slack = {}
@@ -145,7 +154,7 @@ def message_handler(message, say, logger):
     user_id = message['user']
     thread_ts = message.get('thread_ts')  # Obtener el thread_ts del mensaje
     # Verifica si el mensaje es del supervisor
-    if user_id == SUPERVISOR_USER_ID:
+    if user_id in SUPERVISOR_USER_ID.values():
         supervisor_escribe(message, say, logger,thread_ts)
     else:
         handle_liker_message(message, say)
@@ -162,22 +171,53 @@ def supervisor_escribe(message, say, logger,thread_ts):
     say (func): Función para enviar mensajes en Slack.
     logger (Logger): Logger para registrar información y errores.
     """
-    
+
+    # Se puede extraer el canal del bot desde el message. Tambien el id del supervisor
+    bot_channel_id = message.get('channel')
+    # supervisor_user_id = message.get('user')
+
     # Obtener el historial de conversaciones del canal del bot
-    result = app.client.conversations_replies(channel=CHANNEL_ID_BOT, ts=thread_ts) #app.client.conversations_history(channel=CHANNEL_ID_BOT)
+    result = app.client.conversations_replies(channel=bot_channel_id, ts=thread_ts) #app.client.conversations_history(channel=CHANNEL_ID_BOT)
     conversation_history = result["messages"][0]['text']
-    
+
+    #print(f"""
+    #      RESULT 
+    #      {result}
+    #      RESULT[MESSAGES]
+    #      {result['messages']} 
+    #      CONVERSATION_HISTORY
+    #      {conversation_history}
+#""")
+
     # Extraer el ID del usuario del historial de conversación
     user_id = re.search(r'\bU\w+\b', conversation_history).group()
+    correction = message['text']
+
+    # Enviar la corrección al hilo del empleado que hizo la pregunta
+    try:
+        """ app.client.chat_postMessage(
+            channel=channel_bot,
+            text=f"Corrección del supervisor: {correction}",
+            thread_ts=thread_ts
+        ) """
+
+        # Actualizar la respuesta tentativa en el diccionario threads_slack
+        threads_slack[user_id]['tentative_response'] = correction 
+        threads_slack[user_id]['waiting_for_approval'] = True
+        
+        say(text=f"{users_info[user_id]} - {user_id} - Respuesta tentativa actualizada: {correction}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
+        logger.info(f"Corrección enviada al empleado {users_info[user_id]} en el canal {bot_channel_id}.")
+    except Exception as e:
+        logger.error(f"Error enviando la corrección: {e}")
+
     # Si el supervisor vuelve a escribir y el mensaje anterior no tiene el ID del usuario
     # print(f"{message} \n{thread_ts} \n{user_id}")
     # print(result['messages'])
-    if user_id in threads_slack:
+    """ if user_id in threads_slack:
         # Asegúrate de que el mensaje fue originalmente enviado al supervisor para aprobación
         if threads_slack[user_id]['waiting_for_approval']:
             # El supervisor proporciona una corrección
             correction = message['text']
-
             # Ejecutar el thread con el asistente para obtener la respuesta.
             # Crear un thread en OpenAI y obtener la respuesta.
             thread_openia = client.beta.threads.retrieve(threads_openia[user_id]['thread_id'])
@@ -208,9 +248,8 @@ def supervisor_escribe(message, say, logger,thread_ts):
             # Enviar la respuesta actualizada al canal de Slack
             # say(text=f"{user_id}: - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: {APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
             say(text=f"{users_info[user_id]} - {user_id} - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
-            print(f"Thread timestamp {thread_ts}")
             logger.info("Supervisor correction handled and waiting for approval.")
-
+ """
 
 def append_string_to_file(file_path, string_to_append):
     with open(file_path, 'a') as file:
@@ -228,7 +267,7 @@ def handle_reaction_added_events(body, say, logger):
     logger (Logger): Logger para registrar información y errores.
     """
     event = body['event']
-    user_id = event['user']
+    supervisor_user_id = event['user']
     reaction = event['reaction']
     item = event['item']
     channel_id = event['item']['channel']
@@ -277,15 +316,15 @@ def handle_reaction_added_events(body, say, logger):
                 # Enviar la respuesta aprobada al liker
                 app.client.chat_postMessage(
                     channel=user_id,
-                    text=f"Respuesta aprobada por el supervisor {users_info[user_id]} - {user_id} : {response}",
+                    text=f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]} - {supervisor_user_id} : {response}",
                     thread_ts=liker_thread_slack_id
                 )
-                append_string_to_file('correcciones_supervisor.txt', f"Respuesta aprobada por el supervisor {users_info[user_id]}: {response}")
+                append_string_to_file('correcciones_supervisor.txt', f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]}: {response}")
                 # Opcionalmente, limpiar el estado del thread
                 del threads_slack[user_id]
                 logger.info("Approved response sent to liker.")
         else:
-            logger.info(f"Reaction {reaction} added by {users_info[user_id]} but no action taken.")
+            logger.info(f"Reaction {reaction} added by {users_info[supervisor_user_id]} but no action taken.")
     else:
         logger.error(f"No messages found for channel {channel_id} with timestamp {ts_id}.")
 
@@ -338,40 +377,40 @@ def handle_liker_message(message, say):
         print(f"🏃 Estado de la corrida: {run.status}")
 
         # Si el estado del run requiere una acción, marcar consulta_basedatos como True.
-        if run.status == 'requires_action':
-            consulta_basedatos = True
-            # Recorrer cada herramienta en la sección de acción requerida.
-            for tool in run.required_action.submit_tool_outputs.tool_calls:
-                # Verificar si la herramienta requerida es "consultar_ventas".
-                if tool.function.name == "consultar_ventas":
-                    # Extraer los argumentos necesarios para la consulta de ventas.
-                    nombre = json.loads(tool.function.arguments)["nombre"]
-                    fecha_inicio = json.loads(tool.function.arguments)["fecha_inicio"]
-                    fecha_final = json.loads(tool.function.arguments)["fecha_final"]
-                    contrasena = json.loads(tool.function.arguments)["contrasena"]
+        #if run.status == 'requires_action':
+        #    consulta_basedatos = True
+        #    # Recorrer cada herramienta en la sección de acción requerida.
+        #    for tool in run.required_action.submit_tool_outputs.tool_calls:
+        #        # Verificar si la herramienta requerida es "consultar_ventas".
+        #        if tool.function.name == "consultar_ventas":
+        #            # Extraer los argumentos necesarios para la consulta de ventas.
+        #            nombre = json.loads(tool.function.arguments)["nombre"]
+        #            fecha_inicio = json.loads(tool.function.arguments)["fecha_inicio"]
+        #            fecha_final = json.loads(tool.function.arguments)["fecha_final"]
+        #            contrasena = json.loads(tool.function.arguments)["contrasena"]
+        #
+        #            # Ejecutar la función consultar_ventas con los argumentos extraídos.
+        #            with app_flask.app_context():
+        #                result = consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena)
+        #            # Agregar el resultado de la herramienta a tool_outputs.
+        #            tool_outputs.append({
+        #                "tool_call_id": tool.id,
+        #                "output": result
+        #            })
 
-                    # Ejecutar la función consultar_ventas con los argumentos extraídos.
-                    with app_flask.app_context():
-                        result = consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena)
-                    # Agregar el resultado de la herramienta a tool_outputs.
-                    tool_outputs.append({
-                        "tool_call_id": tool.id,
-                        "output": result
-                    })
-
-            if tool_outputs:
-                try:
-                    # Enviar los resultados de las herramientas a OpenAI y continuar el run.
-                    run = client.beta.threads.runs.submit_tool_outputs_and_poll(
-                        thread_id=thread_openia.id,
-                        run_id=run.id,
-                        tool_outputs=tool_outputs
-                    )
-                    print("Tool outputs submitted successfully.")
-                except Exception as e:
-                    print("Failed to submit tool outputs:", e)
-            else:
-                print("No tool outputs to submit.")
+        #    if tool_outputs:
+        #        try:
+        #            # Enviar los resultados de las herramientas a OpenAI y continuar el run.
+        #            run = client.beta.threads.runs.submit_tool_outputs_and_poll(
+        #                thread_id=thread_openia.id,
+        #                run_id=run.id,
+        #                tool_outputs=tool_outputs
+        #            )
+        #            print("Tool outputs submitted successfully.")
+        #        except Exception as e:
+        #            print("Failed to submit tool outputs:", e)
+        #    else:
+        #        print("No tool outputs to submit.")
 
         time.sleep(1)
 
@@ -400,7 +439,7 @@ def handle_liker_message(message, say):
         try:
             # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
             app.client.chat_postMessage(
-                channel=SUPERVISOR_USER_ID,
+                channel=SUPERVISOR_USER_ID.get(user_id),
                 text=f"{users_info[user_id]} - {user_id} hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion.",
                 thread_ts=thread_slack_id
             )
@@ -418,4 +457,4 @@ def handle_liker_message(message, say):
 
 # Start your app
 if __name__ == "__main__":
-    SocketModeHandler(app,"socket_token").start()
+    SocketModeHandler(app,"socket token").start()
