@@ -9,7 +9,7 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from pydrive2.files import FileNotUploadedError
 import pandas as pd
-import datetime
+from datetime import datetime
 from slack_sdk.errors import SlackApiError
 import re
 import json
@@ -20,11 +20,11 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "Asistente" # En produccion deben ir como variables de entorno
-VECTOR_STORE_ID = "Vector Store ID" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "assistant_id" # En produccion deben ir como variables de entorno
+VECTOR_STORE_ID = "vector_store_id" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
-client = OpenAI(api_key="OpenAI API Key") # En produccion deben ir como variables de entorno
+client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variables de entorno
 
 # FUNCIONES ORM FLASK
 
@@ -99,7 +99,7 @@ def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
 # FUNCIONES SLACK
 
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
-slack_token = "Aplicación Slack (Bot)"
+slack_token = "slack_app_token"
 app = App(token = slack_token)
 
 #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
@@ -112,7 +112,7 @@ SUPERVISOR_USER_ID = {"U06SGR43U1G": 'U07BNLU9KT2',
                       "U01MB9DQF9B": 'U07BNLU9KT2',
                       } #"U06LZ2LCD6H"
 APPROVAL_EMOJI = "white_check_mark" #Emoji de aprobacion por parte del supervisor
-CHANNEL_ID_BOT = 'D07C74UCTA4' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
+#CHANNEL_ID_BOT = 'D07C74UCTA4' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
 LIKERS_PERMITIDOS =[
     "U01LQ9N5WJJ",
     "U01M2V299EH",
@@ -133,7 +133,6 @@ for id in LIKERS_PERMITIDOS + list(SUPERVISOR_USER_ID.values()):
     response = requests.get('https://slack.com/api/users.info', headers = headers, params = {'user': id})
     user_info = response.json().get("user")
     users_info[id] = user_info["profile"].get("real_name")
-print(f"Estado de las personas disponibles para sacar info\n {users_info}")
 
 # Almacenamiento para los estados de los hilos
 threads_slack = {}
@@ -179,18 +178,13 @@ def supervisor_escribe(message, say, logger,thread_ts):
     # Obtener el historial de conversaciones del canal del bot
     result = app.client.conversations_replies(channel=bot_channel_id, ts=thread_ts) #app.client.conversations_history(channel=CHANNEL_ID_BOT)
     conversation_history = result["messages"][0]['text']
-
-    #print(f"""
-    #      RESULT 
-    #      {result}
-    #      RESULT[MESSAGES]
-    #      {result['messages']} 
-    #      CONVERSATION_HISTORY
-    #      {conversation_history}
-#""")
-
     # Extraer el ID del usuario del historial de conversación
-    user_id = re.search(r'\bU\w+\b', conversation_history).group()
+    pattern = r'\|(.*?)\|'
+    key = re.findall(pattern,  conversation_history)
+    #user_id = re.search(r'\bU\w+\b', conversation_history).group()
+    key=key[0]
+    info_msj=key.split("-")
+    user_id=info_msj[0]
     correction = message['text']
 
     # Enviar la corrección al hilo del empleado que hizo la pregunta
@@ -202,60 +196,22 @@ def supervisor_escribe(message, say, logger,thread_ts):
         ) """
 
         # Actualizar la respuesta tentativa en el diccionario threads_slack
-        threads_slack[user_id]['tentative_response'] = correction 
-        threads_slack[user_id]['waiting_for_approval'] = True
         
-        say(text=f"{users_info[user_id]} - {user_id} - Respuesta tentativa actualizada: {correction}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
+        threads_slack[key]['tentative_response'] = correction 
+        threads_slack[key]['waiting_for_approval'] = True
+        threads_slack[key]['update_response']= True
+        
+        say(text=f"{users_info[user_id]} - |{key}| - Respuesta tentativa actualizada: {correction}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
         logger.info(f"Corrección enviada al empleado {users_info[user_id]} en el canal {bot_channel_id}.")
     except Exception as e:
-        logger.error(f"Error enviando la corrección: {e}")
-
-    # Si el supervisor vuelve a escribir y el mensaje anterior no tiene el ID del usuario
-    # print(f"{message} \n{thread_ts} \n{user_id}")
-    # print(result['messages'])
-    """ if user_id in threads_slack:
-        # Asegúrate de que el mensaje fue originalmente enviado al supervisor para aprobación
-        if threads_slack[user_id]['waiting_for_approval']:
-            # El supervisor proporciona una corrección
-            correction = message['text']
-            # Ejecutar el thread con el asistente para obtener la respuesta.
-            # Crear un thread en OpenAI y obtener la respuesta.
-            thread_openia = client.beta.threads.retrieve(threads_openia[user_id]['thread_id'])
-            
-            thread_message = client.beta.threads.messages.create(
-                thread_openia.id,
-                role="user",
-                content=correction,
-            )
-
-            run = client.beta.threads.runs.create(thread_id=thread_openia.id, assistant_id=ASSISTANT_ID)
-            while run.status != "completed":
-                print(f"🏃 Estado de la corrida en supervisor_escribe: {run.status}")
-                run = client.beta.threads.runs.retrieve(thread_id=thread_openia.id, run_id=run.id)
-                time.sleep(1)
-
-            # Obtener el último mensaje del thread de OpenAI.
-            message_response = client.beta.threads.messages.list(thread_id=thread_openia.id)
-            messages = message_response.data
-            latest_message = messages[0]
-            tentative_response = latest_message.content[0].text.value
-            tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de referencias de archivos del asistente
-
-            # Actualizar la respuesta tentativa en el diccionario threads_slack
-            threads_slack[user_id]['tentative_response'] = tentative_response 
-            threads_slack[user_id]['waiting_for_approval'] = True
-
-            # Enviar la respuesta actualizada al canal de Slack
-            # say(text=f"{user_id}: - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: {APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
-            say(text=f"{users_info[user_id]} - {user_id} - Respuesta tentativa actualizada: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
-            logger.info("Supervisor correction handled and waiting for approval.")
- """
+        logger.error(f"Error enviando la corrección: {e}")    
 
 def append_string_to_file(file_path, string_to_append):
     with open(file_path, 'a') as file:
         file.write('\n' + string_to_append + '\n')
 
 @app.event("reaction_added")
+
 def handle_reaction_added_events(body, say, logger):
     """
     Función que maneja los eventos de reacciones añadidas en Slack.
@@ -301,17 +257,23 @@ def handle_reaction_added_events(body, say, logger):
             logger.error(f"Error fetching channel messages: {e}")
 
     if message:
+        
+        pattern = r'\|(.*?)\|'
+        key = re.findall(pattern,  message)
+        key=key[0]
+        
+        info_msj=key.split("-")
+        user_id=info_msj[0]
         # Verificar si la reacción es el emoji de aprobación y si es en un thread que estamos manejando
-        if reaction == APPROVAL_EMOJI and re.search(r'\bU\w+\b', message).group() in threads_slack:
+        if reaction == APPROVAL_EMOJI and key in threads_slack:
             # Obtener el user_id del mensaje original
-            user_id = re.search(r'\bU\w+\b', message).group()
-
+            #user_id = re.search(r'\bU\w+\b', message).group()
             # Asegurarse de que el mensaje fue originalmente enviado al supervisor para aprobación
-            if threads_slack[user_id]['waiting_for_approval']:
+            if threads_slack[key]['waiting_for_approval']:
                 # Obtener la respuesta aprobada y el thread_slack_id del liker
-                response = threads_slack[user_id]['tentative_response']
+                response = threads_slack[key]['tentative_response']
                 response = re.sub('【.*?†source】', '', response) # Limpieza de posibles referencias de archivos por el asistente
-                liker_thread_slack_id = threads_slack[user_id]['liker_thread_ts']
+                liker_thread_slack_id = threads_slack[key]['liker_thread_ts']
 
                 # Enviar la respuesta aprobada al liker
                 app.client.chat_postMessage(
@@ -319,9 +281,12 @@ def handle_reaction_added_events(body, say, logger):
                     text=f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]} - {supervisor_user_id} : {response}",
                     thread_ts=liker_thread_slack_id
                 )
-                append_string_to_file('correcciones_supervisor.txt', f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]}: {response}")
+                if threads_slack[key]['update_response']:
+                    fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    append_string_to_file('correcciones_supervisor.txt', f"{fecha_actual} - Pregunta: {threads_slack[key]['pregunta']} - Respuesta: {response}")
+                    
                 # Opcionalmente, limpiar el estado del thread
-                del threads_slack[user_id]
+                del threads_slack[key]
                 logger.info("Approved response sent to liker.")
         else:
             logger.info(f"Reaction {reaction} added by {users_info[supervisor_user_id]} but no action taken.")
@@ -329,7 +294,18 @@ def handle_reaction_added_events(body, say, logger):
         logger.error(f"No messages found for channel {channel_id} with timestamp {ts_id}.")
 
 
-
+def es_saludo(mensaje):
+    saludos = ["¡Hola! ¿En qué puedo ayudarte hoy?", 
+               "Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
+                "Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
+                "¡De nada! Estoy aquí para ayudarte en lo que necesites. Si tienes alguna otra pregunta o necesitas más información, no dudes en decírmelo. ¡Estoy aquí para asistirte!",
+                "¡De nada! Estoy aquí para ayudarte en lo que necesites. ¿Hay algo más en lo que pueda asistirte hoy?",
+                "¡De nada! Estoy aquí para ayudarte. ¿Hay algo más en lo que pueda asistirte?"
+                ]
+    for saludo in saludos:
+        if saludo in mensaje:
+            return True
+    return False
 
 def handle_liker_message(message, say):
     """
@@ -344,21 +320,23 @@ def handle_liker_message(message, say):
     
     user_id = message['user']
     
-    thread_slack_id = message['ts']
-    consulta_basedatos = False
-    
+    thread_slack_id = message['ts']    
+    #consulta_basedatos = False
+    key=user_id+"-"+thread_slack_id
     # Guardar el estado inicial del 'thread' en el diccionario threads_slack.
-    threads_slack[user_id] = {
+    liker_message_text = message['text']
+    threads_slack[key] = {
         'liker_thread_ts': thread_slack_id,
-        'liker_user_id': user_id
+        'liker_user_id': user_id,
+        'pregunta': liker_message_text
     }
 
     # Extraer el contenido del mensaje del 'liker'.
-    liker_message_text = message['text']
+
 
     # Si el liker no tiene permitido hablar con el bot detiene la ejecucion
     if user_id not in LIKERS_PERMITIDOS:
-        say(text='Aun no tienes permitido interactuar con nuestro bot.', thread_ts=threads_slack[user_id]['liker_thread_ts'])
+        say(text='Aun no tienes permitido interactuar con nuestro bot.', thread_ts=threads_slack[key]['liker_thread_ts'])
         return
     
     # Crear un thread en OpenAI con el mensaje del 'liker'.
@@ -368,51 +346,13 @@ def handle_liker_message(message, say):
         ]
     )
 
-    tool_outputs = []
     # Ejecutar el thread con el asistente para obtener la respuesta.
     run = client.beta.threads.runs.create(thread_id=thread_openia.id, assistant_id=ASSISTANT_ID)
     while run.status != "completed":
         # Consultar el estado del run hasta que se complete.
         run = client.beta.threads.runs.retrieve(thread_id=thread_openia.id, run_id=run.id)
         print(f"🏃 Estado de la corrida: {run.status}")
-
-        # Si el estado del run requiere una acción, marcar consulta_basedatos como True.
-        #if run.status == 'requires_action':
-        #    consulta_basedatos = True
-        #    # Recorrer cada herramienta en la sección de acción requerida.
-        #    for tool in run.required_action.submit_tool_outputs.tool_calls:
-        #        # Verificar si la herramienta requerida es "consultar_ventas".
-        #        if tool.function.name == "consultar_ventas":
-        #            # Extraer los argumentos necesarios para la consulta de ventas.
-        #            nombre = json.loads(tool.function.arguments)["nombre"]
-        #            fecha_inicio = json.loads(tool.function.arguments)["fecha_inicio"]
-        #            fecha_final = json.loads(tool.function.arguments)["fecha_final"]
-        #            contrasena = json.loads(tool.function.arguments)["contrasena"]
-        #
-        #            # Ejecutar la función consultar_ventas con los argumentos extraídos.
-        #            with app_flask.app_context():
-        #                result = consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena)
-        #            # Agregar el resultado de la herramienta a tool_outputs.
-        #            tool_outputs.append({
-        #                "tool_call_id": tool.id,
-        #                "output": result
-        #            })
-
-        #    if tool_outputs:
-        #        try:
-        #            # Enviar los resultados de las herramientas a OpenAI y continuar el run.
-        #            run = client.beta.threads.runs.submit_tool_outputs_and_poll(
-        #                thread_id=thread_openia.id,
-        #                run_id=run.id,
-        #                tool_outputs=tool_outputs
-        #            )
-        #            print("Tool outputs submitted successfully.")
-        #        except Exception as e:
-        #            print("Failed to submit tool outputs:", e)
-        #    else:
-        #        print("No tool outputs to submit.")
-
-        time.sleep(1)
+        #time.sleep(1)
 
     # Obtener el último mensaje del thread de OpenAI después de completar el run.
     message_response = client.beta.threads.messages.list(thread_id=thread_openia.id)
@@ -420,27 +360,32 @@ def handle_liker_message(message, say):
     latest_message = messages[0]
     tentative_response = latest_message.content[0].text.value
     tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de las referencias de los archivos
-
-    # Actualizar el diccionario threads_slack con la respuesta tentativa y marcarla como esperando aprobación.
-    threads_slack[user_id]['tentative_response'] = tentative_response
-    threads_slack[user_id]['waiting_for_approval'] = True
-
-    # Guardar el ID del thread de OpenAI en threads_openia.
-    threads_openia[user_id] = {
-        'thread_id': thread_openia.id
-    }
     print(tentative_response)
-    
-    # Enviar la respuesta tentativa al supervisor para su aprobación si no es una consulta a la base de datos.
-    if consulta_basedatos:
-        # Si es una consulta a la base de datos, enviar la respuesta directamente al thread del 'liker'.
-        say(text=tentative_response, thread_ts=threads_slack[user_id]['liker_thread_ts'])
+
+    if es_saludo(tentative_response):
+        app.client.chat_postMessage(
+                    channel=user_id,
+                    text=f"{tentative_response}",
+                    thread_ts=thread_slack_id
+                )
+        del threads_slack[key]
     else:
+        # Actualizar el diccionario threads_slack con la respuesta tentativa y marcarla como esperando aprobación.
+        threads_slack[key]['tentative_response'] = tentative_response
+        threads_slack[key]['waiting_for_approval'] = True
+        threads_slack[key]['update_response']= False
+        # Guardar el ID del thread de OpenAI en threads_openia.
+        threads_openia[user_id] = {
+            'thread_id': thread_openia.id
+        }
+        
+        
+        # Enviar la respuesta tentativa al supervisor para su aprobación si no es una consulta a la base de datos.
         try:
-            # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
+                # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
             app.client.chat_postMessage(
                 channel=SUPERVISOR_USER_ID.get(user_id),
-                text=f"{users_info[user_id]} - {user_id} hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion.",
+                text=f"{users_info[user_id]} - |{key}| hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion.",
                 thread_ts=thread_slack_id
             )
         except SlackApiError as e:
@@ -457,4 +402,4 @@ def handle_liker_message(message, say):
 
 # Start your app
 if __name__ == "__main__":
-    SocketModeHandler(app,"socket token").start()
+    SocketModeHandler(app,"socket_token").start()
