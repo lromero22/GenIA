@@ -1,0 +1,19 @@
+#BD en formato csv
+Data
+# Vector database
+chroma_docs
+
+# Byte-compiled / optimized / DLL files
+_pycache_/
+
+# Poetry
+poetry.lock
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
