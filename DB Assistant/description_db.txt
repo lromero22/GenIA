@@ -151,7 +151,16 @@ FROM lk_pedidos_cstm
 WHERE ciclo_c >= '202401';
 
 Pregunta: Dame la cantidad de pedidos y la suma total por ciclos del año 2024
-SELECT ciclo_c, COUNT(id_c) AS cantidad_pedidos, SUM(valor_venta_sin_iva_c) AS suma_total_ventas
+Query: SELECT ciclo_c, COUNT(id_c) AS cantidad_pedidos, SUM(valor_venta_sin_iva_c) AS suma_total_ventas
 FROM lk_pedidos_cstm
 WHERE ciclo_c LIKE '2024%'
 GROUP BY ciclo_c
+
+Pregunta: ¿Cuál es el presupuesto de {novaempresario} para cada ciclo después del {ciclo}?
+Query: SELECT lk_pedidos_cstm.ciclo_c, lk_pedidos_cstm.presupuesto_c
+FROM leads
+JOIN leads_cstm ON leads.id = leads_cstm.id_c
+JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id
+JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb
+JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id
+WHERE leads.last_name = {novaempresario} AND lk_pedidos.name >{ciclo};

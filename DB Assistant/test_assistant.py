@@ -9,24 +9,36 @@ import pymysql
 
 
 load_dotenv()
-api_key = os.getenv("API_KEY")
 
-# Set API key as environment variable
-os.environ['OPENAI_API_KEY'] = api_key
-
+# Configuration for the OpenAI client
 client = OpenAI()
 
-# Funcion para transformar lenguaje natural a sintaxis SQL
-def promt_to_sql(pregunta, table_str):
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+# Function to prompt the user for the SQL
+def prompt_to_sql(question):
+    # Create a thread with the user's question
+    thread_openai = client.beta.threads.create(
         messages=[
-            {"role": "system", "content": f"Eres un asistente que convierte preguntas en consultas SQL, solamente retornaras la sintaxis SQL correspondiente a la consulta. Sin decoradores solo el texto. Haz las querys teniendo en cuenta que la DB es una MariaDB. Las caracteristicas de la tabla estan en formato diccionario, con key = table_name, value = table_schema, pueden ser unica o varias. IMPORTANTE: NUNCA HARAS QUERYS QUE ELIMINEN O MODIFIQUEN DATOS, SOLO CONSULTAS SELECT. Estas son las caracteristica {table_str}"},
-            {"role": "user", "content": pregunta}
+            {"role": "user", "content": question}
         ]
     )
 
-    sql_query = response.choices[0].message.content.strip()
+    # Run the thread with the assistant
+    run = client.beta.threads.runs.create(thread_id=thread_openai.id, assistant_id=os.getenv('ASSISTANT_ID'))
+    while run.status != "completed":
+        # Check the status of the run
+        run = client.beta.threads.runs.retrieve(thread_id=thread_openai.id, run_id=run.id)
+        print(f"Thread status: {run.status}")
+        #time.sleep(1)
+
+    # Get the latest message from the assistant
+    message_response = client.beta.threads.messages.list(thread_id=thread_openai.id)
+    messages = message_response.data
+    latest_message = messages[0]
+    sql_query = latest_message.content[0].text.value
+    # The sql_query is formatted as a markdown sql string, so we need to remove the markdown characters
+    sql_query = sql_query.replace('```sql\n', '').replace('```', '')
+    sql_query = sql_query.replace('\n', ' ')
+
     return sql_query
 
 def conn_db():
@@ -55,13 +67,17 @@ def table_schema(tables_names:list):
 
     return table_sch
 
+# question = "Traeme el nombre, identificación o cédula, usuario o liker que lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409"
 
-tables_to_look = ["leads", "leads_lk_pedidos_1_c", "lk_pedidos_cstm"]
+question = input("Enter the question: ")
 
-table_sch = table_schema(tables_to_look)
-pregunta = "Quiero saber el id del lider que tenga a las 10 personas mas vendieron y el valor de ventas, teniendo como limite inferior ventas de 400000 en los ciclos mayores a 202310, con pedidos mayores a 3. Y sabiendo que la tabla leads tiene el id del lider, la tabla leads_lk_pedidos_1_c es una tabla relacional que los leads que se relacionan con cada id de lk, tambien como dato adicional el id de lk_pedidos_cstm tiene este formato id-ciclo."
-query = promt_to_sql(pregunta, table_sch)
-
-result = execute_query(query)
+query = prompt_to_sql(question)
+try:
+    result = execute_query(query)
+    print(result)
+except Exception as e:
+    print(e)
+    query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
+    result = execute_query(query)
 
 print(result)
