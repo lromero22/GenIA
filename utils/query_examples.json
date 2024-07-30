@@ -1,0 +1,66 @@
+[
+  {
+    "input": "Dame el Id de Lucy Yohana Cespedes Ramos",
+    "query": "SELECT id FROM leads WHERE leads.last_name='Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "cual es el nombre de quien llamo a Lucy Yohana Cespedes Ramos, su estatus y en que fechas",
+    "query": "SELECT leads.last_name, users.user_name, calls.date_entered, calls.created_by, calls.status FROM leads JOIN calls on calls.parent_id=leads.id JOIN users on users.id=calls.created_by WHERE leads.id='10002d2b-c3db-6e82-1fd9-64dcfb3d016d';"
+  },
+  {
+    "input": "Total de pedidos realizados por Lucy Yohana Cespedes Ramos",
+    "query": "SELECT COUNT(lk_pedidos.id) as total_pedidos FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "Detalles de los pedidos con valor superior a 1000 sin IVA de Lucy Yohana Cespedes Ramos",
+    "query": "SELECT lk_pedidos.id, lk_pedidos.name, lk_pedidos_cstm.valor_venta_sin_iva_c FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos' AND lk_pedidos_cstm.valor_venta_sin_iva_c > 1000;"
+  },
+  {
+    "input": "Fecha del último pedido de Lucy Yohana Cespedes Ramos",
+    "query": "SELECT MAX(lk_pedidos.date_entered) as ultimo_pedido FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "¿Quién es el vendedor asignado a Lucy Yohana Cespedes Ramos?",
+    "query": "SELECT users.user_name FROM leads JOIN users ON leads.assigned_user_id = users.id WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "¿Cuál es el presupuesto total gastado por Lucy Yohana Cespedes Ramos en todos los ciclos?",
+    "query": "SELECT SUM(lk_pedidos_cstm.presupuesto_c) as total_presupuesto FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "Dame los pedidos y presupuesto por ciclo de Lucy Yohana Cespedes Ramos",
+    "query": "SELECT lk_pedidos_cstm.ciclo_c, lk_pedidos.name, lk_pedidos_cstm.presupuesto_c FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos';"
+  },
+  {
+    "input": "¿Cuántos pedidos realizó Lucy Yohana Cespedes Ramos en el ciclo 202311?",
+    "query": "SELECT lk_pedidos_cstm.pedidos_realizados_c FROM leads JOIN leads_lk_pedidos_1_c ON leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida = leads.id JOIN lk_pedidos ON lk_pedidos.id = leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id WHERE leads.last_name = 'Lucy Yohana Cespedes Ramos' AND lk_pedidos_cstm.ciclo_c = 202311;"
+  },
+  {
+    "input": "Dame los clientes potenciales del departamento de Antioquia",
+    "query": "SELECT leads.last_name, leads.phone_mobile FROM leads WHERE leads.department = 'Antioquia';"
+  },
+  {
+    "input": "Dame los pedidos realizados por Lucy Yohana Cespedes Ramos en el ciclo 202311",
+    "query": "SELECT COUNT(*) FROM 'Employee'"
+  },
+  {
+    "input": "Dame todos los vendedores y sus clientes asignados",
+    "query": "SELECT users.user_name, leads.last_name FROM leads JOIN users ON leads.assigned_user_id = users.id;"
+  },
+  {
+    "input": "Dame el total de pedidos por ciclo en el año 2024",
+    "query": "SELECT lk_pedidos_cstm.ciclo_c, COUNT(lk_pedidos.id) as total_pedidos FROM lk_pedidos JOIN lk_pedidos_cstm ON lk_pedidos_cstm.id_c = lk_pedidos.id WHERE lk_pedidos.name like '2024%' GROUP BY lk_pedidos_cstm.ciclo_c"
+  },
+  {
+    "input": "Pedidos Vs Cilos de Lucy Yohana Cespedes Ramos",
+    "query": "SELECT last_name, lk_pedidos.name FROM leads JOIN leads_lk_pedidos_1_c on leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida=leads.id JOIN lk_pedidos on lk_pedidos.id=leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb WHERE leads.id = '10002d2b-c3db-6e82-1fd9-64dcfb3d016d' AND lk_pedidos.name!='' ORDER BY 'lk_pedidos','name' ASC;"
+  },
+  {
+    "input": "Cual es el valor sin iva de Lucy Yohana Cespedes Ramos en todos los periodos",
+    "query": "SELECT last_name, lk_pedidos.name, lk_pedidos_cstm.valor_venta_sin_iva_c FROM leads JOIN leads_lk_pedidos_1_c on leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida=leads.id JOIN lk_pedidos on lk_pedidos.id=leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb JOIN lk_pedidos_cstm on lk_pedidos_cstm.id_c=lk_pedidos.id WHERE leads.id = '10002d2b-c3db-6e82-1fd9-64dcfb3d016d' AND lk_pedidos.name!='' ORDER BY 'lk_pedidos','name' ASC;"
+  },
+  {
+    "input": "Traeme el Nombre , identificacion o cedula , usuario o liker lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409",
+    "query": "SELECT leads.last_name , leads_cstm.identificacion_c ,users.user_name,lk_pedidos.name, lk_pedidos_cstm.valor_venta_sin_iva_c FROM leads  JOIN leads_cstm on leads_cstm.id_c=leads.id join users on users.id=leads.assigned_user_id JOIN leads_lk_pedidos_1_c on leads_lk_pedidos_1_c.leads_lk_pedidos_1leads_ida=leads.id  JOIN lk_pedidos on lk_pedidos.id=leads_lk_pedidos_1_c.leads_lk_pedidos_1lk_pedidos_idb  JOIN lk_pedidos_cstm on lk_pedidos_cstm.id_c=lk_pedidos.id  WHERE lk_pedidos.name='202409';"
+  }
+]

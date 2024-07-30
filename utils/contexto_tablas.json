@@ -1,0 +1,142 @@
+{
+  "modulos": {
+    "leads": {
+      "descripcion": "",
+      "relaciones": {
+        "leads_cstm": "id",
+        "calls": "id",
+        "users": "assigned_user_id",
+        "pedidos": "mediante una tabla intermedia llamada leads_lk_pedidos_1_c donde el campo leads_lk_pedidos_1leads_ida es el id del lead y el campo leads_lk_pedidos_1lk_pedidos_idb es el id del pedido "
+      },
+      "campos": {
+        "id": "Esta columna es de tipo Primary Key, char. Contiene el identificador unico del novaempresario, el cual se usa para cruzar esta información con otras tablas",
+        "date_entered": "Esta columna es de tipo datetime. Esta columna contiene la fecha de creacion del registro del novaempresario  en el crm",
+        "created_by": "Esta columna es de tipo char. Contiene el usuario que creo el registro del novaempresario en el crm",
+        "deleted": "Esta columna es de tipo tinyint. Contiene el estado de cada registro en el crm si fue eliminado o si esta activo. Por ejemplo: 0 significa que esta activo, y 1 que fue eliminado",
+        "assigned_user_id": "Esta columna es de tipo char. Contiene el id del agente o liker al que fue asignado el novaempresario",
+        "last_name": "Esta columna es de tipo varchar. Contiene  el nombre completo del novaempresario",
+        "department": "Esta columna es de tipo varchar. Contiene el departamento de Colombia en el que esta ubicado el navaemprensario.",
+        "phone_mobile": "Esta columna es de tipo varchar. Contiene el numero de telefono del novaempresario",
+        "primary_address_city": "Esta columna es de tipo varchar. Contiene la ciudad de Colombia en la que esta ubicado el novaempresario."
+      }
+    },
+    "leads_cstm": {
+      "descripcion": "Esta tabla es una extensión de la tabla 'leads'. Contiene múltiples detalles relacionados con el novaempresario  y datos del estado de su negocio",
+      "relaciones": {
+        "leads": "id_c"
+      },
+      "campos": {
+        "id_c": "Esta columna es de tipo Primary Key, char. Contiene el identificador unico del novaempresario, el cual se usa para cruzar esta informacion con otras tablas.",
+        "ultimo_estado_llamada_c": "Esta columna es de tipo varchar. Contiene el resultado de la ultima interacción  que se tuvo con el novaempresario",
+        "identificacion_c": "Esta columna es de tipo varchar. Contiene el numero de identificación del novaempresario. Cedula de ciudadania Colombiana",
+        "seccion_c": "Esta columna es de tipo varchar. Es el codigo postal para novaventa",
+        "fecha_gestion_c": "Esta columna es de tipo datetime.Contiene la fecha de la última interacción  que se tuvo con el novaempresario",
+        "fecha_entrega1_c": "Esta columna es de tipo date. Es la primera fecha de corte del ciclo definida para el novaempresario.",
+        "fecha_entrega2_c": "Esta columna es de tipo date. Es la segunda fecha de corte de ciclo definida para el novaempresario.",
+        "estado_positivo_c": "Esta columna es de tipo varchar. Contiene el estado de la interaccion más positiva con que se tuvo con el novaempresario. Por ejemplo: En la ultima llamada se concerto un pedido.",
+        "motivo_intermitencia_pedido_c": "Esta columna es de tipo varchar. Contiene una descripción separada por _ en la que se indica la razon por la que el novaempresario no realiza pedidos de manera continua.",
+        "ciclos_mora_c": "Esta columna es de tipo varchar. Contiene la cantidad de ciclos que el novaempresario presenta en mora.",
+        "frecuencia_proyectada_c": "Esta columna es de tipo varchar. Contiene la frecuencia estimada en la que el novaempresario podrá realizar pedidos por 9 ciclos que se ejecutan en un semestre.",
+        "ciclo_c": "Esta columna es de tipo varchar. Contiene el numero de ciclo donde se encuentra el Novaempresario, que esta en formato AÑOCICLO. Por ejemplo: 202310, 2023 es el año, y 10 es el ciclo, cuya temporalidad es de 3 semanas.",
+        "segmento_c": "Esta columna es de tipo varchar. Contiene el segmento (nivel) en el que se encuentra el novaempresario. Ejems: Junior, Master",
+        "segmento_anterior_c": "Esta columna es de tipo varchar. Contiene el segmento (nivel) en el que se encontraba el novaempresario en el ciclo anterior.",
+        "tv_activa_c": "Esta columna es de tipo varchar. Contiene el link de la tienda del novaempresario novaventa.",
+        "modalidad_de_pago_c": "Esta columna es de tipo varchar. Contiene la modalidad de pago del novaempresario. Ejemplo: CREDITO",
+        "correo_electronico_c": "Esta columna es de tipo varchar. Contiene el correo electronico del novaempresario.",
+        "edad_c": "Esta columna es de tipo varchar. Contiene la edad del novaempresario.",
+        "antiguedad_c": "Esta columna es de tipo varchar. Contiene la cantidad de semanas que lleva el novaempresario.",
+        "score_c": "Esta columna es de tipo varchar. Contiene el puntaje en porcentaje del novaempresario",
+        "toma_pedido_1_c": "Esta columna es de tipo date. Contiene la fecha en la que el novaempresario hizo su primer pedido del ciclo",
+        "toma_pedido_2_c": "Esta columna es de tipo date. Contiene la fecha en la que el novaempresario hizo su segundo pedido del ciclo",
+        "realiza_ultima_gestion_c": "Esta columna es de tipo varchar. Contiene username del usuario que le hizo gestión al novaempresario.",
+        "orden_promedio_c": "Esta columna es de tipo int. Contiene el valor promedio de orden que realiza el novaempresario",
+        "motiva_vender_novaventa_c": " Esta columna es de tipo varchar. Contiene la motivacion del novaempresario para vender productos novaventa.",
+        "venta_acomulada_c": "Esta columna es de tipo int. Contiene el total historico de ventas del novaempresario.",
+        "valor_necesario_c": "Esta columna es de tipo int. Contiene el valor necesario para cumplir el presupuesto asignado para el ciclo actual.",
+        "acompanamiento_por_whatsapp_c": "Esta columna es de tipo tinyint. Contiene datos booleanos para indicar si novaempresario recibe acompañamiento por WhatsApp.",
+        "tipo_catalogo_c": "Esta columna es de tipo varchar. Contiene la descripcion del tipo de catalago que usa el novaempresario novaventa.",
+        "pedido_rechazado_c": " Esta columna es de tipo tinyint. Contiene un booleano que indica el estado del pedido. 0/NULL para aprobado, 1 para rechazado.",
+        "dias_mora_c": "Esta columna es de tipo int. Contiene la cantidad de dias en mora del novaempresario.",
+        "pedido_ciclo_anterior_c": "Esta columna es de tipo tinyint. Contiene un numero booleano que indica si el novaempresario realizo un pedido en el ciclo anterior. 0/NULL para No, 1 para Si.",
+        "frecuencia_actual_c": "Esta columna es de tipo int. Contiene la frecuencia actual de pedidos del novaempresario",
+        "no_enviar_c": "Esta columna es de tipo tinyint. Contiene un numero booleano que indica si se le debe enviar o no el pedido al novaempresario. 0 para Si, 1 para No."
+      }
+    },
+    "lk_pedidos": {
+      "descripcion": "Esta tabla es una extension de la tabla 'lk_pedidos'. Contiene múltiples detalles relacionados con el novaempresario y sus pedidos.",
+      "relaciones": {},
+      "campos": {
+        "id": "Esta columna es de tipo Primary Key, char(36). Contiene el identificador del pedido y el ciclo. Por ejemplo: 1000003259-202310, donde 1000003259 es el identificador y 202310 es el ciclo. (La temporalidad de los ciclos es 3 semanas)",
+        "name": "Esta columna es de tipo varchar. Contiene el numero de ciclo, que está en formato AÑOCICLO. Por ejemplo: 202310, 2023 es el año, y 10 es el ciclo, cuya temporalidad es de 3 semanas.",
+        "date_entered": "Esta columna es de tipo datetime. Esta columna contiene la fecha de creacion del registro en el crm",
+        "created_by": "Esta columna es de tipo char. Contiene el ID del liker que creo el registro en el crm",
+        "deleted": "Esta columna es de tipo tinyint. Es una columna con valores booleanos, para indicar si un pedido fue eliminado o no. 1 = Si, 0 = No.",
+        "assigned_user_id": "Esta columna es de tipo char. Contiene el ID del liker al que fue asignado el pedido registro en el crm."
+      }
+    },
+    "lk_pedidos_cstm": {
+      "descripcion": "Esta tabla es una extensión de la tabla 'lk_pedidos'. Contiene multiples detalles relacionados con el novaempresario y sus pedidos.",
+      "relaciones": {},
+      "campos": {
+        "id_c": "Esta columna es de tipo Primary Key, char(36). Contiene el identificador del pedido y el ciclo y se relaciona con la columna id, de la tabla lk_pedidos. Por ejemplo: 1000003259-202310, donde 1000003259 es el identificador y 202310 es el ciclo. (La temporalidad de los ciclos es 3 semanas)",
+        "ciclo_c": "Esta columna es de tipo varchar(255). Contiene el numero de ciclo, que esta en formato AÑOCICLO. Por ejemplo: 202310, 2023 es el año, y 10 es el ciclo, cuya temporalidad es de 3 semanas",
+        "valor_venta_sin_iva_c": "Esta columna es de tipo varchar. Contiene el valor de la venta del novaempresario sin el impuesto del IVA.",
+        "pedidos_realizados_c": "Esta columna es de tipo varchar. Contiene la cantidad de pedidos realizados en un ciclo.",
+        "presupuesto_c": "Esta columna es de tipo varchar. Contiene el presupuesto propuesto para ese novaempresario en el ciclo indicado.",
+        "fecha_de_entrega_2_c": "Esta columna es de tipo date. Contiene la fecha de entrega del kit para el novaempresario.",
+        "semestre_c": "Esta columna es de tipo varchar. Contiene el semestre en el que se realizó el pedido, descrito en letras: Por ejemplo: Primer",
+        "frecuencia_proyectada_c": "Esta columna es de tipo varchar. Contiene la frecuencia espera en la que el novaempresario deberia realizar pedidos para cumplir el presupuesto",
+        "inactividad_c": "Esta columna es de tipo varchar. Contiene la cantidad de ciclos acumulados sin actividad de compra por parte del novaempresario.",
+        "frecuencia_c": "Esta columna es de tipo varchar. Contiene la frecuencia en la que he novaempresario ha realizado pedidos historicamente."
+      }
+    },
+    "users": {
+      "descripcion": "Esta tabla contiene los detalles de los users (también llamados Likers) que gestionan a los vendedores (también llamados novaempresarios)",
+      "relaciones": {
+        "leads": "id"
+      },
+      "campos": {
+        "id": "Esta columna es de tipo char. Primary key, que contiene el id del usuario/liker que gestiona las interacciones con los novaempresarios",
+        "user_name": "Esta columna es de tipo varchar. Contiene el username del usuario/liker",
+        "user_hash": "Esta columna es de tipo varchar. Contiene le Hash del usuario",
+        "system_generated_password": "Esta columna es de tipo tinyint.  Es una columna tipo booleana que indica si el usuario tiene una contraseña por defecto.",
+        "pwd_last_changed": "Esta columna es de tipo datetime. Contiene la fecha del ultimo cambio de contraseña.",
+        "first_name": "Esta columna es de tipo varchar. Contiene los nombres del usuario/liker",
+        "last_name": "Esta columna es de tipo varchar. Contiene los apellidos del usuario/liker",
+        "is_admin": "Esta columna es de tipo tinyint. Es una columna booleana para indicar si el usuario es administrador. 1 para si, 0 para no",
+        "date_entered": "Esta columna es de tipo datetime. Esta columna contiene la fecha de creación del registro del liker en el crm",
+        "date_modified": "Esta columna es de tipo datetime. Esta columna contiene la fecha de modificación del registro del novaempresario  en el crm",
+        "modified_user_id": "Esta columna es de tipo char. Contiene el usuario que modifico el registro del liker en el crm.",
+        "created_by": "Esta columna es de tipo char. Contiene el usuario que creo el registro del liker en el crm.",
+        "employee_status": "Esta columna es de tipo varchar. Descripción del estado del liker. Ejemplo: Active, Inactive."
+      }
+    },
+    "calls": {
+      "descripcion": "Esta tabla contiene los detalles de las interacciones de los Liker, realizadas mediante llamadas, sms o Whatsapp.",
+      "relaciones": {
+        "leads": "id"
+      },
+      "campos": {
+        "id": "Esta columna es de tipo char. Primary key, que contiene el id de la llamada",
+        "name": "Esta columna es de tipo varchar. Contiene el numero de celular de la llamada",
+        "description": "Esta columna es de tipo text. Contiene la descripción de la interaccion de la llamada",
+        "deleted": "Esta columna es de tipo tinyint. Contiene un booleano que indica si la llamada fue eliminada (1) o no (0)",
+        "assigned_user_id": "Esta columna es de tipo char. Contiene el id del Liker que gestiono la llamada",
+        "duration_hours": "Esta columna es de tipo int. Contiene la duracion en horas de la llamada",
+        "duration_minutes": "Esta columna es de tipo int. Contiene la duración en minutos de la llamada",
+        "status": "Esta columna es de tipo varchar. Contiene la categoria de la interaccion del novaempresario y el liker.",
+        "direction": "Esta columna es de tipo varchar. Contiene el medio de interacción del novaempresario y el liker. Ejem: Llamada, Whatsapp o SMS"
+      }
+    },
+    "leads_lk_pedidos_1_c": {
+      "descripcion": "Esta tabla es usada para relacionar las tablas leads y pedidos",
+      "relaciones": {
+        "leads": "id"
+      },
+      "campos": {
+        "leads_lk_pedidos_1leads_ida": "Esta columna es de tipo varchar. Contiene el id del lead",
+        "leads_lk_pedidos_1lk_pedidos_idb": "Esta columna es de tipo varchar. Contiene el id del pedido"
+      }
+    }
+  }
+}
