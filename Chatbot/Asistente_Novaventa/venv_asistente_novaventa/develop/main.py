@@ -21,83 +21,11 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "assitant_id" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "assistant_id" # En produccion deben ir como variables de entorno
 VECTOR_STORE_ID = "vector_store_id" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
 client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variables de entorno
-
-# FUNCIONES ORM FLASK
-
-"""
-# Inicialización de la aplicación Flask y configuración de la base de datos
-app_flask = Flask(__name__)
-app_flask.config['SQLALCHEMY_DATABASE_URI'] = '***' # En produccion deben ir como variables de entorno
-db = SQLAlchemy(app_flask)
-
-# Modelos de Datos de prueba
-# Estos modelos deben adaptarse a la base de datos real antes de usarse en producción
-
-class Registro(db.Model):
-    __tablename__ = 'registros'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(80), nullable=False)
-    ventas = db.Column(db.Float, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False)
-
-class Usuario(db.Model):
-    __tablename__ = 'usuarios'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(80), unique=True, nullable=False)
-    contrasena = db.Column(db.String(80), nullable=False)
-
-"""
-
-
-
-
-def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
-    """
-    Función para consultar las ventas totales de un usuario en un rango de fechas específico.
-    Esta es una función de prueba y debe ser actualizada para su uso en producción.
-
-    Parámetros:
-    nombre (str): Nombre del usuario.
-    fecha_inicio (str): Fecha de inicio en formato 'YYYY-MM-DD'.
-    fecha_final (str): Fecha final en formato 'YYYY-MM-DD'.
-    contrasena (str): Contraseña del usuario.
-
-    Retorna:
-    str: Ventas totales en el rango de fechas o un mensaje de error.
-    
-    print('Se llamó a consultar_ventas')
-
-    # Ajustar fecha_final para incluir todo el día especificado
-    fecha_final = datetime.datetime.strptime(fecha_final, '%Y-%m-%d') + datetime.timedelta(days=1) - datetime.timedelta(seconds=1)
-    
-    # Comprobar la contraseña del usuario
-    usuario = Usuario.query.filter_by(nombre=nombre).first()
-    if not usuario or usuario.contrasena != contrasena:
-        return 'Nombre de usuario o contraseña incorrectos'
-    
-    # Realizar la consulta de ventas
-    ventas_totales = db.session.query(func.sum(Registro.ventas)).filter(
-        Registro.nombre == nombre,
-        Registro.timestamp >= fecha_inicio,
-        Registro.timestamp <= fecha_final
-    ).scalar()
-
-    print(f'Se consultaron correctamente: {ventas_totales}')
-    
-    return f'Ventas totales: {ventas_totales}' if ventas_totales else 'Ventas totales: 0'
-
-    """
-
-
-
-# FUNCIONES SLACK
 
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
 slack_token = "slack_app_token"
@@ -167,24 +95,6 @@ db_credentials = {
     'host': 'localhost',
     'database': 'sakila'
 }
-
-# Ejemplo de uso
-""" insert_message(
-    liker_thread_ts='1234567890.123456',
-    liker_user_id='U12345678',
-    liker='Juan Pérez',
-    question='¿Cómo estás?',
-    question_date=datetime.now(),
-    tentative_response='Estoy bien, gracias.',
-    update_response=False,
-    correction=None,
-    id_supervisor_who_solves=None,
-    supervisor_who_solves=None,
-    response_date=None,
-    required_correction=False,
-    required_approval=False
-)
- """
 # ------------------------------------------------------------------------------------------------------------------------------------
 
 # Almacenamiento para los estados de los hilos
@@ -343,8 +253,6 @@ def handle_reaction_added_events(body, say, logger):
 
                 # Si entro a esta parte del flujo, es porque necesito algún tipo de aprobacion
                 threads_slack[key]['required_approval'] = True
-                #X Obtener la respuesta aprobada y el thread_slack_id del liker
-                #X response = threads_slack[key]['correction']
                 liker_thread_slack_id = threads_slack[key]['liker_thread_ts']
 
                 # Enviar la respuesta aprobada al liker
@@ -353,17 +261,19 @@ def handle_reaction_added_events(body, say, logger):
                     text=f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]} - {supervisor_user_id} : {response}",
                     thread_ts=liker_thread_slack_id
                 )
+                fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                
                 if threads_slack[key]['update_response']:
-                    fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['question']}|{response}|Corregida")    
                     append_string_to_file('correcciones_supervisor.txt', f"{fecha_actual} - Pregunta: {threads_slack[key]['question']} - Respuesta: {response}")
-                print(f"Threads Slack en reaction events {threads_slack}")
+                else:
+                    append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['question']}|{response}|Sin_correccion")        
+
                 # Tupla para agregar a la posterior base de datos MySQL
                 del threads_slack[key]['waiting_for_approval']
                 row = threads_slack[key]
-                # row = tuple(row.values())
-                # insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
-                print(f"KEYS \n{tuple(row.keys())}")
-                print(f"ROW TO APPEND \n{tuple(row.values())}")
+                row = tuple(row.values())
+                insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
                 # Opcionalmente, limpiar el estado del thread
                 del threads_slack[key]
                 logger.info("Approved response sent to liker.")
@@ -371,20 +281,6 @@ def handle_reaction_added_events(body, say, logger):
             logger.info(f"Reaction {reaction} added by {users_info[supervisor_user_id]} but no action taken.")
     else:
         logger.error(f"No messages found for channel {channel_id} with timestamp {ts_id}.")
-
-
-def es_saludo(mensaje):
-    saludos = ["¡Hola! ¿En qué puedo ayudarte hoy?", 
-               "Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
-                "Estoy aquí para ayudarte. ¿En qué puedo asistirte hoy?",
-                "¡De nada! Estoy aquí para ayudarte en lo que necesites. Si tienes alguna otra pregunta o necesitas más información, no dudes en decírmelo. ¡Estoy aquí para asistirte!",
-                "¡De nada! Estoy aquí para ayudarte en lo que necesites. ¿Hay algo más en lo que pueda asistirte hoy?",
-                "¡De nada! Estoy aquí para ayudarte. ¿Hay algo más en lo que pueda asistirte?"
-                ]
-    for saludo in saludos:
-        if saludo in mensaje:
-            return True
-    return False
 
 def handle_liker_message(message, say):
     """
@@ -409,12 +305,19 @@ def handle_liker_message(message, say):
         'liker_user_id': user_id,
         'liker': users_info[user_id],
         'question': liker_message_text,
-        'question_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        'question_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'tentative_response': None,
+        'waiting_for_approval': None,
+        'update_response': None,
+        'correction': None,
+        'id_supervisor_who_solves': None,
+        'supervisor_who_solves': None,
+        'response_date': None,
+        'required_correction': False,
+        'required_approval': False
     }
 
     # Extraer el contenido del mensaje del 'liker'.
-
-
     # Si el liker no tiene permitido hablar con el bot detiene la ejecucion
     if user_id not in LIKERS_PERMITIDOS:
         say(text='Aun no tienes permitido interactuar con nuestro bot.', thread_ts=threads_slack[key]['liker_thread_ts'])
@@ -443,55 +346,42 @@ def handle_liker_message(message, say):
     tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de las referencias de los archivos
     threads_slack[key]['tentative_response'] = tentative_response # Se anade la respuesta tentativa de una vez
 
-    # Keys adicionales usadas en threads_slack
-    threads_slack[key]['waiting_for_approval'] = None
-    threads_slack[key]['update_response'] = None
-    threads_slack[key]['correction'] = None
-    threads_slack[key]['id_supervisor_who_solves'] = None
-    threads_slack[key]['supervisor_who_solves'] = None
-    threads_slack[key]['response_date'] = None
-    threads_slack[key]['required_correction'] = False
-    threads_slack[key]['required_approval'] = False
-
     print(tentative_response)
-    # if False:
-    if es_saludo(tentative_response):
+    pattern = r'【.*?†source】'
+    if re.search(pattern, tentative_response) is None and len(tentative_response) < 75:
         app.client.chat_postMessage(
                     channel=user_id,
                     text=f"{tentative_response}",
                     thread_ts=thread_slack_id
                 )
+        
         # Keys adicionales necesarias en threads_slack
         threads_slack[key]['waiting_for_approval'] = False
         threads_slack[key]['update_response'] = False
         threads_slack[key]['supervisor_who_solves'] = 'Asistente_OpenAI'
         threads_slack[key]['response_date'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        # print(f"Threads Slack en reaction events {threads_slack}")
         # Tupla para agregar a la posterior base de datos MySQL
         del threads_slack[key]['waiting_for_approval']
         row = threads_slack[key]
-        # row = tuple(row.values())
-        # insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
-        print(f"KEYS \n{tuple(row.keys())}")
-        print(f"ROW TO APPEND \n{tuple(row.values())}")
+        row = tuple(row.values())
+        insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
         # Opcionalmente, limpiar el estado del thread
+        fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['question']}|{tentative_response}|Bot")
         del threads_slack[key]
-        
     else:
         # Actualizar el diccionario threads_slack con la respuesta tentativa y marcarla como esperando aprobación.
-        # threads_slack[key]['tentative_response'] = tentative_response
         threads_slack[key]['waiting_for_approval'] = True
-        threads_slack[key]['update_response']= False
+        threads_slack[key]['update_response'] = False
         # Guardar el ID del thread de OpenAI en threads_openia.
         threads_openia[user_id] = {
             'thread_id': thread_openia.id
         }
         
-        
         # Enviar la respuesta tentativa al supervisor para su aprobación si no es una consulta a la base de datos.
         try:
-                # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
+            # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
             app.client.chat_postMessage(
                 channel=SUPERVISOR_USER_ID.get(user_id),
                 text=f"{users_info[user_id]} - |{key}| hizo la siguiente pregunta: {liker_message_text}\nRespuesta tentativa: {tentative_response}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion.",

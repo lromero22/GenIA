@@ -28,99 +28,74 @@ client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variable
 
 # FUNCIONES ORM FLASK
 
-"""
-# Inicialización de la aplicación Flask y configuración de la base de datos
-app_flask = Flask(__name__)
-app_flask.config['SQLALCHEMY_DATABASE_URI'] = '***' # En produccion deben ir como variables de entorno
-db = SQLAlchemy(app_flask)
-
-# Modelos de Datos de prueba
-# Estos modelos deben adaptarse a la base de datos real antes de usarse en producción
-
-class Registro(db.Model):
-    __tablename__ = 'registros'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(80), nullable=False)
-    ventas = db.Column(db.Float, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False)
-
-class Usuario(db.Model):
-    __tablename__ = 'usuarios'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(80), unique=True, nullable=False)
-    contrasena = db.Column(db.String(80), nullable=False)
-
-"""
 
 
-
-
-def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
-    """
-    Función para consultar las ventas totales de un usuario en un rango de fechas específico.
-    Esta es una función de prueba y debe ser actualizada para su uso en producción.
-
-    Parámetros:
-    nombre (str): Nombre del usuario.
-    fecha_inicio (str): Fecha de inicio en formato 'YYYY-MM-DD'.
-    fecha_final (str): Fecha final en formato 'YYYY-MM-DD'.
-    contrasena (str): Contraseña del usuario.
-
-    Retorna:
-    str: Ventas totales en el rango de fechas o un mensaje de error.
-    
-    print('Se llamó a consultar_ventas')
-
-    # Ajustar fecha_final para incluir todo el día especificado
-    fecha_final = datetime.datetime.strptime(fecha_final, '%Y-%m-%d') + datetime.timedelta(days=1) - datetime.timedelta(seconds=1)
-    
-    # Comprobar la contraseña del usuario
-    usuario = Usuario.query.filter_by(nombre=nombre).first()
-    if not usuario or usuario.contrasena != contrasena:
-        return 'Nombre de usuario o contraseña incorrectos'
-    
-    # Realizar la consulta de ventas
-    ventas_totales = db.session.query(func.sum(Registro.ventas)).filter(
-        Registro.nombre == nombre,
-        Registro.timestamp >= fecha_inicio,
-        Registro.timestamp <= fecha_final
-    ).scalar()
-
-    print(f'Se consultaron correctamente: {ventas_totales}')
-    
-    return f'Ventas totales: {ventas_totales}' if ventas_totales else 'Ventas totales: 0'
-
-    """
-
-
-
-# FUNCIONES SLACK
-
+#def consultar_ventas(nombre, fecha_inicio, fecha_final, contrasena):
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
-slack_token = "slack_app_token"
+slack_token = "slack_bot_id"
 app = App(token = slack_token)
 
 #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
-SUPERVISOR_USER_ID = {"U06SGR43U1G": 'U07BNLU9KT2',
-                      "U01LQ9N5WJJ": 'U07BNLU9KT2',
-                      "U01M2V299EH": 'U07BNLU9KT2',
-                      "U04HCJ0CE2X": 'U07BNLU9KT2',
-                      "U0475KXJU20": 'U07BNLU9KT2',
-                      "U01L6UJGRSS": 'U07BNLU9KT2',
-                      "U01MB9DQF9B": 'U07BNLU9KT2',
+SUPERVISOR_USER_ID = {"U01M3018BTP":'U06LZ2LCD6H',
+                        "U01MB9DQF9B":'U06LZ2LCD6H',
+                        "U02GPR4Q53N":'U06LZ2LCD6H',
+                        "U038KKVH4MU":'U06LZ2LCD6H',
+                        "U03P9SFSR1P":'U06LZ2LCD6H',
+                        "U03V2JYN88M":'U06LZ2LCD6H',
+                        "U059YRK763H":'U06LZ2LCD6H',
+                        "U05HCERJB8D":'U06LZ2LCD6H',
+                        "U05KFL9AP3N":'U06LZ2LCD6H',
+                        "U05QK7ZCXE0":'U06LZ2LCD6H',
+                        "U05QVD2BVG9":'U06LZ2LCD6H',
+                        "U06A0C0D1NF":'U06LZ2LCD6H',
+                        "U06KSP5257V":'U06LZ2LCD6H',
+                        "U06Q21KTC3V":'U06LZ2LCD6H',
+                        "U07A0S73FM3":'U06LZ2LCD6H',
+                        "U07A3KB887M":'U06LZ2LCD6H',
+                        "U07AGCX5G1F":'U06LZ2LCD6H',
+                        "U07ASGG0LN4":'U06LZ2LCD6H',
+                        "U078K3FE1MF":'U06LZ2LCD6H',
+                        "U01L6UJGRSS":'U06LZ2LCD6H',
+                        "U01L71AMFPG":'U06LZ2LCD6H',
+                        "U01LQ9N5WJJ":'U06LZ2LCD6H',
+                        "U01M2V299EH":'U06LZ2LCD6H',
+                        "U01MB9DQF9B":'U06LZ2LCD6H',
+                        "U04229KLR6E":'U06LZ2LCD6H',
+                        "U0475KXJU20":'U06LZ2LCD6H',
+                        "U04HCJ0CE2X":'U06LZ2LCD6H',
+                        "U06SGR43U1G":'U06LZ2LCD6H',
                       } #"U06LZ2LCD6H"
 APPROVAL_EMOJI = "white_check_mark" #Emoji de aprobacion por parte del supervisor
 #CHANNEL_ID_BOT = 'D07C74UCTA4' #Necesario que lo pase leo, en produccion debe ser un diccionario con el id del supervisor y su respectivo chanelid con el bot
 LIKERS_PERMITIDOS =[
-    "U01LQ9N5WJJ",
-    "U01M2V299EH",
-    "U04HCJ0CE2X",
-    "U0475KXJU20",
     "U01L6UJGRSS",
-    "U01MB9DQF9B",
-    "U06SGR43U1G" #ID de Juanjo para hacer pruebas
+"U01L71AMFPG",
+"U01M2V299EH",
+"U01M3018BTP",
+"U01MB9DQF9B",
+"U02GPR4Q53N",
+"U038KKVH4MU",
+"U03P9SFSR1P",
+"U03V2JYN88M",
+"U04229KLR6E",
+"U0475KXJU20",
+"U04HCJ0CE2X",
+"U059YRK763H",
+"U05HCERJB8D",
+"U05KFL9AP3N",
+"U05QK7ZCXE0",
+"U05QVD2BVG9",
+"U06A0C0D1NF",
+"U06KSP5257V",
+"U06Q21KTC3V",
+"U06SGR43U1G",
+"U078K3FE1MF",
+"U07A0S73FM3",
+"U07A3KB887M",
+"U07AGCX5G1F",
+"U07ASGG0LN4",
+"U01LQ9N5WJJ"
+ #ID de Juanjo para hacer pruebas    
 ]
 
 # Diccionario con los ID de usuarios y sus respectivos nombres
@@ -281,9 +256,13 @@ def handle_reaction_added_events(body, say, logger):
                     text=f"Respuesta aprobada por el supervisor {users_info[supervisor_user_id]} - {supervisor_user_id} : {response}",
                     thread_ts=liker_thread_slack_id
                 )
+                fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                
                 if threads_slack[key]['update_response']:
-                    fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['pregunta']}|{response}|Corregida")    
                     append_string_to_file('correcciones_supervisor.txt', f"{fecha_actual} - Pregunta: {threads_slack[key]['pregunta']} - Respuesta: {response}")
+                else:
+                    append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['pregunta']}|{response}|Sin_correccion")        
                     
                 # Opcionalmente, limpiar el estado del thread
                 del threads_slack[key]
@@ -359,17 +338,21 @@ def handle_liker_message(message, say):
     messages = message_response.data
     latest_message = messages[0]
     tentative_response = latest_message.content[0].text.value
-    tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de las referencias de los archivos
     print(tentative_response)
-
-    if es_saludo(tentative_response):
+    pattern = r'【.*?†source】'
+    #if re.search(pattern, tentative_response) is None and not tentative_response.startswith("No se encontró"):
+    #if re.search(pattern, tentative_response) is None and not tentative_response.startswith("No se encontró"):
+    if re.search(pattern, tentative_response) is None and len(tentative_response) < 50:
         app.client.chat_postMessage(
                     channel=user_id,
                     text=f"{tentative_response}",
                     thread_ts=thread_slack_id
                 )
+        fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        append_string_to_file('preguntas_totales.txt', f"{fecha_actual}|{threads_slack[key]['pregunta']}|{tentative_response}|Bot")
         del threads_slack[key]
     else:
+        tentative_response = re.sub('【.*?†source】', '', tentative_response) # Limpieza de las referencias de los archivos
         # Actualizar el diccionario threads_slack con la respuesta tentativa y marcarla como esperando aprobación.
         threads_slack[key]['tentative_response'] = tentative_response
         threads_slack[key]['waiting_for_approval'] = True
@@ -377,8 +360,7 @@ def handle_liker_message(message, say):
         # Guardar el ID del thread de OpenAI en threads_openia.
         threads_openia[user_id] = {
             'thread_id': thread_openia.id
-        }
-        
+        }       
         
         # Enviar la respuesta tentativa al supervisor para su aprobación si no es una consulta a la base de datos.
         try:
