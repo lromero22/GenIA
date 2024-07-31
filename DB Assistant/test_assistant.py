@@ -76,8 +76,13 @@ try:
     result = execute_query(query)
     print(result)
 except Exception as e:
-    print(e)
-    query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
-    result = execute_query(query)
+    if "Can't connect to MySQL" in str(e):
+        print("There was an error connecting to the database. Please check the connection")
+        print(e)
+        exit()
+    else:
+        print(e)
+        query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
+        result = execute_query(query)
 
 print(result)
