@@ -52,7 +52,7 @@ for id in LIKERS_PERMITIDOS + list(SUPERVISOR_USER_ID.values()):
     users_info[id] = user_info["profile"].get("real_name")
 
 # ------------------------------------------------------------------------------------------------------------------------------------
-# FUNCION PARA INSERTAR LA INFORMACION DE LOS MENSAJES EN LA BASE DE DATOS MySQL
+# FUNCIONES PARA INSERTAR Y ACTUALIZAR LA INFORMACION DE LOS MENSAJES EN LA BASE DE DATOS MySQL
 # Función para insertar un mensaje en la base de datos
 def insert_message(values, user, password, host, database):
     """ 
@@ -88,6 +88,78 @@ def insert_message(values, user, password, host, database):
     # Cerrar la conexión
     cursor.close()
     conn.close()
+
+# Función para actualizar un mensaje en la base de datos
+def update_message(liker_thread_ts, threads_slack, user, password, host, database):
+    # Configuración de la conexión
+    db_config = {
+        'user': user,
+        'password': password,
+        'host': host,
+        'database': database
+    }
+
+    # Crear la conexión
+    conn = mysql.connector.connect(**db_config)
+    cursor = conn.cursor()
+    
+    
+    sql = "UPDATE messages SET "
+    fields = []
+    values = []
+
+    if threads_slack["tentative_response"] is not None:
+        fields.append("tentative_response = %s")
+        values.append(threads_slack['tentative_response'])
+    if threads_slack["update_response"] is not None:
+        fields.append("update_response = %s")
+        values.append(threads_slack['update_response'])
+    if threads_slack["correction"] is not None:
+        fields.append("correction = %s")
+        values.append(threads_slack['correction'])
+    if threads_slack["id_supervisor_who_solves"] is not None:
+        fields.append("id_supervisor_who_solves = %s")
+        values.append(threads_slack['id_supervisor_who_solves'])
+    if threads_slack["supervisor_who_solves"] is not None:
+        fields.append("supervisor_who_solves = %s")
+        values.append(threads_slack['supervisor_who_solves'])
+    if threads_slack["response_date"] is not None:
+        fields.append("response_date = %s")
+        values.append(threads_slack['response_date'])
+    if threads_slack["required_correction"] is not None:
+        fields.append("required_correction = %s")
+        values.append(threads_slack['required_correction'])
+    if threads_slack["required_approval"] is not None:
+        fields.append("required_approval = %s")
+        values.append(threads_slack['required_approval'])
+
+    if not fields:
+        raise ValueError("No fields to update")
+
+    sql += ", ".join(fields) + " WHERE liker_thread_ts = %s"
+    values.append(liker_thread_ts)
+
+    # cursor.execute(sql, tuple(values))
+    cursor.execute(sql, tuple(values))
+    conn.commit()
+
+    # Cerrar la conexión
+    cursor.close()
+    conn.close()
+
+""" # Ejemplo de uso
+update_message(
+    liker_thread_ts='1234567890.123456',
+    tentative_response='Actualización de la respuesta.',
+    update_response=True,
+    correction='Corrección hecha por el supervisor.',
+    id_supervisor_who_solves='S12345678',
+    supervisor_who_solves='Ana Gómez',
+    response_date=datetime.now(),
+    required_correction=True,
+    required_approval=True
+) """
+
 # Credenciales de la base de datos
 db_credentials = {
     'user': 'root',
@@ -273,7 +345,8 @@ def handle_reaction_added_events(body, say, logger):
                 del threads_slack[key]['waiting_for_approval']
                 row = threads_slack[key]
                 row = tuple(row.values())
-                insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
+                liker_thread_ts = threads_slack[key]['liker_thread_ts']
+                update_message(liker_thread_ts, threads_slack[key], db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
                 # Opcionalmente, limpiar el estado del thread
                 del threads_slack[key]
                 logger.info("Approved response sent to liker.")
@@ -307,14 +380,14 @@ def handle_liker_message(message, say):
         'question': liker_message_text,
         'question_date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'tentative_response': None,
-        'waiting_for_approval': None,
+        'waiting_for_approval': None, # Esta key es usada en el flujo de manejo de mensajes pero NO HACE PARTE DE LA BD
         'update_response': None,
         'correction': None,
         'id_supervisor_who_solves': None,
         'supervisor_who_solves': None,
         'response_date': None,
-        'required_correction': False,
-        'required_approval': False
+        'required_correction': None,
+        'required_approval': None
     }
 
     # Extraer el contenido del mensaje del 'liker'.
@@ -360,6 +433,8 @@ def handle_liker_message(message, say):
         threads_slack[key]['update_response'] = False
         threads_slack[key]['supervisor_who_solves'] = 'Asistente_OpenAI'
         threads_slack[key]['response_date'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        threads_slack[key]['required_correction'] = False
+        threads_slack[key]['required_approval'] = False
 
         # Tupla para agregar a la posterior base de datos MySQL
         del threads_slack[key]['waiting_for_approval']
@@ -378,7 +453,18 @@ def handle_liker_message(message, say):
         threads_openia[user_id] = {
             'thread_id': thread_openia.id
         }
+
+        # Creacion de la fila a insertar en la base de datos (se debe excluir la key 'waiting_for_approval')
+        copy = threads_slack[key].copy() # Copia del diccionario threads_slack[key] para insertar la fila en la BD
+        del copy['waiting_for_approval']
         
+        row = copy
+        row = tuple(row.values())
+        del copy # Eliminacion de la copia del diccionario threads_slack
+
+        # Insertar el mensaje en la base de datos
+        insert_message(row, db_credentials['user'], db_credentials['password'], db_credentials['host'], db_credentials['database'])
+
         # Enviar la respuesta tentativa al supervisor para su aprobación si no es una consulta a la base de datos.
         try:
             # Si no es una consulta a la base de datos, enviar la respuesta tentativa al supervisor para aprobación.
