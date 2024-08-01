@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 import pandas as pd
 import pymysql
+import time
 
 
 load_dotenv()
@@ -15,31 +16,37 @@ client = OpenAI()
 
 # Function to prompt the user for the SQL
 def prompt_to_sql(question):
-    # Create a thread with the user's question
-    thread_openai = client.beta.threads.create(
-        messages=[
-            {"role": "user", "content": question}
-        ]
-    )
+    try:
+        # Create a thread with the user's question
+        thread_openai = client.beta.threads.create(
+            messages=[
+                {"role": "user", "content": question}
+            ]
+        )
 
-    # Run the thread with the assistant
-    run = client.beta.threads.runs.create(thread_id=thread_openai.id, assistant_id=os.getenv('ASSISTANT_ID'))
-    while run.status != "completed":
-        # Check the status of the run
-        run = client.beta.threads.runs.retrieve(thread_id=thread_openai.id, run_id=run.id)
-        print(f"Thread status: {run.status}")
-        #time.sleep(1)
+        # Run the thread with the assistant
+        run = client.beta.threads.runs.create(thread_id=thread_openai.id, assistant_id=os.getenv('ASSISTANT_ID'))
+        while run.status != "completed":
+            time.sleep(1)
+            run = client.beta.threads.runs.retrieve(thread_id=thread_openai.id, run_id=run.id)
 
-    # Get the latest message from the assistant
-    message_response = client.beta.threads.messages.list(thread_id=thread_openai.id)
-    messages = message_response.data
-    latest_message = messages[0]
-    sql_query = latest_message.content[0].text.value
-    # The sql_query is formatted as a markdown sql string, so we need to remove the markdown characters
-    sql_query = sql_query.replace('```sql\n', '').replace('```', '')
-    sql_query = sql_query.replace('\n', ' ')
+        # Get the latest message from the assistant
+        message_response = client.beta.threads.messages.list(thread_id=thread_openai.id)
+        messages = message_response.data
 
-    return sql_query
+        if not messages:
+            raise ValueError("No messages returned from the assistant.")
+
+        latest_message = messages[0]
+        sql_query = latest_message.content[0].text.value
+        # The sql_query is formatted as a markdown sql string, so we need to remove the markdown characters
+        sql_query = sql_query.replace('```sql\n', '').replace('```', '').strip()
+
+        return sql_query
+    except Exception as e:
+        print(f"An error ocurred: {e}")
+        return None
+
 
 def conn_db():
     conn_str = os.getenv("CONNECTION_STRING")
@@ -72,6 +79,7 @@ def table_schema(tables_names:list):
 question = input("Enter the question: ")
 
 query = prompt_to_sql(question)
+print(query)
 try:
     result = execute_query(query)
     print(result)
@@ -84,5 +92,3 @@ except Exception as e:
         print(e)
         query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
         result = execute_query(query)
-
-print(result)
