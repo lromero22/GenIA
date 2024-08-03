@@ -54,7 +54,7 @@ def conn_db():
     engine = create_engine(conn_str)
     return engine
 
-def execute_query(query):
+def query_engine(query):
     # Connect to the database
     engine = conn_db()
     df = pd.read_sql(query, engine)
@@ -74,21 +74,40 @@ def table_schema(tables_names:list):
 
     return table_sch
 
-# question = "Traeme el nombre, identificación o cédula, usuario o liker que lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409"
+def execute_query():
+    # Esta función simula la ejecución de la consulta SQL
+    print("Executing query...")
+    try:
+        result = query_engine(query)
+        print(result)
+    except Exception as e:
+        if "Can't connect to MySQL" in str(e):
+            print("There was an error connecting to the database. Please check the connection")
+            print(e)
+            exit()
+        else:
+            print(e)
+            query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
+            result = query_engine(query)
 
-question = input("Enter the question: ")
+def main():
+    # step 1: Get the question from the user
+    # question = "Traeme el nombre, identificación o cédula, usuario o liker que lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409"
 
-query = prompt_to_sql(question)
-print(query)
-try:
-    result = execute_query(query)
-    print(result)
-except Exception as e:
-    if "Can't connect to MySQL" in str(e):
-        print("There was an error connecting to the database. Please check the connection")
-        print(e)
-        exit()
+    question = input("Enter the question: ")
+
+    query = prompt_to_sql(question)
+    
+    # Step 2: Ask the user if they want to execute the query
+    answer = input("Do you want to execute the query? (s/n): ").strip().lower()
+    
+    # Step 3: Wait for user decision
+    if answer == 's':
+        execute_query()
+    elif answer == 'n':
+        print(f"SQL Query: \n{query}")
     else:
-        print(e)
-        query = prompt_to_sql(f"There was an error with the query, please try again. {e}")
-        result = execute_query(query)
+        print("Invalid option. Please enter 's' to execute the query or 'n' to show the query.")
+
+if __name__ == "__main__":
+    main()
