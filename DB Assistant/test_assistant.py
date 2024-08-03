@@ -91,23 +91,46 @@ def execute_query():
             result = query_engine(query)
 
 def main():
-    # step 1: Get the question from the user
-    # question = "Traeme el nombre, identificación o cédula, usuario o liker que lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409"
+    while True:
+        # step 1: Get the question from the user
+        # question = "Traeme el nombre, identificación o cédula, usuario o liker que lo tiene asignado, ciclo y valor del pedido de los leads o novaempresarios para el ciclo 202409"
 
-    question = input("Enter the question: ")
+        question = input("Enter the question: ")
 
-    query = prompt_to_sql(question)
-    
-    # Step 2: Ask the user if they want to execute the query
-    answer = input("Do you want to execute the query? (s/n): ").strip().lower()
-    
-    # Step 3: Wait for user decision
-    if answer == 's':
-        execute_query()
-    elif answer == 'n':
-        print(f"SQL Query: \n{query}")
-    else:
-        print("Invalid option. Please enter 's' to execute the query or 'n' to show the query.")
+        query = prompt_to_sql(question)
+        
+        # Step 2: Ask the user if they want to execute the query
+        answer = input("Do you want to execute the query? (s/n): ").strip().lower()
+        
+        # Step 3: Wait for user decision
+        if answer == 's':
+            execute_query()
+        elif answer == 'n':
+            print(f"SQL Query: \n{query}")
+        else:
+            print("Invalid option. Please enter 's' to execute the query or 'n' to show the query.")
+            continue
+
+        # Step 4: Ask the user if they want to repeat the process
+        repeat = input("Do you want to ask another question? (s/n): ").strip().lower()
+        if repeat != 's':
+            print("Goodbye!")
+            break
 
 if __name__ == "__main__":
     main()
+
+
+#-----------------Preguntas-----------------
+# ¿Cuáles son los nombres y descripciones de todas las interacciones registradas en la tabla de llamadas?
+# ¿Qué llamadas fueron gestionadas por un usuario específico identificado por el nombre anrojas?
+# ¿Cuáles son los nombres completos y los departamentos de todos los novaempresarios registrados?
+# ¿Cuántos pedidos ha realizado cada novaempresario en el ciclo 202310? Y ordénalos de mayor a menor
+# ¿Cuáles son los correos electrónicos y edades de todos los novaempresarios activos?
+# ¿Qué novaempresarios tienen un puntaje superior al 30%?
+# ¿Cuál es el total acumulado de ventas para cada segmento de novaempresarios, en el ciclo 202310?
+# ¿Cuáles son los nombres de los novaempresarios y los valores de sus pedidos realizados agrupados por el ciclo 202310?
+# ¿Qué novaempresarios han realizado su primer pedido más reciente, ordenado por la fecha de su primer pedido?
+# ¿Cuáles son los pedidos realizados por novaempresarios que tienen más de 100 días en mora?
+# ¿Cuál es el valor promedio de los pedidos realizados por novaempresarios del segmento "MASTER"? 
+# ¿Qué novaempresarios tienen el mayor total histórico de ventas, ordenado de mayor a menor? Dime solo los 10 primeros
