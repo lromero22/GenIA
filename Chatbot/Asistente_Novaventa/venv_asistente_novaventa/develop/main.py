@@ -21,14 +21,14 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "assistant_id" # En produccion deben ir como variables de entorno
-VECTOR_STORE_ID = "vector_store_id" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "openai_assitant_id" # En produccion deben ir como variables de entorno
+VECTOR_STORE_ID = "openai_vector_store_id" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
 client = OpenAI(api_key="openai_api_key") # En produccion deben ir como variables de entorno
 
 # Inicializa tu aplicación con el token de bot y el manejador de socket mode
-slack_token = "slack_app_token"
+slack_token = "slack_app_id"
 app = App(token = slack_token)
 
 #En produccion debe ser un diccionario que contenga que supervisor corresponde a que liker
@@ -50,6 +50,9 @@ for id in LIKERS_PERMITIDOS + list(SUPERVISOR_USER_ID.values()):
     response = requests.get('https://slack.com/api/users.info', headers = headers, params = {'user': id})
     user_info = response.json().get("user")
     users_info[id] = user_info["profile"].get("real_name")
+
+# ID del Asistente de OpenAI en Slack (Aplicación de Slack)
+slack_id_assistant = 'U07DXQYJMRP' # Solución simplista
 
 # ------------------------------------------------------------------------------------------------------------------------------------
 # FUNCIONES PARA INSERTAR Y ACTUALIZAR LA INFORMACION DE LOS MENSAJES EN LA BASE DE DATOS MySQL
@@ -78,10 +81,10 @@ def insert_message(values, user, password, host, database):
     cursor = conn.cursor()
 
     consulta = """
-        INSERT INTO messages (liker_thread_ts, liker_user_id, liker, question, question_date, tentative_response, update_response, correction, id_supervisor_who_solves, supervisor_who_solves, response_date, required_correction, required_approval)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        INSERT INTO messages (liker_thread_ts, liker_user_id, liker, question, question_date, tentative_response, update_response, correction, id_supervisor_who_solves, supervisor_who_solves, id_supervisor_who_approves, supervisor_who_approves, response_date, required_correction, required_approval)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
-    # val = (liker_thread_ts, liker_user_id, liker, question, question_date, tentative_response, update_response, correction, id_supervisor_who_solves, supervisor_who_solves, response_date, required_correction, required_approval)
+    
     cursor.execute(consulta, values)
     conn.commit()
 
@@ -123,6 +126,12 @@ def update_message(liker_thread_ts, threads_slack, user, password, host, databas
     if threads_slack["supervisor_who_solves"] is not None:
         fields.append("supervisor_who_solves = %s")
         values.append(threads_slack['supervisor_who_solves'])
+    if threads_slack["id_supervisor_who_approves"] is not None:
+        fields.append("id_supervisor_who_approves = %s")
+        values.append(threads_slack['id_supervisor_who_approves'])
+    if threads_slack["supervisor_who_approves"] is not None:
+        fields.append("supervisor_who_approves = %s")
+        values.append(threads_slack['supervisor_who_approves'])
     if threads_slack["response_date"] is not None:
         fields.append("response_date = %s")
         values.append(threads_slack['response_date'])
@@ -146,19 +155,6 @@ def update_message(liker_thread_ts, threads_slack, user, password, host, databas
     # Cerrar la conexión
     cursor.close()
     conn.close()
-
-""" # Ejemplo de uso
-update_message(
-    liker_thread_ts='1234567890.123456',
-    tentative_response='Actualización de la respuesta.',
-    update_response=True,
-    correction='Corrección hecha por el supervisor.',
-    id_supervisor_who_solves='S12345678',
-    supervisor_who_solves='Ana Gómez',
-    response_date=datetime.now(),
-    required_correction=True,
-    required_approval=True
-) """
 
 # Credenciales de la base de datos
 db_credentials = {
@@ -189,10 +185,9 @@ def message_handler(message, say, logger):
     thread_ts = message.get('thread_ts')  # Obtener el thread_ts del mensaje
     # Verifica si el mensaje es del supervisor
     if user_id in SUPERVISOR_USER_ID.values():
-        supervisor_escribe(message, say, logger,thread_ts)
+        supervisor_escribe(message, say, logger, thread_ts)
     else:
         handle_liker_message(message, say)
-
 
 def supervisor_escribe(message, say, logger,thread_ts):
     """
@@ -221,7 +216,6 @@ def supervisor_escribe(message, say, logger,thread_ts):
     info_msj=key.split("-")
     user_id=info_msj[0]
     correction = message['text']
-
     # Enviar la corrección al hilo del empleado que hizo la pregunta
     try:
         """ app.client.chat_postMessage(
@@ -238,15 +232,14 @@ def supervisor_escribe(message, say, logger,thread_ts):
         say(text=f"{users_info[user_id]} - |{key}| - Respuesta tentativa actualizada: {correction}\nPor favor aprueba con: :{APPROVAL_EMOJI}: o realice una correccion nuevamente.", thread_ts=thread_ts)
         logger.info(f"Corrección enviada al empleado {users_info[user_id]} en el canal {bot_channel_id}.")
     except Exception as e:
-        logger.error(f"Error enviando la corrección: {e}")    
+        logger.error(f"Error enviando la corrección: {e}")
 
 def append_string_to_file(file_path, string_to_append):
     with open(file_path, 'a') as file:
         file.write('\n' + string_to_append + '\n')
 
 @app.event("reaction_added")
-
-def handle_reaction_added_events(body, say, logger):
+def handle_reaction_added_events(body, logger):
     """
     Función que maneja los eventos de reacciones añadidas en Slack.
     Si la reacción es el emoji de aprobación, se envía la respuesta aprobada al usuario que la solicitó.
@@ -259,12 +252,11 @@ def handle_reaction_added_events(body, say, logger):
     event = body['event']
     supervisor_user_id = event['user']
     reaction = event['reaction']
-    item = event['item']
+    # slack_id_assistant = body['authorizations'][0]['user_id'] # ID del Asistente de OpenAI en Slack
     channel_id = event['item']['channel']
     ts_id = event['item']['ts']
 
     message = None
-
     # Intentar obtener el mensaje del hilo
     try:
         result = app.client.conversations_replies(
@@ -300,12 +292,14 @@ def handle_reaction_added_events(body, say, logger):
         user_id=info_msj[0]
         # Verificar si la reacción es el emoji de aprobación y si es en un thread que estamos manejando
         if reaction == APPROVAL_EMOJI and key in threads_slack:
-            # Obtener el user_id del mensaje original
-            #user_id = re.search(r'\bU\w+\b', message).group()
             # Asegurarse de que el mensaje fue originalmente enviado al supervisor para aprobación
             if threads_slack[key]['waiting_for_approval']:
                 # NOTA: En este punto, tendría sentido setear el waiting for approval a False porque con las condiciones
                 # dadas la pregunta ha sido resuelta, sin embargo, tampoco tiene algun tipo de efecto en los pasos a seguir
+                
+                # Se Agrega especifica el supervisor que aprobo la correcion (quien uso el emoji de aprobacion)
+                threads_slack[key]['id_supervisor_who_approves'] = supervisor_user_id
+                threads_slack[key]['supervisor_who_approves'] = users_info[supervisor_user_id]
                 
                 # Verificar de donde se saca la respuesta a enviar al liker: la tentativa o la corregida                    
                 if threads_slack[key]['update_response']:
@@ -317,7 +311,7 @@ def handle_reaction_added_events(body, say, logger):
                     threads_slack[key]['required_correction'] = True
                 else:
                     response = threads_slack[key]['tentative_response']     
-                    threads_slack[key]['id_supervisor_who_solves'] = None
+                    threads_slack[key]['id_supervisor_who_solves'] = slack_id_assistant
                     threads_slack[key]['supervisor_who_solves'] = 'Asistente OpenAI'
                     threads_slack[key]['response_date'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     threads_slack[key]['required_correction'] = False
@@ -365,12 +359,10 @@ def handle_liker_message(message, say):
     message (dict): El mensaje recibido en Slack.
     say (func): Función para enviar mensajes en Slack.
     """
-    
     user_id = message['user']
     
-    thread_slack_id = message['ts']    
-    #consulta_basedatos = False
-    key=user_id+"-"+thread_slack_id
+    thread_slack_id = message['ts']
+    key = user_id + "-" + thread_slack_id
     # Guardar el estado inicial del 'thread' en el diccionario threads_slack.
     liker_message_text = message['text']
     threads_slack[key] = {
@@ -385,6 +377,8 @@ def handle_liker_message(message, say):
         'correction': None,
         'id_supervisor_who_solves': None,
         'supervisor_who_solves': None,
+        'id_supervisor_who_approves': None,
+        'supervisor_who_approves': None,
         'response_date': None,
         'required_correction': None,
         'required_approval': None
@@ -431,6 +425,7 @@ def handle_liker_message(message, say):
         # Keys adicionales necesarias en threads_slack
         threads_slack[key]['waiting_for_approval'] = False
         threads_slack[key]['update_response'] = False
+        threads_slack[key]['id_supervisor_who_solves'] = slack_id_assistant
         threads_slack[key]['supervisor_who_solves'] = 'Asistente_OpenAI'
         threads_slack[key]['response_date'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         threads_slack[key]['required_correction'] = False
