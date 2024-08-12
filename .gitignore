@@ -131,6 +131,7 @@ venv.bak/
 .venv/
 .voicenv/
 .asvenv/
+.sellvenv/
 
 # Spyder project settings
 .spyderproject
