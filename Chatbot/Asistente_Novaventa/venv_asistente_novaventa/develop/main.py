@@ -1,18 +1,11 @@
 # Importación de librerías necesarias
-import os
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-import time
 from openai import OpenAI
-import io
-from pydrive2.auth import GoogleAuth
-from pydrive2.drive import GoogleDrive
-from pydrive2.files import FileNotUploadedError
 import pandas as pd
 from datetime import datetime
 from slack_sdk.errors import SlackApiError
 import re
-import json
 import mysql.connector
 
 from flask import Flask, request, jsonify
@@ -21,7 +14,7 @@ from sqlalchemy import func
 
 # FUNCIONES OPENIA
 # Asistente y vector store IDs para OpenAI
-ASSISTANT_ID = "openai_assitant_id" # En produccion deben ir como variables de entorno
+ASSISTANT_ID = "openai_assistant_id" # En produccion deben ir como variables de entorno
 VECTOR_STORE_ID = "openai_vector_store_id" # En produccion deben ir como variables de entorno
 
 # Configuración del cliente de OpenAI con la clave API
@@ -81,7 +74,7 @@ def insert_message(values, user, password, host, database):
     cursor = conn.cursor()
 
     consulta = """
-        INSERT INTO messages (liker_thread_ts, liker_user_id, liker, question, question_date, tentative_response, update_response, correction, id_supervisor_who_solves, supervisor_who_solves, id_supervisor_who_approves, supervisor_who_approves, response_date, required_correction, required_approval)
+        INSERT INTO history_of_assistant_messages (liker_thread_ts, liker_user_id, liker, question, question_date, tentative_response, update_response, correction, id_supervisor_who_solves, supervisor_who_solves, id_supervisor_who_approves, supervisor_who_approves, response_date, required_correction, required_approval)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     
@@ -107,7 +100,7 @@ def update_message(liker_thread_ts, threads_slack, user, password, host, databas
     cursor = conn.cursor()
     
     
-    sql = "UPDATE messages SET "
+    sql = "UPDATE history_of_assistant_messages SET "
     fields = []
     values = []
 
@@ -158,10 +151,10 @@ def update_message(liker_thread_ts, threads_slack, user, password, host, databas
 
 # Credenciales de la base de datos
 db_credentials = {
-    'user': 'root',
-    'password': 'Rustinpeace4+',
-    'host': 'localhost',
-    'database': 'sakila'
+    'user': 'IA',
+    'password': 'gkVD7UfrK0tjHe1K',
+    'host': '192.168.100.16',
+    'database': 'CRM_Zafiro'
 }
 # ------------------------------------------------------------------------------------------------------------------------------------
 
