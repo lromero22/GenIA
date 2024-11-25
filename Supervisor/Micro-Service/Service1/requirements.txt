@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+langchain  # Asegúrate de verificar la versión compatible
+langchain-openai  # Asegúrate de verificar la versión compatible
+httpx
+langchain_community 
+unstructured 
+pyPDF
+chromadb 
+langchain-chroma

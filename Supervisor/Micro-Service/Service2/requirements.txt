@@ -1,0 +1,13 @@
+python-dotenv
+langchain-community
+langchain-text-splitters
+sqlalchemy
+langchain-openai
+langchain-experimental
+langchain-core
+tiktoken
+openai
+langsmith
+pymysql
+jq
+faiss-cpu

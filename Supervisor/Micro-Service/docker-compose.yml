@@ -1,0 +1,37 @@
+services:
+  service_1:
+    build: ./service1
+    container_name: service_1
+    ports:
+      - "8001:8000"
+    env_file:
+      - ../.env
+
+      
+  service_2:
+    build: ./service2
+    env_file:
+      - ../.env
+    container_name: service_2
+    ports:
+      - "8002:8000"
+
+  service_3:
+    build: ./service3
+    env_file:
+      - ../.env
+    container_name: service_3
+    ports:
+      - "8003:8000"
+      
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - service_1
+      - service_2
+      - service_3
+    env_file:
+      - ../.env
